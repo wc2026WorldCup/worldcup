@@ -46,7 +46,7 @@
 
 ```text
 worldcup-2026-reminder/
-├── README.md / PROJECT_REVIEW.md / CHANGELOG.md   # 项目资产文档
+├── README.md                   # 项目说明(本文件)
 ├── index.html                  # 构建产物:可部署网页
 ├── worldcup.ics                # 构建产物:可订阅日历
 ├── data/
