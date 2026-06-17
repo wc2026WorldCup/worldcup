@@ -1,0 +1,55 @@
+name: Build static artifacts
+
+# 何时运行:
+#  - 当源文件(数据/模板/脚本)被推送到 main 时,自动重建并提交成品
+#  - 也可在 Actions 页面手动触发(workflow_dispatch)
+#
+# 效果:你只要改 data/matches.json(例如填入淘汰赛真实对阵)并提交,
+#      本工作流会自动重新生成 index.html 和 worldcup.ics 并提交回仓库,
+#      GitHub Pages 随即重新发布,订阅日历也会在下次回源时自动更新。
+#      —— 你无需在本地构建、也无需手动上传成品文件。
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "data/**"
+      - "src/**"
+      - "scripts/**"
+      - ".github/workflows/build.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write          # 允许工作流把重建后的文件提交回仓库
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build site & calendar
+        run: python scripts/build_all.py    # 仅用标准库,无需 pip install
+
+      - name: Commit rebuilt files if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html worldcup.ics
+          if git diff --staged --quiet; then
+            echo "Nothing changed — skip commit."
+          else
+            git commit -m "chore: rebuild index.html & worldcup.ics [skip ci]"
+            git push
+          fi
+
+# 进阶(可选,等淘汰赛真正开打、有真实数据可验证时再加):
+#   在 “Build” 之前增加一步,用脚本从 ESPN 公开接口抓取淘汰赛真实对阵,
+#   按开球时间匹配回 data/matches.json 并写回,再交给本工作流重建。
+#   那样连“手填队名”都不需要,可配合 schedule(定时 cron)每日自动运行。

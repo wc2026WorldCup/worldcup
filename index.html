@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>世界杯 2026 · 赛果与赛程</title>
+<style>
+  :root{
+    --bg:#EEF1F5; --card:#FFFFFF; --ink:#14181F; --muted:#697282; --faint:#A2AAB6;
+    --line:#E4E8EE; --turf:#1E8E5A; --turf-deep:#125537; --live:#E5484D; --amber:#C98A12;
+    --pill:#EEF4F0; --pill-ink:#1E6E48; --draw-bg:#EEF1F5; --draw-ink:#566070;
+    --shadow:0 1px 2px rgba(20,24,31,.05),0 6px 18px rgba(20,24,31,.06);
+    --mono:ui-monospace,"SF Mono","SFMono-Regular",Menlo,Consolas,monospace;
+    --cjk:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--cjk);font-size:16px;line-height:1.4;
+       -webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom)}
+  .wrap{max-width:560px;margin:0 auto}
+
+  header{position:sticky;top:0;z-index:20;background:rgba(238,241,245,.86);
+         backdrop-filter:saturate(160%) blur(12px);-webkit-backdrop-filter:saturate(160%) blur(12px);
+         border-bottom:1px solid var(--line)}
+  .hbar{max-width:560px;margin:0 auto;padding:14px 16px 10px}
+  .toprow{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .brand{display:flex;align-items:baseline;gap:8px;min-width:0}
+  .brand b{font-size:22px;font-weight:800;letter-spacing:-.02em}
+  .brand .yr{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--turf);letter-spacing:-.04em}
+  .fifa{flex:none;display:inline-flex;align-items:center;gap:5px;text-decoration:none;
+        background:var(--ink);color:#fff;font-size:13px;font-weight:600;padding:8px 12px;border-radius:999px}
+  .fifa:active{transform:scale(.97)}
+  .sub{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.5}
+  .sub .tz{font-family:var(--mono)}
+
+  .seg{display:flex;gap:4px;margin-top:11px;background:#E2E7EE;padding:3px;border-radius:11px}
+  .seg button{flex:1;border:0;background:transparent;font-family:var(--cjk);
+              font-size:13px;font-weight:600;color:var(--muted);padding:7px 4px;border-radius:9px;cursor:pointer}
+  .seg button[aria-pressed="true"]{background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
+  .seg button .ct{font-family:var(--mono);font-size:11px;color:var(--faint);margin-left:3px}
+  .seg button[aria-pressed="true"] .ct{color:var(--turf)}
+
+  .meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;font-size:12px;color:var(--muted)}
+  .meta .upd{display:flex;align-items:center;gap:6px;min-width:0}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--faint);flex:none}
+  .dot.ok{background:var(--turf)} .dot.err{background:var(--live)}
+  .dot.load{background:var(--amber);animation:blink 1s infinite}
+  @keyframes blink{50%{opacity:.25}}
+  .actions{display:flex;gap:6px;flex:none}
+  .actions select,.refresh{font-family:var(--cjk);font-size:12px;color:var(--ink);
+        border:1px solid var(--line);background:var(--card);border-radius:8px;padding:5px 8px;cursor:pointer}
+  .refresh{font-weight:600}
+  .refresh:active{transform:scale(.97)}
+
+  main{padding:6px 12px 40px}
+  .day{margin-top:18px}
+  .dayhd{display:flex;align-items:baseline;gap:8px;padding:0 4px 8px}
+  .dayhd .d{font-size:15px;font-weight:800;letter-spacing:-.01em}
+  .dayhd .w{font-size:12px;color:var(--muted)}
+  .dayhd .rule{flex:1;height:1px;background:var(--line);align-self:center;margin-left:2px}
+
+  .card{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;
+        box-shadow:var(--shadow);padding:13px 14px;margin-bottom:10px;position:relative;overflow:hidden}
+  .card.live{border-color:rgba(229,72,77,.4)}
+  .chd{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}
+  .tags{display:flex;gap:6px;align-items:center;min-width:0}
+  .pill{font-size:11px;font-weight:700;color:var(--pill-ink);background:var(--pill);
+        padding:3px 8px;border-radius:999px;white-space:nowrap}
+  .pill.ko{color:var(--turf-deep)}
+  .state{font-size:11px;font-weight:700;letter-spacing:.02em;white-space:nowrap;flex:none}
+  .state.up{color:var(--faint)}
+  .state.fin{color:var(--muted)}
+  .state.live{color:var(--live);display:inline-flex;align-items:center;gap:5px}
+  /* draw coin badge (sits after each country name, mirrors the 胜 coin) */
+  .draw-badge{flex:none;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;
+        border-radius:50%;background:#fff;border:2px solid #2563EB;color:#2563EB;
+        font-size:11px;font-weight:800;line-height:1;margin-left:7px}
+  /* rolling football for live */
+  .ball{display:inline-block;font-size:14px;line-height:1;will-change:transform;
+        animation:roll 1s linear infinite alternate}
+  @keyframes roll{0%{transform:translateX(-3px) rotate(-18deg)}100%{transform:translateX(3px) rotate(342deg)}}
+
+  .grid{display:grid;grid-template-columns:1fr auto;column-gap:12px;align-items:center}
+  .sides{display:flex;flex-direction:column;gap:8px;min-width:0}
+  .side{display:flex;align-items:center;gap:9px;min-width:0}
+  .fl{font-size:20px;line-height:1;flex:none;width:24px;text-align:center}
+  .nm{font-size:17px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .side.tbd .nm{color:var(--faint);font-weight:600;font-size:15px}
+  .win-badge{flex:none;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;
+        border-radius:50%;background:#fff;border:2px solid var(--live);color:var(--live);
+        font-size:11px;font-weight:800;line-height:1;margin-left:7px}
+
+  .figure{flex:none;text-align:right;min-width:64px;display:flex;flex-direction:column;
+          align-items:flex-end;justify-content:center;gap:8px}
+  .scores{display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+  .sc{font-family:var(--mono);font-size:25px;font-weight:700;line-height:1;
+      font-variant-numeric:tabular-nums;color:var(--ink);min-height:25px;display:flex;align-items:center}
+  .sc.dim{color:var(--faint)}
+  .sc.liven{color:var(--live)}
+  .kick{display:flex;flex-direction:column;align-items:flex-end}
+  .kick .eyebrow{font-size:10px;font-weight:700;color:var(--faint);letter-spacing:.06em}
+  .kick .t{font-family:var(--mono);font-size:23px;font-weight:700;letter-spacing:-.02em;
+           font-variant-numeric:tabular-nums;color:var(--turf-deep)}
+
+  .foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:11px;
+        padding-top:10px;border-top:1px dashed var(--line);font-size:12px;color:var(--muted)}
+  .foot .loc{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  .foot .when{font-family:var(--mono);white-space:nowrap;flex:none;color:var(--faint)}
+  .foot .wlabel{font-family:var(--cjk);font-weight:600}
+
+  /* universal broadcast entry (mainland China rights holders) */
+  .liveentry{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px}
+  .liveentry .lelbl{font-size:12px;color:var(--muted);font-weight:700;margin-right:1px}
+  .wbtn{font-size:12px;font-weight:600;color:var(--turf-deep);background:var(--pill);
+        border:1px solid #CFE3D6;border-radius:999px;padding:5px 11px;text-decoration:none}
+  .wbtn:active{transform:scale(.96)}
+
+  .empty{text-align:center;color:var(--muted);font-size:14px;padding:48px 20px}
+  .legend{text-align:center;color:var(--faint);font-size:11px;margin-top:22px;line-height:1.7}
+
+  .card.clickable{cursor:pointer}
+  .card.clickable:active{transform:scale(.992)}
+  .wm-overlay{position:fixed;inset:0;z-index:50;background:rgba(20,24,31,.5);
+    display:flex;align-items:flex-end;justify-content:center;padding:14px}
+  .wm-overlay[hidden]{display:none}
+  .wm-card{background:var(--card);border-radius:18px;width:100%;max-width:420px;
+    padding:18px 16px calc(14px + env(safe-area-inset-bottom));box-shadow:0 -10px 44px rgba(0,0,0,.22)}
+  .wm-title{font-size:16px;font-weight:800;text-align:center;color:var(--ink)}
+  .wm-sub{font-size:13px;color:var(--muted);text-align:center;margin:5px 0 15px}
+  .wm-btn{display:block;text-align:center;text-decoration:none;font-size:16px;font-weight:700;
+    color:var(--turf-deep);background:var(--pill);border:1px solid #CFE3D6;border-radius:12px;
+    padding:13px;margin-bottom:9px}
+  .wm-btn:active{transform:scale(.99)}
+  .wm-cancel{display:block;width:100%;font-family:var(--cjk);font-size:15px;font-weight:600;
+    color:var(--muted);background:transparent;border:0;padding:11px;cursor:pointer}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap"></div>
+<header>
+  <div class="hbar">
+    <div class="toprow">
+      <div class="brand"><span>⚽</span><b>世界杯</b><span class="yr">2026</span></div>
+      <a class="fifa" id="fifaTop" target="_blank" rel="noopener">FIFA 官网 ↗</a>
+    </div>
+    <div class="sub">美 · 加 · 墨主办 &nbsp;·&nbsp; 6/11 – 7/19 &nbsp;·&nbsp; 共 104 场<br>
+      时间按你的设备时区显示 · 当前 <span class="tz" id="tzName">—</span></div>
+    <div class="seg" id="seg">
+      <button data-f="all" aria-pressed="true">全部<span class="ct" id="c-all"></span></button>
+      <button data-f="live" aria-pressed="false">进行中<span class="ct" id="c-live"></span></button>
+      <button data-f="fin" aria-pressed="false">已结束<span class="ct" id="c-fin"></span></button>
+      <button data-f="up" aria-pressed="false">未开始<span class="ct" id="c-up"></span></button>
+    </div>
+    <div class="meta">
+      <div class="upd"><span class="dot" id="updDot"></span><span id="updTxt">正在获取最新比分…</span></div>
+      <div class="actions">
+        <select id="stageSel" aria-label="阶段筛选">
+          <option value="all">全部阶段</option>
+          <option value="group">小组赛</option>
+          <option value="knock">淘汰赛</option>
+        </select>
+        <button class="refresh" id="refreshBtn">刷新比分</button>
+      </div>
+    </div>
+    <div class="liveentry">
+      <span class="lelbl">📡 直播入口</span>
+      <a class="wbtn" href="https://www.yangshipin.cn/" target="_blank" rel="noopener">央视频</a>
+      <a class="wbtn" href="https://www.miguvideo.com/" target="_blank" rel="noopener">咪咕视频</a>
+      <a class="wbtn" href="https://www.xiaohongshu.com/" target="_blank" rel="noopener">小红书</a>
+    </div>
+  </div>
+</header>
+<main id="list"></main>
+
+<div id="watchModal" class="wm-overlay" hidden>
+  <div class="wm-card" role="dialog" aria-modal="true" aria-label="选择直播平台">
+    <div class="wm-title">选择直播平台</div>
+    <div class="wm-sub" id="wmSub"></div>
+    <a class="wm-btn" href="https://www.yangshipin.cn/" target="_blank" rel="noopener">📺 央视频</a>
+    <a class="wm-btn" href="https://www.miguvideo.com/" target="_blank" rel="noopener">📱 咪咕视频</a>
+    <a class="wm-btn" href="https://www.xiaohongshu.com/" target="_blank" rel="noopener">📕 小红书</a>
+    <button class="wm-cancel" id="wmCancel" type="button">取消</button>
+  </div>
+</div>
+
+<script>
+const FIFA="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/match-schedule-fixtures-results-teams-stadiums";
+const DATA=[{"n":1,"ko":"2026-06-11T19:00:00Z","st":"小组赛","sk":"group-stage","g":"A","h":"Mexico","a":"South Africa","hz":"墨西哥","hf":"🇲🇽","az":"南非","af":"🇿🇦","c":"墨西哥城","v":"Estadio Azteca"},{"n":2,"ko":"2026-06-12T02:00:00Z","st":"小组赛","sk":"group-stage","g":"A","h":"Korea Republic","a":"Czechia","hz":"韩国","hf":"🇰🇷","az":"捷克","af":"🇨🇿","c":"瓜达拉哈拉","v":"Estadio Akron"},{"n":3,"ko":"2026-06-12T19:00:00Z","st":"小组赛","sk":"group-stage","g":"B","h":"Canada","a":"Bosnia and Herzegovina","hz":"加拿大","hf":"🇨🇦","az":"波黑","af":"🇧🇦","c":"多伦多","v":"BMO Field"},{"n":4,"ko":"2026-06-13T01:00:00Z","st":"小组赛","sk":"group-stage","g":"D","h":"United States","a":"Paraguay","hz":"美国","hf":"🇺🇸","az":"巴拉圭","af":"🇵🇾","c":"洛杉矶","v":"SoFi Stadium"},{"n":5,"ko":"2026-06-14T01:00:00Z","st":"小组赛","sk":"group-stage","g":"C","h":"Haiti","a":"Scotland","hz":"海地","hf":"🇭🇹","az":"苏格兰","af":"🏴󠁧󠁢󠁳󠁣󠁴󠁿","c":"波士顿","v":"Gillette Stadium"},{"n":6,"ko":"2026-06-14T04:00:00Z","st":"小组赛","sk":"group-stage","g":"D","h":"Australia","a":"Turkiye","hz":"澳大利亚","hf":"🇦🇺","az":"土耳其","af":"🇹🇷","c":"温哥华","v":"BC Place"},{"n":7,"ko":"2026-06-13T22:00:00Z","st":"小组赛","sk":"group-stage","g":"C","h":"Brazil","a":"Morocco","hz":"巴西","hf":"🇧🇷","az":"摩洛哥","af":"🇲🇦","c":"纽约","v":"MetLife Stadium"},{"n":8,"ko":"2026-06-13T19:00:00Z","st":"小组赛","sk":"group-stage","g":"B","h":"Qatar","a":"Switzerland","hz":"卡塔尔","hf":"🇶🇦","az":"瑞士","af":"🇨🇭","c":"旧金山","v":"Levi's Stadium"},{"n":9,"ko":"2026-06-14T23:00:00Z","st":"小组赛","sk":"group-stage","g":"E","h":"Cote d'Ivoire","a":"Ecuador","hz":"科特迪瓦","hf":"🇨🇮","az":"厄瓜多尔","af":"🇪🇨","c":"费城","v":"Lincoln Financial Field"},{"n":10,"ko":"2026-06-14T17:00:00Z","st":"小组赛","sk":"group-stage","g":"E","h":"Germany","a":"Curacao","hz":"德国","hf":"🇩🇪","az":"库拉索","af":"🇨🇼","c":"休斯顿","v":"NRG Stadium"},{"n":11,"ko":"2026-06-14T20:00:00Z","st":"小组赛","sk":"group-stage","g":"F","h":"Netherlands","a":"Japan","hz":"荷兰","hf":"🇳🇱","az":"日本","af":"🇯🇵","c":"达拉斯","v":"AT&T Stadium"},{"n":12,"ko":"2026-06-15T02:00:00Z","st":"小组赛","sk":"group-stage","g":"F","h":"Sweden","a":"Tunisia","hz":"瑞典","hf":"🇸🇪","az":"突尼斯","af":"🇹🇳","c":"蒙特雷","v":"Estadio BBVA"},{"n":13,"ko":"2026-06-15T22:00:00Z","st":"小组赛","sk":"group-stage","g":"H","h":"Saudi Arabia","a":"Uruguay","hz":"沙特","hf":"🇸🇦","az":"乌拉圭","af":"🇺🇾","c":"迈阿密","v":"Hard Rock Stadium"},{"n":14,"ko":"2026-06-15T16:00:00Z","st":"小组赛","sk":"group-stage","g":"H","h":"Spain","a":"Cabo Verde","hz":"西班牙","hf":"🇪🇸","az":"佛得角","af":"🇨🇻","c":"亚特兰大","v":"Mercedes-Benz Stadium"},{"n":15,"ko":"2026-06-16T01:00:00Z","st":"小组赛","sk":"group-stage","g":"G","h":"IR Iran","a":"New Zealand","hz":"伊朗","hf":"🇮🇷","az":"新西兰","af":"🇳🇿","c":"洛杉矶","v":"SoFi Stadium"},{"n":16,"ko":"2026-06-15T19:00:00Z","st":"小组赛","sk":"group-stage","g":"G","h":"Belgium","a":"Egypt","hz":"比利时","hf":"🇧🇪","az":"埃及","af":"🇪🇬","c":"西雅图","v":"Lumen Field"},{"n":17,"ko":"2026-06-16T19:00:00Z","st":"小组赛","sk":"group-stage","g":"I","h":"France","a":"Senegal","hz":"法国","hf":"🇫🇷","az":"塞内加尔","af":"🇸🇳","c":"纽约","v":"MetLife Stadium"},{"n":18,"ko":"2026-06-16T22:00:00Z","st":"小组赛","sk":"group-stage","g":"I","h":"Iraq","a":"Norway","hz":"伊拉克","hf":"🇮🇶","az":"挪威","af":"🇳🇴","c":"波士顿","v":"Gillette Stadium"},{"n":19,"ko":"2026-06-17T01:00:00Z","st":"小组赛","sk":"group-stage","g":"J","h":"Argentina","a":"Algeria","hz":"阿根廷","hf":"🇦🇷","az":"阿尔及利亚","af":"🇩🇿","c":"堪萨斯城","v":"Arrowhead Stadium"},{"n":20,"ko":"2026-06-17T04:00:00Z","st":"小组赛","sk":"group-stage","g":"J","h":"Austria","a":"Jordan","hz":"奥地利","hf":"🇦🇹","az":"约旦","af":"🇯🇴","c":"旧金山","v":"Levi's Stadium"},{"n":21,"ko":"2026-06-17T23:00:00Z","st":"小组赛","sk":"group-stage","g":"L","h":"Ghana","a":"Panama","hz":"加纳","hf":"🇬🇭","az":"巴拿马","af":"🇵🇦","c":"多伦多","v":"BMO Field"},{"n":22,"ko":"2026-06-17T20:00:00Z","st":"小组赛","sk":"group-stage","g":"L","h":"England","a":"Croatia","hz":"英格兰","hf":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","az":"克罗地亚","af":"🇭🇷","c":"达拉斯","v":"AT&T Stadium"},{"n":23,"ko":"2026-06-17T17:00:00Z","st":"小组赛","sk":"group-stage","g":"K","h":"Portugal","a":"Congo DR","hz":"葡萄牙","hf":"🇵🇹","az":"刚果(金)","af":"🇨🇩","c":"休斯顿","v":"NRG Stadium"},{"n":24,"ko":"2026-06-18T02:00:00Z","st":"小组赛","sk":"group-stage","g":"K","h":"Uzbekistan","a":"Colombia","hz":"乌兹别克","hf":"🇺🇿","az":"哥伦比亚","af":"🇨🇴","c":"墨西哥城","v":"Estadio Azteca"},{"n":25,"ko":"2026-06-18T16:00:00Z","st":"小组赛","sk":"group-stage","g":"A","h":"Czechia","a":"South Africa","hz":"捷克","hf":"🇨🇿","az":"南非","af":"🇿🇦","c":"亚特兰大","v":"Mercedes-Benz Stadium"},{"n":26,"ko":"2026-06-18T19:00:00Z","st":"小组赛","sk":"group-stage","g":"B","h":"Switzerland","a":"Bosnia and Herzegovina","hz":"瑞士","hf":"🇨🇭","az":"波黑","af":"🇧🇦","c":"洛杉矶","v":"SoFi Stadium"},{"n":27,"ko":"2026-06-18T22:00:00Z","st":"小组赛","sk":"group-stage","g":"B","h":"Canada","a":"Qatar","hz":"加拿大","hf":"🇨🇦","az":"卡塔尔","af":"🇶🇦","c":"温哥华","v":"BC Place"},{"n":28,"ko":"2026-06-19T01:00:00Z","st":"小组赛","sk":"group-stage","g":"A","h":"Mexico","a":"Korea Republic","hz":"墨西哥","hf":"🇲🇽","az":"韩国","af":"🇰🇷","c":"瓜达拉哈拉","v":"Estadio Akron"},{"n":29,"ko":"2026-06-20T01:00:00Z","st":"小组赛","sk":"group-stage","g":"C","h":"Brazil","a":"Haiti","hz":"巴西","hf":"🇧🇷","az":"海地","af":"🇭🇹","c":"费城","v":"Lincoln Financial Field"},{"n":30,"ko":"2026-06-19T22:00:00Z","st":"小组赛","sk":"group-stage","g":"C","h":"Scotland","a":"Morocco","hz":"苏格兰","hf":"🏴󠁧󠁢󠁳󠁣󠁴󠁿","az":"摩洛哥","af":"🇲🇦","c":"波士顿","v":"Gillette Stadium"},{"n":31,"ko":"2026-06-20T03:00:00Z","st":"小组赛","sk":"group-stage","g":"D","h":"Turkiye","a":"Paraguay","hz":"土耳其","hf":"🇹🇷","az":"巴拉圭","af":"🇵🇾","c":"旧金山","v":"Levi's Stadium"},{"n":32,"ko":"2026-06-19T19:00:00Z","st":"小组赛","sk":"group-stage","g":"D","h":"United States","a":"Australia","hz":"美国","hf":"🇺🇸","az":"澳大利亚","af":"🇦🇺","c":"西雅图","v":"Lumen Field"},{"n":33,"ko":"2026-06-20T20:00:00Z","st":"小组赛","sk":"group-stage","g":"E","h":"Germany","a":"Cote d'Ivoire","hz":"德国","hf":"🇩🇪","az":"科特迪瓦","af":"🇨🇮","c":"多伦多","v":"BMO Field"},{"n":34,"ko":"2026-06-21T00:00:00Z","st":"小组赛","sk":"group-stage","g":"E","h":"Ecuador","a":"Curacao","hz":"厄瓜多尔","hf":"🇪🇨","az":"库拉索","af":"🇨🇼","c":"堪萨斯城","v":"Arrowhead Stadium"},{"n":35,"ko":"2026-06-20T17:00:00Z","st":"小组赛","sk":"group-stage","g":"F","h":"Netherlands","a":"Sweden","hz":"荷兰","hf":"🇳🇱","az":"瑞典","af":"🇸🇪","c":"休斯顿","v":"NRG Stadium"},{"n":36,"ko":"2026-06-21T04:00:00Z","st":"小组赛","sk":"group-stage","g":"F","h":"Tunisia","a":"Japan","hz":"突尼斯","hf":"🇹🇳","az":"日本","af":"🇯🇵","c":"蒙特雷","v":"Estadio BBVA"},{"n":37,"ko":"2026-06-21T22:00:00Z","st":"小组赛","sk":"group-stage","g":"H","h":"Uruguay","a":"Cabo Verde","hz":"乌拉圭","hf":"🇺🇾","az":"佛得角","af":"🇨🇻","c":"迈阿密","v":"Hard Rock Stadium"},{"n":38,"ko":"2026-06-21T16:00:00Z","st":"小组赛","sk":"group-stage","g":"H","h":"Spain","a":"Saudi Arabia","hz":"西班牙","hf":"🇪🇸","az":"沙特","af":"🇸🇦","c":"亚特兰大","v":"Mercedes-Benz Stadium"},{"n":39,"ko":"2026-06-21T19:00:00Z","st":"小组赛","sk":"group-stage","g":"G","h":"Belgium","a":"IR Iran","hz":"比利时","hf":"🇧🇪","az":"伊朗","af":"🇮🇷","c":"洛杉矶","v":"SoFi Stadium"},{"n":40,"ko":"2026-06-22T01:00:00Z","st":"小组赛","sk":"group-stage","g":"G","h":"New Zealand","a":"Egypt","hz":"新西兰","hf":"🇳🇿","az":"埃及","af":"🇪🇬","c":"温哥华","v":"BC Place"},{"n":41,"ko":"2026-06-23T00:00:00Z","st":"小组赛","sk":"group-stage","g":"I","h":"Norway","a":"Senegal","hz":"挪威","hf":"🇳🇴","az":"塞内加尔","af":"🇸🇳","c":"纽约","v":"MetLife Stadium"},{"n":42,"ko":"2026-06-22T21:00:00Z","st":"小组赛","sk":"group-stage","g":"I","h":"France","a":"Iraq","hz":"法国","hf":"🇫🇷","az":"伊拉克","af":"🇮🇶","c":"费城","v":"Lincoln Financial Field"},{"n":43,"ko":"2026-06-22T17:00:00Z","st":"小组赛","sk":"group-stage","g":"J","h":"Argentina","a":"Austria","hz":"阿根廷","hf":"🇦🇷","az":"奥地利","af":"🇦🇹","c":"达拉斯","v":"AT&T Stadium"},{"n":44,"ko":"2026-06-23T03:00:00Z","st":"小组赛","sk":"group-stage","g":"J","h":"Jordan","a":"Algeria","hz":"约旦","hf":"🇯🇴","az":"阿尔及利亚","af":"🇩🇿","c":"旧金山","v":"Levi's Stadium"},{"n":45,"ko":"2026-06-23T20:00:00Z","st":"小组赛","sk":"group-stage","g":"L","h":"England","a":"Ghana","hz":"英格兰","hf":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","az":"加纳","af":"🇬🇭","c":"波士顿","v":"Gillette Stadium"},{"n":46,"ko":"2026-06-23T23:00:00Z","st":"小组赛","sk":"group-stage","g":"L","h":"Panama","a":"Croatia","hz":"巴拿马","hf":"🇵🇦","az":"克罗地亚","af":"🇭🇷","c":"多伦多","v":"BMO Field"},{"n":47,"ko":"2026-06-23T17:00:00Z","st":"小组赛","sk":"group-stage","g":"K","h":"Portugal","a":"Uzbekistan","hz":"葡萄牙","hf":"🇵🇹","az":"乌兹别克","af":"🇺🇿","c":"休斯顿","v":"NRG Stadium"},{"n":48,"ko":"2026-06-24T02:00:00Z","st":"小组赛","sk":"group-stage","g":"K","h":"Colombia","a":"Congo DR","hz":"哥伦比亚","hf":"🇨🇴","az":"刚果(金)","af":"🇨🇩","c":"瓜达拉哈拉","v":"Estadio Akron"},{"n":49,"ko":"2026-06-24T22:00:00Z","st":"小组赛","sk":"group-stage","g":"C","h":"Scotland","a":"Brazil","hz":"苏格兰","hf":"🏴󠁧󠁢󠁳󠁣󠁴󠁿","az":"巴西","af":"🇧🇷","c":"迈阿密","v":"Hard Rock Stadium"},{"n":50,"ko":"2026-06-24T22:00:00Z","st":"小组赛","sk":"group-stage","g":"C","h":"Morocco","a":"Haiti","hz":"摩洛哥","hf":"🇲🇦","az":"海地","af":"🇭🇹","c":"亚特兰大","v":"Mercedes-Benz Stadium"},{"n":51,"ko":"2026-06-24T19:00:00Z","st":"小组赛","sk":"group-stage","g":"B","h":"Switzerland","a":"Canada","hz":"瑞士","hf":"🇨🇭","az":"加拿大","af":"🇨🇦","c":"温哥华","v":"BC Place"},{"n":52,"ko":"2026-06-24T19:00:00Z","st":"小组赛","sk":"group-stage","g":"B","h":"Bosnia and Herzegovina","a":"Qatar","hz":"波黑","hf":"🇧🇦","az":"卡塔尔","af":"🇶🇦","c":"西雅图","v":"Lumen Field"},{"n":53,"ko":"2026-06-25T01:00:00Z","st":"小组赛","sk":"group-stage","g":"A","h":"Czechia","a":"Mexico","hz":"捷克","hf":"🇨🇿","az":"墨西哥","af":"🇲🇽","c":"墨西哥城","v":"Estadio Azteca"},{"n":54,"ko":"2026-06-25T01:00:00Z","st":"小组赛","sk":"group-stage","g":"A","h":"South Africa","a":"Korea Republic","hz":"南非","hf":"🇿🇦","az":"韩国","af":"🇰🇷","c":"蒙特雷","v":"Estadio BBVA"},{"n":55,"ko":"2026-06-25T20:00:00Z","st":"小组赛","sk":"group-stage","g":"E","h":"Curacao","a":"Cote d'Ivoire","hz":"库拉索","hf":"🇨🇼","az":"科特迪瓦","af":"🇨🇮","c":"费城","v":"Lincoln Financial Field"},{"n":56,"ko":"2026-06-25T20:00:00Z","st":"小组赛","sk":"group-stage","g":"E","h":"Ecuador","a":"Germany","hz":"厄瓜多尔","hf":"🇪🇨","az":"德国","af":"🇩🇪","c":"纽约","v":"MetLife Stadium"},{"n":57,"ko":"2026-06-25T23:00:00Z","st":"小组赛","sk":"group-stage","g":"F","h":"Japan","a":"Sweden","hz":"日本","hf":"🇯🇵","az":"瑞典","af":"🇸🇪","c":"达拉斯","v":"AT&T Stadium"},{"n":58,"ko":"2026-06-25T23:00:00Z","st":"小组赛","sk":"group-stage","g":"F","h":"Tunisia","a":"Netherlands","hz":"突尼斯","hf":"🇹🇳","az":"荷兰","af":"🇳🇱","c":"堪萨斯城","v":"Arrowhead Stadium"},{"n":59,"ko":"2026-06-26T02:00:00Z","st":"小组赛","sk":"group-stage","g":"D","h":"Turkiye","a":"United States","hz":"土耳其","hf":"🇹🇷","az":"美国","af":"🇺🇸","c":"洛杉矶","v":"SoFi Stadium"},{"n":60,"ko":"2026-06-26T02:00:00Z","st":"小组赛","sk":"group-stage","g":"D","h":"Paraguay","a":"Australia","hz":"巴拉圭","hf":"🇵🇾","az":"澳大利亚","af":"🇦🇺","c":"旧金山","v":"Levi's Stadium"},{"n":61,"ko":"2026-06-26T19:00:00Z","st":"小组赛","sk":"group-stage","g":"I","h":"Norway","a":"France","hz":"挪威","hf":"🇳🇴","az":"法国","af":"🇫🇷","c":"波士顿","v":"Gillette Stadium"},{"n":62,"ko":"2026-06-26T19:00:00Z","st":"小组赛","sk":"group-stage","g":"I","h":"Senegal","a":"Iraq","hz":"塞内加尔","hf":"🇸🇳","az":"伊拉克","af":"🇮🇶","c":"多伦多","v":"BMO Field"},{"n":63,"ko":"2026-06-27T03:00:00Z","st":"小组赛","sk":"group-stage","g":"G","h":"Egypt","a":"IR Iran","hz":"埃及","hf":"🇪🇬","az":"伊朗","af":"🇮🇷","c":"西雅图","v":"Lumen Field"},{"n":64,"ko":"2026-06-27T03:00:00Z","st":"小组赛","sk":"group-stage","g":"G","h":"New Zealand","a":"Belgium","hz":"新西兰","hf":"🇳🇿","az":"比利时","af":"🇧🇪","c":"温哥华","v":"BC Place"},{"n":65,"ko":"2026-06-27T00:00:00Z","st":"小组赛","sk":"group-stage","g":"H","h":"Cabo Verde","a":"Saudi Arabia","hz":"佛得角","hf":"🇨🇻","az":"沙特","af":"🇸🇦","c":"休斯顿","v":"NRG Stadium"},{"n":66,"ko":"2026-06-27T00:00:00Z","st":"小组赛","sk":"group-stage","g":"H","h":"Uruguay","a":"Spain","hz":"乌拉圭","hf":"🇺🇾","az":"西班牙","af":"🇪🇸","c":"瓜达拉哈拉","v":"Estadio Akron"},{"n":67,"ko":"2026-06-27T21:00:00Z","st":"小组赛","sk":"group-stage","g":"L","h":"Panama","a":"England","hz":"巴拿马","hf":"🇵🇦","az":"英格兰","af":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","c":"纽约","v":"MetLife Stadium"},{"n":68,"ko":"2026-06-27T21:00:00Z","st":"小组赛","sk":"group-stage","g":"L","h":"Croatia","a":"Ghana","hz":"克罗地亚","hf":"🇭🇷","az":"加纳","af":"🇬🇭","c":"费城","v":"Lincoln Financial Field"},{"n":69,"ko":"2026-06-28T02:00:00Z","st":"小组赛","sk":"group-stage","g":"J","h":"Algeria","a":"Austria","hz":"阿尔及利亚","hf":"🇩🇿","az":"奥地利","af":"🇦🇹","c":"堪萨斯城","v":"Arrowhead Stadium"},{"n":70,"ko":"2026-06-28T02:00:00Z","st":"小组赛","sk":"group-stage","g":"J","h":"Jordan","a":"Argentina","hz":"约旦","hf":"🇯🇴","az":"阿根廷","af":"🇦🇷","c":"达拉斯","v":"AT&T Stadium"},{"n":71,"ko":"2026-06-27T23:30:00Z","st":"小组赛","sk":"group-stage","g":"K","h":"Colombia","a":"Portugal","hz":"哥伦比亚","hf":"🇨🇴","az":"葡萄牙","af":"🇵🇹","c":"迈阿密","v":"Hard Rock Stadium"},{"n":72,"ko":"2026-06-27T23:30:00Z","st":"小组赛","sk":"group-stage","g":"K","h":"Congo DR","a":"Uzbekistan","hz":"刚果(金)","hf":"🇨🇩","az":"乌兹别克","af":"🇺🇿","c":"亚特兰大","v":"Mercedes-Benz Stadium"},{"n":73,"ko":"2026-06-28T19:00:00Z","st":"32强赛","sk":"round-of-32","g":null,"h":"Group A runners-up","a":"Group B runners-up","hz":"A组第2","hf":"","az":"B组第2","af":"","c":"洛杉矶","v":"SoFi Stadium"},{"n":74,"ko":"2026-06-29T20:30:00Z","st":"32强赛","sk":"round-of-32","g":null,"h":"Group E winners","a":"Group A/B/C/D/F third place","hz":"E组第1","hf":"","az":"A/B/C/D/F组第3","af":"","c":"波士顿","v":"Gillette Stadium"},{"n":75,"ko":"2026-06-30T01:00:00Z","st":"32强赛","sk":"round-of-32","g":null,"h":"Group F winners","a":"Group C runners-up","hz":"F组第1","hf":"","az":"C组第2","af":"","c":"蒙特雷","v":"Estadio BBVA"},{"n":76,"ko":"2026-06-29T17:00:00Z","st":"32强赛","sk":"round-of-32","g":null,"h":"Group C winners","a":"Group F runners-up","hz":"C组第1","hf":"","az":"F组第2","af":"","c":"休斯顿","v":"NRG Stadium"},{"n":77,"ko":"2026-06-30T21:00:00Z","st":"32强赛","sk":"round-of-32","g":null,"h":"Group I winners","a":"Group C/D/F/G/H third place","hz":"I组第1","hf":"","az":"C/D/F/G/H组第3","af":"","c":"纽约","v":"MetLife Stadium"},{"n":78,"ko":"2026-06-30T17:00:00Z","st":"32强赛","sk":"round-of-32","g":null,"h":"Group E runners-up","a":"Group I runners-up","hz":"E组第2","hf":"","az":"I组第2","af":"","c":"达拉斯","v":"AT&T Stadium"},{"n":79,"ko":"2026-07-01T01:00:00Z","st":"32强赛","sk":"round-of-32","g":null,"h":"Group A winners","a":"Group C/E/F/H/I third place","hz":"A组第1","hf":"","az":"C/E/F/H/I组第3","af":"","c":"墨西哥城","v":"Estadio Azteca"},{"n":80,"ko":"2026-07-01T16:00:00Z","st":"32强赛","sk":"round-of-32","g":null,"h":"Group L winners","a":"Group E/H/I/J/K third place","hz":"L组第1","hf":"","az":"E/H/I/J/K组第3","af":"","c":"亚特兰大","v":"Mercedes-Benz Stadium"},{"n":81,"ko":"2026-07-02T00:00:00Z","st":"32强赛","sk":"round-of-32","g":null,"h":"Group D winners","a":"Group B/E/F/I/J third place","hz":"D组第1","hf":"","az":"B/E/F/I/J组第3","af":"","c":"旧金山","v":"Levi's Stadium"},{"n":82,"ko":"2026-07-01T20:00:00Z","st":"32强赛","sk":"round-of-32","g":null,"h":"Group G winners","a":"Group A/E/H/I/J third place","hz":"G组第1","hf":"","az":"A/E/H/I/J组第3","af":"","c":"西雅图","v":"Lumen Field"},{"n":83,"ko":"2026-07-02T23:00:00Z","st":"32强赛","sk":"round-of-32","g":null,"h":"Group K runners-up","a":"Group L runners-up","hz":"K组第2","hf":"","az":"L组第2","af":"","c":"多伦多","v":"BMO Field"},{"n":84,"ko":"2026-07-02T19:00:00Z","st":"32强赛","sk":"round-of-32","g":null,"h":"Group H winners","a":"Group J runners-up","hz":"H组第1","hf":"","az":"J组第2","af":"","c":"洛杉矶","v":"SoFi Stadium"},{"n":85,"ko":"2026-07-03T03:00:00Z","st":"32强赛","sk":"round-of-32","g":null,"h":"Group B winners","a":"Group E/F/G/I/J third place","hz":"B组第1","hf":"","az":"E/F/G/I/J组第3","af":"","c":"温哥华","v":"BC Place"},{"n":86,"ko":"2026-07-03T22:00:00Z","st":"32强赛","sk":"round-of-32","g":null,"h":"Group J winners","a":"Group H runners-up","hz":"J组第1","hf":"","az":"H组第2","af":"","c":"迈阿密","v":"Hard Rock Stadium"},{"n":87,"ko":"2026-07-04T01:30:00Z","st":"32强赛","sk":"round-of-32","g":null,"h":"Group K winners","a":"Group D/E/I/J/L third place","hz":"K组第1","hf":"","az":"D/E/I/J/L组第3","af":"","c":"堪萨斯城","v":"Arrowhead Stadium"},{"n":88,"ko":"2026-07-03T18:00:00Z","st":"32强赛","sk":"round-of-32","g":null,"h":"Group D runners-up","a":"Group G runners-up","hz":"D组第2","hf":"","az":"G组第2","af":"","c":"达拉斯","v":"AT&T Stadium"},{"n":89,"ko":"2026-07-04T21:00:00Z","st":"16强赛","sk":"round-of-16","g":null,"h":"Winner Match 74","a":"Winner Match 77","hz":"M74胜者","hf":"","az":"M77胜者","af":"","c":"费城","v":"Lincoln Financial Field"},{"n":90,"ko":"2026-07-04T17:00:00Z","st":"16强赛","sk":"round-of-16","g":null,"h":"Winner Match 73","a":"Winner Match 75","hz":"M73胜者","hf":"","az":"M75胜者","af":"","c":"休斯顿","v":"NRG Stadium"},{"n":91,"ko":"2026-07-05T20:00:00Z","st":"16强赛","sk":"round-of-16","g":null,"h":"Winner Match 76","a":"Winner Match 78","hz":"M76胜者","hf":"","az":"M78胜者","af":"","c":"纽约","v":"MetLife Stadium"},{"n":92,"ko":"2026-07-06T00:00:00Z","st":"16强赛","sk":"round-of-16","g":null,"h":"Winner Match 79","a":"Winner Match 80","hz":"M79胜者","hf":"","az":"M80胜者","af":"","c":"墨西哥城","v":"Estadio Azteca"},{"n":93,"ko":"2026-07-06T19:00:00Z","st":"16强赛","sk":"round-of-16","g":null,"h":"Winner Match 83","a":"Winner Match 84","hz":"M83胜者","hf":"","az":"M84胜者","af":"","c":"达拉斯","v":"AT&T Stadium"},{"n":94,"ko":"2026-07-07T00:00:00Z","st":"16强赛","sk":"round-of-16","g":null,"h":"Winner Match 81","a":"Winner Match 82","hz":"M81胜者","hf":"","az":"M82胜者","af":"","c":"西雅图","v":"Lumen Field"},{"n":95,"ko":"2026-07-07T16:00:00Z","st":"16强赛","sk":"round-of-16","g":null,"h":"Winner Match 86","a":"Winner Match 88","hz":"M86胜者","hf":"","az":"M88胜者","af":"","c":"亚特兰大","v":"Mercedes-Benz Stadium"},{"n":96,"ko":"2026-07-07T20:00:00Z","st":"16强赛","sk":"round-of-16","g":null,"h":"Winner Match 85","a":"Winner Match 87","hz":"M85胜者","hf":"","az":"M87胜者","af":"","c":"温哥华","v":"BC Place"},{"n":97,"ko":"2026-07-09T20:00:00Z","st":"1/4决赛","sk":"quarter-finals","g":null,"h":"Winner Match 89","a":"Winner Match 90","hz":"M89胜者","hf":"","az":"M90胜者","af":"","c":"波士顿","v":"Gillette Stadium"},{"n":98,"ko":"2026-07-10T19:00:00Z","st":"1/4决赛","sk":"quarter-finals","g":null,"h":"Winner Match 93","a":"Winner Match 94","hz":"M93胜者","hf":"","az":"M94胜者","af":"","c":"洛杉矶","v":"SoFi Stadium"},{"n":99,"ko":"2026-07-11T21:00:00Z","st":"1/4决赛","sk":"quarter-finals","g":null,"h":"Winner Match 91","a":"Winner Match 92","hz":"M91胜者","hf":"","az":"M92胜者","af":"","c":"迈阿密","v":"Hard Rock Stadium"},{"n":100,"ko":"2026-07-12T01:00:00Z","st":"1/4决赛","sk":"quarter-finals","g":null,"h":"Winner Match 95","a":"Winner Match 96","hz":"M95胜者","hf":"","az":"M96胜者","af":"","c":"堪萨斯城","v":"Arrowhead Stadium"},{"n":101,"ko":"2026-07-14T19:00:00Z","st":"半决赛","sk":"semi-finals","g":null,"h":"Winner Match 97","a":"Winner Match 98","hz":"M97胜者","hf":"","az":"M98胜者","af":"","c":"达拉斯","v":"AT&T Stadium"},{"n":102,"ko":"2026-07-15T19:00:00Z","st":"半决赛","sk":"semi-finals","g":null,"h":"Winner Match 99","a":"Winner Match 100","hz":"M99胜者","hf":"","az":"M100胜者","af":"","c":"亚特兰大","v":"Mercedes-Benz Stadium"},{"n":103,"ko":"2026-07-18T21:00:00Z","st":"三四名决赛","sk":"third-place","g":null,"h":"Loser Match 101","a":"Loser Match 102","hz":"M101负者","hf":"","az":"M102负者","af":"","c":"迈阿密","v":"Hard Rock Stadium"},{"n":104,"ko":"2026-07-19T19:00:00Z","st":"决赛","sk":"final","g":null,"h":"Winner Match 101","a":"Winner Match 102","hz":"M101胜者","hf":"","az":"M102胜者","af":"","c":"纽约","v":"MetLife Stadium"}];
+document.getElementById('fifaTop').href=FIFA;
+
+const TZ=Intl.DateTimeFormat().resolvedOptions().timeZone||"本地";
+document.getElementById('tzName').textContent=TZ;
+
+const KNOCK=new Set(["round-of-32","round-of-16","quarter-finals","semi-finals","third-place","final"]);
+function isKnock(m){return KNOCK.has(m.sk);}
+function koMs(m){return Date.parse(m.ko);}
+function endMs(m){return koMs(m)+(isKnock(m)?180:135)*60000;}
+const fmtTime=new Intl.DateTimeFormat('zh-CN',{hour:'2-digit',minute:'2-digit',hour12:false});
+const fmtDay=new Intl.DateTimeFormat('zh-CN',{month:'long',day:'numeric'});
+const fmtWeek=new Intl.DateTimeFormat('zh-CN',{weekday:'short'});
+const fmtMD=new Intl.DateTimeFormat('zh-CN',{month:'numeric',day:'numeric'});
+function dayKey(m){const d=new Date(koMs(m));return d.getFullYear()+'-'+d.getMonth()+'-'+d.getDate();}
+
+function norm(s){return (s||"").toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');}
+const ALIAS={southkorea:'korearepublic',korea:'korearepublic',republicofkorea:'korearepublic',
+ turkey:'turkiye',usa:'unitedstates',unitedstatesofamerica:'unitedstates',us:'unitedstates',
+ iran:'iriran',capeverde:'caboverde',ivorycoast:'cotedivoire',
+ drcongo:'congodr',democraticrepublicofthecongo:'congodr',congokinshasa:'congodr',congo:'congodr',
+ bosnia:'bosniaandherzegovina',bosniaherzegovina:'bosniaandherzegovina',bih:'bosniaandherzegovina',
+ czechrepublic:'czechia',czech:'czechia',saudi:'saudiarabia',uzbek:'uzbekistan'};
+function canon(s){const n=norm(s);return ALIAS[n]||n;}
+function pairKey(a,b){return [canon(a),canon(b)].sort().join('|');}
+
+const byPair={};
+DATA.forEach(m=>{ if(!isKnock(m)) byPair[pairKey(m.h,m.a)]=m; });
+
+let RESULTS={};
+function statusOf(m){
+  const r=RESULTS[m.n], now=Date.now();
+  if(r) return r.live?'live':'fin';
+  if(now<koMs(m)) return 'up';
+  if(now<endMs(m)) return 'live';
+  return 'fin';
+}
+
+let didScroll=false;
+function render(){
+  const fStat=document.querySelector('#seg button[aria-pressed="true"]').dataset.f;
+  const fStage=document.getElementById('stageSel').value;
+  const counts={all:0,live:0,fin:0,up:0};
+  const list=document.getElementById('list'); list.innerHTML='';
+  const sorted=[...DATA].sort((a,b)=>koMs(a)-koMs(b));
+
+  sorted.forEach(m=>{
+    if(fStage==='group'&&isKnock(m))return; if(fStage==='knock'&&!isKnock(m))return;
+    const s=statusOf(m); counts.all++; counts[s]++;
+  });
+  document.getElementById('c-all').textContent=counts.all;
+  document.getElementById('c-live').textContent=counts.live;
+  document.getElementById('c-fin').textContent=counts.fin;
+  document.getElementById('c-up').textContent=counts.up;
+
+  let curDay=null, dayEl=null, shown=0, firstNext=null;
+  sorted.forEach(m=>{
+    if(fStage==='group'&&isKnock(m))return; if(fStage==='knock'&&!isKnock(m))return;
+    const s=statusOf(m);
+    if(fStat!=='all'&&fStat!==s)return;
+    shown++;
+    const dk=dayKey(m);
+    if(dk!==curDay){
+      curDay=dk; dayEl=document.createElement('section'); dayEl.className='day';
+      const d=new Date(koMs(m));
+      dayEl.innerHTML='<div class="dayhd"><span class="d">'+fmtDay.format(d)+
+        '</span><span class="w">'+fmtWeek.format(d)+'</span><span class="rule"></span></div>';
+      list.appendChild(dayEl);
+    }
+    dayEl.appendChild(card(m,s));
+    if(!firstNext&&(s==='up'||s==='live')) firstNext=dayEl.lastChild;
+  });
+
+  if(shown===0) list.innerHTML='<div class="empty">这个筛选下暂时没有比赛。<br>换个标签看看 🙂</div>';
+  else list.insertAdjacentHTML('beforeend',
+    '<div class="legend">比分来自公开体育数据源，仅供参考，以 FIFA 官方为准<br>'+
+    '点右上角“刷新比分”获取最新结果</div>');
+
+  if(!didScroll&&firstNext){ didScroll=true;
+    setTimeout(()=>firstNext.scrollIntoView({behavior:'smooth',block:'center'}),250); }
+}
+
+function card(m,s){
+  const el=document.createElement('div');
+  el.className='card'+(s==='live'?' live':'');
+  const r=RESULTS[m.n], tbd=isKnock(m);
+  const pill=isKnock(m)?'<span class="pill ko">🏆 '+m.st+'</span>'
+                       :'<span class="pill">'+(m.g?m.g+'组 · ':'')+m.st+'</span>';
+
+  const draw = r && !r.live && r.hs===r.as;
+  let hB=null,aB=null;
+  if(r&&!r.live){ if(draw){hB='draw';aB='draw';} else if(r.hs>r.as){hB='win';} else {aB='win';} }
+
+  let state;
+  if(s==='live') state='<span class="state live"><span class="ball">⚽</span>进行中 · 看直播 ›</span>';
+  else if(s==='fin') state='<span class="state fin">完场</span>';
+  else state='<span class="state up">未开始</span>';
+
+  const side=(flag,name,badge,isTbd)=>
+    '<div class="side'+(isTbd?' tbd':'')+'"><span class="fl">'+(flag||'🏳️')+'</span>'+
+    '<span class="nm">'+name+'</span>'+
+    (badge==='win'?'<span class="win-badge">胜</span>':badge==='draw'?'<span class="draw-badge">平</span>':'')+
+    '</div>';
+
+  let figure;
+  if(r){ // we have a score (live or finished)
+    const cls = r.live ? ' liven' : '';
+    figure='<div class="scores"><span class="sc'+cls+'">'+r.hs+'</span><span class="sc'+cls+'">'+r.as+'</span></div>';
+  }else if(s==='fin'){
+    figure='<div class="scores"><span class="sc dim">–</span><span class="sc dim">–</span></div>';
+  }else if(s==='live'){
+    figure='<div class="scores"><span class="sc dim">·</span><span class="sc dim">·</span></div>';
+  }else{
+    figure='<div class="kick"><span class="eyebrow">开球</span><span class="t">'+
+           fmtTime.format(new Date(koMs(m)))+'</span></div>';
+  }
+
+  const whenHtml = (s==='up') ? '' :
+    '<span class="when"><span class="wlabel">比赛时间：</span>'+
+    fmtMD.format(new Date(koMs(m)))+' '+fmtTime.format(new Date(koMs(m)))+'</span>';
+  el.innerHTML=
+    '<div class="chd"><div class="tags">'+pill+'</div>'+state+'</div>'+
+    '<div class="grid"><div class="sides">'+
+      side(m.hf,m.hz,hB,tbd)+side(m.af,m.az,aB,tbd)+
+    '</div><div class="figure">'+figure+'</div></div>'+
+    '<div class="foot"><span class="loc">📍 '+m.c+' · '+m.v+'</span>'+whenHtml+'</div>';
+  if(s==='live'){
+    el.classList.add('clickable');
+    const wt = isKnock(m) ? (m.st+'｜'+m.hz+' vs '+m.az) : (m.hf+' '+m.hz+' vs '+m.af+' '+m.az);
+    el.addEventListener('click',()=>openWatch(wt));
+  }
+  return el;
+}
+
+function utcYMD(ms){const d=new Date(ms);
+  return ''+d.getUTCFullYear()+String(d.getUTCMonth()+1).padStart(2,'0')+String(d.getUTCDate()).padStart(2,'0');}
+function setUpd(state,txt){
+  document.getElementById('updDot').className='dot '+state;
+  document.getElementById('updTxt').textContent=txt;
+}
+
+// ---- source 1: ESPN public API (works in any normal browser / when hosted) ----
+async function fromESPN(){
+  const now=Date.now(); const dset=new Set();
+  DATA.forEach(m=>{ if(isKnock(m))return; if(koMs(m)>now)return;
+    dset.add(utcYMD(koMs(m))); dset.add(utcYMD(koMs(m)-86400000)); });
+  dset.add(utcYMD(now)); dset.add(utcYMD(now+86400000)); dset.add(utcYMD(now-86400000));
+  const base="https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=";
+  let parts;
+  try{ parts=await Promise.all([...dset].map(d=>fetch(base+d).then(r=>r.ok?r.json():null).catch(()=>null))); }
+  catch(e){ return null; }
+  const next={}; let any=false;
+  parts.forEach(j=>{ if(!j||!Array.isArray(j.events))return; any=true;
+    j.events.forEach(ev=>{
+      const comp=ev.competitions&&ev.competitions[0]; if(!comp)return;
+      const cs=comp.competitors||[]; if(cs.length<2)return;
+      const H=cs.find(c=>c.homeAway==='home')||cs[0];
+      const A=cs.find(c=>c.homeAway==='away')||cs[1];
+      const st=((comp.status&&comp.status.type&&comp.status.type.state)||'').toLowerCase();
+      if(st!=='in'&&st!=='post')return;
+      const nH=(H.team&&(H.team.displayName||H.team.name||H.team.shortDisplayName))||'';
+      const nA=(A.team&&(A.team.displayName||A.team.name||A.team.shortDisplayName))||'';
+      const fx=byPair[pairKey(nH,nA)]; if(!fx)return;
+      const hs=parseInt(H.score,10), as=parseInt(A.score,10);
+      if(isNaN(hs)||isNaN(as))return;
+      const orient=canon(fx.h)===canon(nH);
+      next[fx.n]={hs:orient?hs:as, as:orient?as:hs, live:st==='in'};
+    });
+  });
+  return any? next : null;
+}
+
+// ---- source 2: Claude + web search (fallback; works inside Claude preview) ----
+async function fromClaude(){
+  const names=[...new Set(DATA.filter(m=>!isKnock(m)).flatMap(m=>[m.h,m.a]))];
+  const prompt="Use web search to find the LATEST 2026 FIFA World Cup match results. "+
+   "Return ONLY minified JSON, no markdown, no fences, no commentary. "+
+   "Schema: {\"m\":[[\"home\",\"away\",homeScore,awayScore,live]]}. "+
+   "home/away are names taken EXACTLY from this list -> "+JSON.stringify(names)+
+   " ; scores are integers; live=1 if in progress else 0. Include EVERY match already kicked off. "+
+   "If a team is not in the list, skip it. If none started, return {\"m\":[]}.";
+  try{
+    const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:1000,
+        messages:[{role:"user",content:prompt}],
+        tools:[{type:"web_search_20250305",name:"web_search"}]})});
+    const data=await res.json();
+    const text=(data.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("");
+    const a=text.indexOf("{"), b=text.lastIndexOf("}"); if(a<0||b<0) return null;
+    const obj=JSON.parse(text.slice(a,b+1)); const next={};
+    (obj.m||[]).forEach(row=>{ if(!Array.isArray(row)||row.length<4)return;
+      const h=row[0],a2=row[1],hs=+row[2],as2=+row[3],live=row[4]==1;
+      const fx=byPair[pairKey(h,a2)]; if(!fx)return;
+      const orient=canon(fx.h)===canon(h);
+      next[fx.n]={hs:orient?hs:as2, as:orient?as2:hs, live:live}; });
+    return next;
+  }catch(e){ return null; }
+}
+
+async function fetchScores(){
+  setUpd('load','正在获取最新比分…');
+  let next=await fromESPN();
+  if(!next || Object.keys(next).length===0){
+    const alt=await fromClaude();
+    if(alt) next=alt;
+  }
+  if(next){
+    RESULTS=next;
+    const n=Object.keys(next).length;
+    const t=new Date().toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit',hour12:false});
+    setUpd('ok','比分更新于 '+t+' · 已收录 '+n+' 场');
+    render();
+  }else{
+    setUpd('err','比分暂时取不到，稍后再点“刷新比分”');
+  }
+}
+
+document.getElementById('seg').addEventListener('click',e=>{
+  const btn=e.target.closest('button'); if(!btn)return;
+  document.querySelectorAll('#seg button').forEach(b=>b.setAttribute('aria-pressed',b===btn));
+  render();
+});
+document.getElementById('stageSel').addEventListener('change',render);
+document.getElementById('refreshBtn').addEventListener('click',fetchScores);
+
+// live-match card -> choose a broadcast platform
+const wm=document.getElementById('watchModal');
+function openWatch(t){ document.getElementById('wmSub').textContent=t+' · 进行中'; wm.hidden=false; }
+function closeWatch(){ wm.hidden=true; }
+document.getElementById('wmCancel').addEventListener('click',closeWatch);
+wm.addEventListener('click',e=>{ if(e.target===wm) closeWatch(); });
+document.querySelectorAll('#watchModal .wm-btn').forEach(b=>b.addEventListener('click',()=>setTimeout(closeWatch,60)));
+
+render();
+fetchScores();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ac81dc56149740369facaed557013675"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

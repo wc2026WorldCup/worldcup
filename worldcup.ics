@@ -1,0 +1,3818 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//WC2026 Sub//ZH//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:世界杯2026 ⚽
+NAME:世界杯2026 ⚽
+X-WR-CALDESC:2026世界杯 全104场 · 赛前15分钟+开球+赛果提醒(订阅版,淘汰赛对阵自动更新)
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:wc2026-match-1@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260611T190000Z
+DTEND:20260611T211500Z
+SUMMARY:🇲🇽 墨西哥 vs 🇿🇦 南非
+DESCRIPTION:A组 · 小组赛\n📍 墨西哥城 · Estadio Azteca\n第1场
+ /共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.gith
+ ub.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇲🇽 墨西哥 vs 🇿🇦 南非
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇲🇽 墨西哥 vs 🇿🇦 南非
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-1@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260611T211500Z
+DTEND:20260611T212500Z
+SUMMARY:📊 赛果｜🇲🇽 墨西哥 vs 🇿🇦 南非
+DESCRIPTION:A组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇲🇽 墨西哥 vs 🇿🇦 南非
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-2@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260612T020000Z
+DTEND:20260612T041500Z
+SUMMARY:🇰🇷 韩国 vs 🇨🇿 捷克
+DESCRIPTION:A组 · 小组赛\n📍 瓜达拉哈拉 · Estadio Akron\n第2
+ 场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.g
+ ithub.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇰🇷 韩国 vs 🇨🇿 捷克
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇰🇷 韩国 vs 🇨🇿 捷克
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-2@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260612T041500Z
+DTEND:20260612T042500Z
+SUMMARY:📊 赛果｜🇰🇷 韩国 vs 🇨🇿 捷克
+DESCRIPTION:A组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇰🇷 韩国 vs 🇨🇿 捷克
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-3@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260612T190000Z
+DTEND:20260612T211500Z
+SUMMARY:🇨🇦 加拿大 vs 🇧🇦 波黑
+DESCRIPTION:B组 · 小组赛\n📍 多伦多 · BMO Field\n第3场/共104
+ 场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/w
+ orldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇨🇦 加拿大 vs 🇧🇦 波黑
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇨🇦 加拿大 vs 🇧🇦 波黑
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-3@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260612T211500Z
+DTEND:20260612T212500Z
+SUMMARY:📊 赛果｜🇨🇦 加拿大 vs 🇧🇦 波黑
+DESCRIPTION:B组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇨🇦 加拿大 vs 🇧🇦 波黑
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-4@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260613T010000Z
+DTEND:20260613T031500Z
+SUMMARY:🇺🇸 美国 vs 🇵🇾 巴拉圭
+DESCRIPTION:D组 · 小组赛\n📍 洛杉矶 · SoFi Stadium\n第4场/共1
+ 04场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io
+ /worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇺🇸 美国 vs 🇵🇾 巴拉圭
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇺🇸 美国 vs 🇵🇾 巴拉圭
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-4@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260613T031500Z
+DTEND:20260613T032500Z
+SUMMARY:📊 赛果｜🇺🇸 美国 vs 🇵🇾 巴拉圭
+DESCRIPTION:D组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇺🇸 美国 vs 🇵🇾 巴拉圭
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-5@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260614T010000Z
+DTEND:20260614T031500Z
+SUMMARY:🇭🇹 海地 vs 🏴󠁧󠁢󠁳󠁣󠁴󠁿 苏格兰
+DESCRIPTION:C组 · 小组赛\n📍 波士顿 · Gillette Stadium\n第5场/
+ 共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.githu
+ b.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇭🇹 海地 vs 🏴󠁧󠁢󠁳󠁣
+ 󠁴󠁿 苏格兰
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇭🇹 海地 vs 🏴󠁧󠁢󠁳󠁣󠁴󠁿 
+ 苏格兰
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-5@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260614T031500Z
+DTEND:20260614T032500Z
+SUMMARY:📊 赛果｜🇭🇹 海地 vs 🏴󠁧󠁢󠁳󠁣󠁴󠁿 苏
+ 格兰
+DESCRIPTION:C组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇭🇹 海地 vs 🏴󠁧󠁢󠁳󠁣󠁴󠁿 
+ 苏格兰
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-6@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260614T040000Z
+DTEND:20260614T061500Z
+SUMMARY:🇦🇺 澳大利亚 vs 🇹🇷 土耳其
+DESCRIPTION:D组 · 小组赛\n📍 温哥华 · BC Place\n第6场/共104
+ 场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/w
+ orldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇦🇺 澳大利亚 vs 🇹🇷 土
+ 耳其
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇦🇺 澳大利亚 vs 🇹🇷 土耳其
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-6@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260614T061500Z
+DTEND:20260614T062500Z
+SUMMARY:📊 赛果｜🇦🇺 澳大利亚 vs 🇹🇷 土耳其
+DESCRIPTION:D组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇦🇺 澳大利亚 vs 🇹🇷 土耳其
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-7@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260613T220000Z
+DTEND:20260614T001500Z
+SUMMARY:🇧🇷 巴西 vs 🇲🇦 摩洛哥
+DESCRIPTION:C组 · 小组赛\n📍 纽约 · MetLife Stadium\n第7场/共1
+ 04场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io
+ /worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇧🇷 巴西 vs 🇲🇦 摩洛哥
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇧🇷 巴西 vs 🇲🇦 摩洛哥
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-7@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260614T001500Z
+DTEND:20260614T002500Z
+SUMMARY:📊 赛果｜🇧🇷 巴西 vs 🇲🇦 摩洛哥
+DESCRIPTION:C组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇧🇷 巴西 vs 🇲🇦 摩洛哥
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-8@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260613T190000Z
+DTEND:20260613T211500Z
+SUMMARY:🇶🇦 卡塔尔 vs 🇨🇭 瑞士
+DESCRIPTION:B组 · 小组赛\n📍 旧金山 · Levi's Stadium\n第8场/
+ 共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.githu
+ b.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇶🇦 卡塔尔 vs 🇨🇭 瑞士
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇶🇦 卡塔尔 vs 🇨🇭 瑞士
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-8@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260613T211500Z
+DTEND:20260613T212500Z
+SUMMARY:📊 赛果｜🇶🇦 卡塔尔 vs 🇨🇭 瑞士
+DESCRIPTION:B组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇶🇦 卡塔尔 vs 🇨🇭 瑞士
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-9@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260614T230000Z
+DTEND:20260615T011500Z
+SUMMARY:🇨🇮 科特迪瓦 vs 🇪🇨 厄瓜多尔
+DESCRIPTION:E组 · 小组赛\n📍 费城 · Lincoln Financial Field\n第9
+ 场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.g
+ ithub.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇨🇮 科特迪瓦 vs 🇪🇨 厄
+ 瓜多尔
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇨🇮 科特迪瓦 vs 🇪🇨 厄瓜多尔
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-9@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260615T011500Z
+DTEND:20260615T012500Z
+SUMMARY:📊 赛果｜🇨🇮 科特迪瓦 vs 🇪🇨 厄瓜多尔
+DESCRIPTION:E组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇨🇮 科特迪瓦 vs 🇪🇨 厄瓜多尔
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-10@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260614T170000Z
+DTEND:20260614T191500Z
+SUMMARY:🇩🇪 德国 vs 🇨🇼 库拉索
+DESCRIPTION:E组 · 小组赛\n📍 休斯顿 · NRG Stadium\n第10场/共1
+ 04场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io
+ /worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇩🇪 德国 vs 🇨🇼 库拉索
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇩🇪 德国 vs 🇨🇼 库拉索
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-10@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260614T191500Z
+DTEND:20260614T192500Z
+SUMMARY:📊 赛果｜🇩🇪 德国 vs 🇨🇼 库拉索
+DESCRIPTION:E组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇩🇪 德国 vs 🇨🇼 库拉索
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-11@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260614T200000Z
+DTEND:20260614T221500Z
+SUMMARY:🇳🇱 荷兰 vs 🇯🇵 日本
+DESCRIPTION:F组 · 小组赛\n📍 达拉斯 · AT&T Stadium\n第11场/共
+ 104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.i
+ o/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇳🇱 荷兰 vs 🇯🇵 日本
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇳🇱 荷兰 vs 🇯🇵 日本
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-11@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260614T221500Z
+DTEND:20260614T222500Z
+SUMMARY:📊 赛果｜🇳🇱 荷兰 vs 🇯🇵 日本
+DESCRIPTION:F组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇳🇱 荷兰 vs 🇯🇵 日本
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-12@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260615T020000Z
+DTEND:20260615T041500Z
+SUMMARY:🇸🇪 瑞典 vs 🇹🇳 突尼斯
+DESCRIPTION:F组 · 小组赛\n📍 蒙特雷 · Estadio BBVA\n第12场/共
+ 104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.i
+ o/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇸🇪 瑞典 vs 🇹🇳 突尼斯
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇸🇪 瑞典 vs 🇹🇳 突尼斯
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-12@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260615T041500Z
+DTEND:20260615T042500Z
+SUMMARY:📊 赛果｜🇸🇪 瑞典 vs 🇹🇳 突尼斯
+DESCRIPTION:F组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇸🇪 瑞典 vs 🇹🇳 突尼斯
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-13@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260615T220000Z
+DTEND:20260616T001500Z
+SUMMARY:🇸🇦 沙特 vs 🇺🇾 乌拉圭
+DESCRIPTION:H组 · 小组赛\n📍 迈阿密 · Hard Rock Stadium\n第13
+ 场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.g
+ ithub.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇸🇦 沙特 vs 🇺🇾 乌拉圭
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇸🇦 沙特 vs 🇺🇾 乌拉圭
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-13@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260616T001500Z
+DTEND:20260616T002500Z
+SUMMARY:📊 赛果｜🇸🇦 沙特 vs 🇺🇾 乌拉圭
+DESCRIPTION:H组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇸🇦 沙特 vs 🇺🇾 乌拉圭
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-14@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260615T160000Z
+DTEND:20260615T181500Z
+SUMMARY:🇪🇸 西班牙 vs 🇨🇻 佛得角
+DESCRIPTION:H组 · 小组赛\n📍 亚特兰大 · Mercedes-Benz Stadium\n
+ 第14场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026world
+ cup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇪🇸 西班牙 vs 🇨🇻 佛得
+ 角
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇪🇸 西班牙 vs 🇨🇻 佛得角
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-14@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260615T181500Z
+DTEND:20260615T182500Z
+SUMMARY:📊 赛果｜🇪🇸 西班牙 vs 🇨🇻 佛得角
+DESCRIPTION:H组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇪🇸 西班牙 vs 🇨🇻 佛得角
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-15@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260616T010000Z
+DTEND:20260616T031500Z
+SUMMARY:🇮🇷 伊朗 vs 🇳🇿 新西兰
+DESCRIPTION:G组 · 小组赛\n📍 洛杉矶 · SoFi Stadium\n第15场/共
+ 104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.i
+ o/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇮🇷 伊朗 vs 🇳🇿 新西兰
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇮🇷 伊朗 vs 🇳🇿 新西兰
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-15@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260616T031500Z
+DTEND:20260616T032500Z
+SUMMARY:📊 赛果｜🇮🇷 伊朗 vs 🇳🇿 新西兰
+DESCRIPTION:G组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇮🇷 伊朗 vs 🇳🇿 新西兰
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-16@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260615T190000Z
+DTEND:20260615T211500Z
+SUMMARY:🇧🇪 比利时 vs 🇪🇬 埃及
+DESCRIPTION:G组 · 小组赛\n📍 西雅图 · Lumen Field\n第16场/共1
+ 04场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io
+ /worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇧🇪 比利时 vs 🇪🇬 埃及
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇧🇪 比利时 vs 🇪🇬 埃及
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-16@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260615T211500Z
+DTEND:20260615T212500Z
+SUMMARY:📊 赛果｜🇧🇪 比利时 vs 🇪🇬 埃及
+DESCRIPTION:G组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇧🇪 比利时 vs 🇪🇬 埃及
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-17@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260616T190000Z
+DTEND:20260616T211500Z
+SUMMARY:🇫🇷 法国 vs 🇸🇳 塞内加尔
+DESCRIPTION:I组 · 小组赛\n📍 纽约 · MetLife Stadium\n第17场/共
+ 104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.i
+ o/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇫🇷 法国 vs 🇸🇳 塞内加
+ 尔
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇫🇷 法国 vs 🇸🇳 塞内加尔
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-17@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260616T211500Z
+DTEND:20260616T212500Z
+SUMMARY:📊 赛果｜🇫🇷 法国 vs 🇸🇳 塞内加尔
+DESCRIPTION:I组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇫🇷 法国 vs 🇸🇳 塞内加尔
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-18@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260616T220000Z
+DTEND:20260617T001500Z
+SUMMARY:🇮🇶 伊拉克 vs 🇳🇴 挪威
+DESCRIPTION:I组 · 小组赛\n📍 波士顿 · Gillette Stadium\n第18场
+ /共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.gith
+ ub.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇮🇶 伊拉克 vs 🇳🇴 挪威
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇮🇶 伊拉克 vs 🇳🇴 挪威
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-18@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260617T001500Z
+DTEND:20260617T002500Z
+SUMMARY:📊 赛果｜🇮🇶 伊拉克 vs 🇳🇴 挪威
+DESCRIPTION:I组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇮🇶 伊拉克 vs 🇳🇴 挪威
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-19@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260617T010000Z
+DTEND:20260617T031500Z
+SUMMARY:🇦🇷 阿根廷 vs 🇩🇿 阿尔及利亚
+DESCRIPTION:J组 · 小组赛\n📍 堪萨斯城 · Arrowhead Stadium\n第1
+ 9场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.
+ github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇦🇷 阿根廷 vs 🇩🇿 阿尔
+ 及利亚
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇦🇷 阿根廷 vs 🇩🇿 阿尔及利亚
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-19@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260617T031500Z
+DTEND:20260617T032500Z
+SUMMARY:📊 赛果｜🇦🇷 阿根廷 vs 🇩🇿 阿尔及利亚
+DESCRIPTION:J组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇦🇷 阿根廷 vs 🇩🇿 阿尔及利亚
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-20@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260617T040000Z
+DTEND:20260617T061500Z
+SUMMARY:🇦🇹 奥地利 vs 🇯🇴 约旦
+DESCRIPTION:J组 · 小组赛\n📍 旧金山 · Levi's Stadium\n第20场/
+ 共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.githu
+ b.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇦🇹 奥地利 vs 🇯🇴 约旦
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇦🇹 奥地利 vs 🇯🇴 约旦
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-20@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260617T061500Z
+DTEND:20260617T062500Z
+SUMMARY:📊 赛果｜🇦🇹 奥地利 vs 🇯🇴 约旦
+DESCRIPTION:J组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇦🇹 奥地利 vs 🇯🇴 约旦
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-21@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260617T230000Z
+DTEND:20260618T011500Z
+SUMMARY:🇬🇭 加纳 vs 🇵🇦 巴拿马
+DESCRIPTION:L组 · 小组赛\n📍 多伦多 · BMO Field\n第21场/共104
+ 场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/w
+ orldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇬🇭 加纳 vs 🇵🇦 巴拿马
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇬🇭 加纳 vs 🇵🇦 巴拿马
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-21@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260618T011500Z
+DTEND:20260618T012500Z
+SUMMARY:📊 赛果｜🇬🇭 加纳 vs 🇵🇦 巴拿马
+DESCRIPTION:L组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇬🇭 加纳 vs 🇵🇦 巴拿马
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-22@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260617T200000Z
+DTEND:20260617T221500Z
+SUMMARY:🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰 vs 🇭🇷 克罗地亚
+DESCRIPTION:L组 · 小组赛\n📍 达拉斯 · AT&T Stadium\n第22场/共
+ 104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.i
+ o/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰 
+ vs 🇭🇷 克罗地亚
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰 vs 🇭
+ 🇷 克罗地亚
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-22@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260617T221500Z
+DTEND:20260617T222500Z
+SUMMARY:📊 赛果｜🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰 vs 🇭🇷 
+ 克罗地亚
+DESCRIPTION:L组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰 vs 🇭
+ 🇷 克罗地亚
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-23@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260617T170000Z
+DTEND:20260617T191500Z
+SUMMARY:🇵🇹 葡萄牙 vs 🇨🇩 刚果(金)
+DESCRIPTION:K组 · 小组赛\n📍 休斯顿 · NRG Stadium\n第23场/共1
+ 04场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io
+ /worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇵🇹 葡萄牙 vs 🇨🇩 刚果(
+ 金)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇵🇹 葡萄牙 vs 🇨🇩 刚果(金)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-23@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260617T191500Z
+DTEND:20260617T192500Z
+SUMMARY:📊 赛果｜🇵🇹 葡萄牙 vs 🇨🇩 刚果(金)
+DESCRIPTION:K组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇵🇹 葡萄牙 vs 🇨🇩 刚果(金)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-24@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260618T020000Z
+DTEND:20260618T041500Z
+SUMMARY:🇺🇿 乌兹别克 vs 🇨🇴 哥伦比亚
+DESCRIPTION:K组 · 小组赛\n📍 墨西哥城 · Estadio Azteca\n第24
+ 场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.g
+ ithub.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇺🇿 乌兹别克 vs 🇨🇴 哥
+ 伦比亚
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇺🇿 乌兹别克 vs 🇨🇴 哥伦比亚
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-24@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260618T041500Z
+DTEND:20260618T042500Z
+SUMMARY:📊 赛果｜🇺🇿 乌兹别克 vs 🇨🇴 哥伦比亚
+DESCRIPTION:K组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇺🇿 乌兹别克 vs 🇨🇴 哥伦比亚
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-25@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260618T160000Z
+DTEND:20260618T181500Z
+SUMMARY:🇨🇿 捷克 vs 🇿🇦 南非
+DESCRIPTION:A组 · 小组赛\n📍 亚特兰大 · Mercedes-Benz Stadium\n
+ 第25场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026world
+ cup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇨🇿 捷克 vs 🇿🇦 南非
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇨🇿 捷克 vs 🇿🇦 南非
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-25@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260618T181500Z
+DTEND:20260618T182500Z
+SUMMARY:📊 赛果｜🇨🇿 捷克 vs 🇿🇦 南非
+DESCRIPTION:A组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇨🇿 捷克 vs 🇿🇦 南非
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-26@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260618T190000Z
+DTEND:20260618T211500Z
+SUMMARY:🇨🇭 瑞士 vs 🇧🇦 波黑
+DESCRIPTION:B组 · 小组赛\n📍 洛杉矶 · SoFi Stadium\n第26场/共
+ 104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.i
+ o/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇨🇭 瑞士 vs 🇧🇦 波黑
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇨🇭 瑞士 vs 🇧🇦 波黑
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-26@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260618T211500Z
+DTEND:20260618T212500Z
+SUMMARY:📊 赛果｜🇨🇭 瑞士 vs 🇧🇦 波黑
+DESCRIPTION:B组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇨🇭 瑞士 vs 🇧🇦 波黑
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-27@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260618T220000Z
+DTEND:20260619T001500Z
+SUMMARY:🇨🇦 加拿大 vs 🇶🇦 卡塔尔
+DESCRIPTION:B组 · 小组赛\n📍 温哥华 · BC Place\n第27场/共104
+ 场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/w
+ orldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇨🇦 加拿大 vs 🇶🇦 卡塔
+ 尔
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇨🇦 加拿大 vs 🇶🇦 卡塔尔
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-27@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260619T001500Z
+DTEND:20260619T002500Z
+SUMMARY:📊 赛果｜🇨🇦 加拿大 vs 🇶🇦 卡塔尔
+DESCRIPTION:B组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇨🇦 加拿大 vs 🇶🇦 卡塔尔
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-28@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260619T010000Z
+DTEND:20260619T031500Z
+SUMMARY:🇲🇽 墨西哥 vs 🇰🇷 韩国
+DESCRIPTION:A组 · 小组赛\n📍 瓜达拉哈拉 · Estadio Akron\n第28
+ 场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.g
+ ithub.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇲🇽 墨西哥 vs 🇰🇷 韩国
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇲🇽 墨西哥 vs 🇰🇷 韩国
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-28@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260619T031500Z
+DTEND:20260619T032500Z
+SUMMARY:📊 赛果｜🇲🇽 墨西哥 vs 🇰🇷 韩国
+DESCRIPTION:A组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇲🇽 墨西哥 vs 🇰🇷 韩国
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-29@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260620T010000Z
+DTEND:20260620T031500Z
+SUMMARY:🇧🇷 巴西 vs 🇭🇹 海地
+DESCRIPTION:C组 · 小组赛\n📍 费城 · Lincoln Financial Field\n第2
+ 9场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.
+ github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇧🇷 巴西 vs 🇭🇹 海地
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇧🇷 巴西 vs 🇭🇹 海地
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-29@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260620T031500Z
+DTEND:20260620T032500Z
+SUMMARY:📊 赛果｜🇧🇷 巴西 vs 🇭🇹 海地
+DESCRIPTION:C组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇧🇷 巴西 vs 🇭🇹 海地
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-30@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260619T220000Z
+DTEND:20260620T001500Z
+SUMMARY:🏴󠁧󠁢󠁳󠁣󠁴󠁿 苏格兰 vs 🇲🇦 摩洛哥
+DESCRIPTION:C组 · 小组赛\n📍 波士顿 · Gillette Stadium\n第30场
+ /共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.gith
+ ub.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏴󠁧󠁢󠁳󠁣󠁴󠁿 苏格兰 
+ vs 🇲🇦 摩洛哥
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏴󠁧󠁢󠁳󠁣󠁴󠁿 苏格兰 vs 🇲
+ 🇦 摩洛哥
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-30@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260620T001500Z
+DTEND:20260620T002500Z
+SUMMARY:📊 赛果｜🏴󠁧󠁢󠁳󠁣󠁴󠁿 苏格兰 vs 🇲🇦 
+ 摩洛哥
+DESCRIPTION:C组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🏴󠁧󠁢󠁳󠁣󠁴󠁿 苏格兰 vs 🇲
+ 🇦 摩洛哥
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-31@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260620T030000Z
+DTEND:20260620T051500Z
+SUMMARY:🇹🇷 土耳其 vs 🇵🇾 巴拉圭
+DESCRIPTION:D组 · 小组赛\n📍 旧金山 · Levi's Stadium\n第31场/
+ 共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.githu
+ b.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇹🇷 土耳其 vs 🇵🇾 巴拉
+ 圭
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇹🇷 土耳其 vs 🇵🇾 巴拉圭
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-31@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260620T051500Z
+DTEND:20260620T052500Z
+SUMMARY:📊 赛果｜🇹🇷 土耳其 vs 🇵🇾 巴拉圭
+DESCRIPTION:D组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇹🇷 土耳其 vs 🇵🇾 巴拉圭
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-32@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260619T190000Z
+DTEND:20260619T211500Z
+SUMMARY:🇺🇸 美国 vs 🇦🇺 澳大利亚
+DESCRIPTION:D组 · 小组赛\n📍 西雅图 · Lumen Field\n第32场/共1
+ 04场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io
+ /worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇺🇸 美国 vs 🇦🇺 澳大利
+ 亚
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇺🇸 美国 vs 🇦🇺 澳大利亚
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-32@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260619T211500Z
+DTEND:20260619T212500Z
+SUMMARY:📊 赛果｜🇺🇸 美国 vs 🇦🇺 澳大利亚
+DESCRIPTION:D组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇺🇸 美国 vs 🇦🇺 澳大利亚
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-33@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260620T200000Z
+DTEND:20260620T221500Z
+SUMMARY:🇩🇪 德国 vs 🇨🇮 科特迪瓦
+DESCRIPTION:E组 · 小组赛\n📍 多伦多 · BMO Field\n第33场/共104
+ 场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/w
+ orldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇩🇪 德国 vs 🇨🇮 科特迪
+ 瓦
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇩🇪 德国 vs 🇨🇮 科特迪瓦
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-33@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260620T221500Z
+DTEND:20260620T222500Z
+SUMMARY:📊 赛果｜🇩🇪 德国 vs 🇨🇮 科特迪瓦
+DESCRIPTION:E组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇩🇪 德国 vs 🇨🇮 科特迪瓦
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-34@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260621T000000Z
+DTEND:20260621T021500Z
+SUMMARY:🇪🇨 厄瓜多尔 vs 🇨🇼 库拉索
+DESCRIPTION:E组 · 小组赛\n📍 堪萨斯城 · Arrowhead Stadium\n第3
+ 4场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.
+ github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇪🇨 厄瓜多尔 vs 🇨🇼 库
+ 拉索
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇪🇨 厄瓜多尔 vs 🇨🇼 库拉索
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-34@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260621T021500Z
+DTEND:20260621T022500Z
+SUMMARY:📊 赛果｜🇪🇨 厄瓜多尔 vs 🇨🇼 库拉索
+DESCRIPTION:E组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇪🇨 厄瓜多尔 vs 🇨🇼 库拉索
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-35@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260620T170000Z
+DTEND:20260620T191500Z
+SUMMARY:🇳🇱 荷兰 vs 🇸🇪 瑞典
+DESCRIPTION:F组 · 小组赛\n📍 休斯顿 · NRG Stadium\n第35场/共1
+ 04场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io
+ /worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇳🇱 荷兰 vs 🇸🇪 瑞典
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇳🇱 荷兰 vs 🇸🇪 瑞典
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-35@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260620T191500Z
+DTEND:20260620T192500Z
+SUMMARY:📊 赛果｜🇳🇱 荷兰 vs 🇸🇪 瑞典
+DESCRIPTION:F组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇳🇱 荷兰 vs 🇸🇪 瑞典
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-36@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260621T040000Z
+DTEND:20260621T061500Z
+SUMMARY:🇹🇳 突尼斯 vs 🇯🇵 日本
+DESCRIPTION:F组 · 小组赛\n📍 蒙特雷 · Estadio BBVA\n第36场/共
+ 104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.i
+ o/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇹🇳 突尼斯 vs 🇯🇵 日本
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇹🇳 突尼斯 vs 🇯🇵 日本
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-36@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260621T061500Z
+DTEND:20260621T062500Z
+SUMMARY:📊 赛果｜🇹🇳 突尼斯 vs 🇯🇵 日本
+DESCRIPTION:F组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇹🇳 突尼斯 vs 🇯🇵 日本
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-37@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260621T220000Z
+DTEND:20260622T001500Z
+SUMMARY:🇺🇾 乌拉圭 vs 🇨🇻 佛得角
+DESCRIPTION:H组 · 小组赛\n📍 迈阿密 · Hard Rock Stadium\n第37
+ 场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.g
+ ithub.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇺🇾 乌拉圭 vs 🇨🇻 佛得
+ 角
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇺🇾 乌拉圭 vs 🇨🇻 佛得角
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-37@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260622T001500Z
+DTEND:20260622T002500Z
+SUMMARY:📊 赛果｜🇺🇾 乌拉圭 vs 🇨🇻 佛得角
+DESCRIPTION:H组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇺🇾 乌拉圭 vs 🇨🇻 佛得角
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-38@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260621T160000Z
+DTEND:20260621T181500Z
+SUMMARY:🇪🇸 西班牙 vs 🇸🇦 沙特
+DESCRIPTION:H组 · 小组赛\n📍 亚特兰大 · Mercedes-Benz Stadium\n
+ 第38场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026world
+ cup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇪🇸 西班牙 vs 🇸🇦 沙特
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇪🇸 西班牙 vs 🇸🇦 沙特
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-38@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260621T181500Z
+DTEND:20260621T182500Z
+SUMMARY:📊 赛果｜🇪🇸 西班牙 vs 🇸🇦 沙特
+DESCRIPTION:H组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇪🇸 西班牙 vs 🇸🇦 沙特
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-39@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260621T190000Z
+DTEND:20260621T211500Z
+SUMMARY:🇧🇪 比利时 vs 🇮🇷 伊朗
+DESCRIPTION:G组 · 小组赛\n📍 洛杉矶 · SoFi Stadium\n第39场/共
+ 104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.i
+ o/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇧🇪 比利时 vs 🇮🇷 伊朗
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇧🇪 比利时 vs 🇮🇷 伊朗
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-39@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260621T211500Z
+DTEND:20260621T212500Z
+SUMMARY:📊 赛果｜🇧🇪 比利时 vs 🇮🇷 伊朗
+DESCRIPTION:G组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇧🇪 比利时 vs 🇮🇷 伊朗
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-40@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260622T010000Z
+DTEND:20260622T031500Z
+SUMMARY:🇳🇿 新西兰 vs 🇪🇬 埃及
+DESCRIPTION:G组 · 小组赛\n📍 温哥华 · BC Place\n第40场/共104
+ 场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/w
+ orldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇳🇿 新西兰 vs 🇪🇬 埃及
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇳🇿 新西兰 vs 🇪🇬 埃及
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-40@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260622T031500Z
+DTEND:20260622T032500Z
+SUMMARY:📊 赛果｜🇳🇿 新西兰 vs 🇪🇬 埃及
+DESCRIPTION:G组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇳🇿 新西兰 vs 🇪🇬 埃及
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-41@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260623T000000Z
+DTEND:20260623T021500Z
+SUMMARY:🇳🇴 挪威 vs 🇸🇳 塞内加尔
+DESCRIPTION:I组 · 小组赛\n📍 纽约 · MetLife Stadium\n第41场/共
+ 104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.i
+ o/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇳🇴 挪威 vs 🇸🇳 塞内加
+ 尔
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇳🇴 挪威 vs 🇸🇳 塞内加尔
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-41@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260623T021500Z
+DTEND:20260623T022500Z
+SUMMARY:📊 赛果｜🇳🇴 挪威 vs 🇸🇳 塞内加尔
+DESCRIPTION:I组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇳🇴 挪威 vs 🇸🇳 塞内加尔
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-42@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260622T210000Z
+DTEND:20260622T231500Z
+SUMMARY:🇫🇷 法国 vs 🇮🇶 伊拉克
+DESCRIPTION:I组 · 小组赛\n📍 费城 · Lincoln Financial Field\n第4
+ 2场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.
+ github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇫🇷 法国 vs 🇮🇶 伊拉克
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇫🇷 法国 vs 🇮🇶 伊拉克
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-42@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260622T231500Z
+DTEND:20260622T232500Z
+SUMMARY:📊 赛果｜🇫🇷 法国 vs 🇮🇶 伊拉克
+DESCRIPTION:I组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇫🇷 法国 vs 🇮🇶 伊拉克
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-43@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260622T170000Z
+DTEND:20260622T191500Z
+SUMMARY:🇦🇷 阿根廷 vs 🇦🇹 奥地利
+DESCRIPTION:J组 · 小组赛\n📍 达拉斯 · AT&T Stadium\n第43场/共
+ 104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.i
+ o/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇦🇷 阿根廷 vs 🇦🇹 奥地
+ 利
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇦🇷 阿根廷 vs 🇦🇹 奥地利
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-43@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260622T191500Z
+DTEND:20260622T192500Z
+SUMMARY:📊 赛果｜🇦🇷 阿根廷 vs 🇦🇹 奥地利
+DESCRIPTION:J组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇦🇷 阿根廷 vs 🇦🇹 奥地利
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-44@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260623T030000Z
+DTEND:20260623T051500Z
+SUMMARY:🇯🇴 约旦 vs 🇩🇿 阿尔及利亚
+DESCRIPTION:J组 · 小组赛\n📍 旧金山 · Levi's Stadium\n第44场/
+ 共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.githu
+ b.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇯🇴 约旦 vs 🇩🇿 阿尔及
+ 利亚
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇯🇴 约旦 vs 🇩🇿 阿尔及利亚
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-44@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260623T051500Z
+DTEND:20260623T052500Z
+SUMMARY:📊 赛果｜🇯🇴 约旦 vs 🇩🇿 阿尔及利亚
+DESCRIPTION:J组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇯🇴 约旦 vs 🇩🇿 阿尔及利亚
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-45@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260623T200000Z
+DTEND:20260623T221500Z
+SUMMARY:🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰 vs 🇬🇭 加纳
+DESCRIPTION:L组 · 小组赛\n📍 波士顿 · Gillette Stadium\n第45场
+ /共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.gith
+ ub.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰 
+ vs 🇬🇭 加纳
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰 vs 🇬
+ 🇭 加纳
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-45@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260623T221500Z
+DTEND:20260623T222500Z
+SUMMARY:📊 赛果｜🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰 vs 🇬🇭 
+ 加纳
+DESCRIPTION:L组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰 vs 🇬
+ 🇭 加纳
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-46@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260623T230000Z
+DTEND:20260624T011500Z
+SUMMARY:🇵🇦 巴拿马 vs 🇭🇷 克罗地亚
+DESCRIPTION:L组 · 小组赛\n📍 多伦多 · BMO Field\n第46场/共104
+ 场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/w
+ orldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇵🇦 巴拿马 vs 🇭🇷 克罗
+ 地亚
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇵🇦 巴拿马 vs 🇭🇷 克罗地亚
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-46@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260624T011500Z
+DTEND:20260624T012500Z
+SUMMARY:📊 赛果｜🇵🇦 巴拿马 vs 🇭🇷 克罗地亚
+DESCRIPTION:L组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇵🇦 巴拿马 vs 🇭🇷 克罗地亚
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-47@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260623T170000Z
+DTEND:20260623T191500Z
+SUMMARY:🇵🇹 葡萄牙 vs 🇺🇿 乌兹别克
+DESCRIPTION:K组 · 小组赛\n📍 休斯顿 · NRG Stadium\n第47场/共1
+ 04场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io
+ /worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇵🇹 葡萄牙 vs 🇺🇿 乌兹
+ 别克
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇵🇹 葡萄牙 vs 🇺🇿 乌兹别克
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-47@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260623T191500Z
+DTEND:20260623T192500Z
+SUMMARY:📊 赛果｜🇵🇹 葡萄牙 vs 🇺🇿 乌兹别克
+DESCRIPTION:K组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇵🇹 葡萄牙 vs 🇺🇿 乌兹别克
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-48@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260624T020000Z
+DTEND:20260624T041500Z
+SUMMARY:🇨🇴 哥伦比亚 vs 🇨🇩 刚果(金)
+DESCRIPTION:K组 · 小组赛\n📍 瓜达拉哈拉 · Estadio Akron\n第48
+ 场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.g
+ ithub.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇨🇴 哥伦比亚 vs 🇨🇩 刚
+ 果(金)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇨🇴 哥伦比亚 vs 🇨🇩 刚果(金)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-48@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260624T041500Z
+DTEND:20260624T042500Z
+SUMMARY:📊 赛果｜🇨🇴 哥伦比亚 vs 🇨🇩 刚果(金)
+DESCRIPTION:K组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇨🇴 哥伦比亚 vs 🇨🇩 刚果(金)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-49@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260624T220000Z
+DTEND:20260625T001500Z
+SUMMARY:🏴󠁧󠁢󠁳󠁣󠁴󠁿 苏格兰 vs 🇧🇷 巴西
+DESCRIPTION:C组 · 小组赛\n📍 迈阿密 · Hard Rock Stadium\n第49
+ 场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.g
+ ithub.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏴󠁧󠁢󠁳󠁣󠁴󠁿 苏格兰 
+ vs 🇧🇷 巴西
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏴󠁧󠁢󠁳󠁣󠁴󠁿 苏格兰 vs 🇧
+ 🇷 巴西
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-49@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260625T001500Z
+DTEND:20260625T002500Z
+SUMMARY:📊 赛果｜🏴󠁧󠁢󠁳󠁣󠁴󠁿 苏格兰 vs 🇧🇷 
+ 巴西
+DESCRIPTION:C组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🏴󠁧󠁢󠁳󠁣󠁴󠁿 苏格兰 vs 🇧
+ 🇷 巴西
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-50@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260624T220000Z
+DTEND:20260625T001500Z
+SUMMARY:🇲🇦 摩洛哥 vs 🇭🇹 海地
+DESCRIPTION:C组 · 小组赛\n📍 亚特兰大 · Mercedes-Benz Stadium\n
+ 第50场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026world
+ cup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇲🇦 摩洛哥 vs 🇭🇹 海地
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇲🇦 摩洛哥 vs 🇭🇹 海地
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-50@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260625T001500Z
+DTEND:20260625T002500Z
+SUMMARY:📊 赛果｜🇲🇦 摩洛哥 vs 🇭🇹 海地
+DESCRIPTION:C组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇲🇦 摩洛哥 vs 🇭🇹 海地
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-51@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260624T190000Z
+DTEND:20260624T211500Z
+SUMMARY:🇨🇭 瑞士 vs 🇨🇦 加拿大
+DESCRIPTION:B组 · 小组赛\n📍 温哥华 · BC Place\n第51场/共104
+ 场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/w
+ orldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇨🇭 瑞士 vs 🇨🇦 加拿大
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇨🇭 瑞士 vs 🇨🇦 加拿大
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-51@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260624T211500Z
+DTEND:20260624T212500Z
+SUMMARY:📊 赛果｜🇨🇭 瑞士 vs 🇨🇦 加拿大
+DESCRIPTION:B组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇨🇭 瑞士 vs 🇨🇦 加拿大
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-52@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260624T190000Z
+DTEND:20260624T211500Z
+SUMMARY:🇧🇦 波黑 vs 🇶🇦 卡塔尔
+DESCRIPTION:B组 · 小组赛\n📍 西雅图 · Lumen Field\n第52场/共1
+ 04场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io
+ /worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇧🇦 波黑 vs 🇶🇦 卡塔尔
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇧🇦 波黑 vs 🇶🇦 卡塔尔
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-52@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260624T211500Z
+DTEND:20260624T212500Z
+SUMMARY:📊 赛果｜🇧🇦 波黑 vs 🇶🇦 卡塔尔
+DESCRIPTION:B组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇧🇦 波黑 vs 🇶🇦 卡塔尔
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-53@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260625T010000Z
+DTEND:20260625T031500Z
+SUMMARY:🇨🇿 捷克 vs 🇲🇽 墨西哥
+DESCRIPTION:A组 · 小组赛\n📍 墨西哥城 · Estadio Azteca\n第53
+ 场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.g
+ ithub.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇨🇿 捷克 vs 🇲🇽 墨西哥
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇨🇿 捷克 vs 🇲🇽 墨西哥
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-53@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260625T031500Z
+DTEND:20260625T032500Z
+SUMMARY:📊 赛果｜🇨🇿 捷克 vs 🇲🇽 墨西哥
+DESCRIPTION:A组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇨🇿 捷克 vs 🇲🇽 墨西哥
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-54@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260625T010000Z
+DTEND:20260625T031500Z
+SUMMARY:🇿🇦 南非 vs 🇰🇷 韩国
+DESCRIPTION:A组 · 小组赛\n📍 蒙特雷 · Estadio BBVA\n第54场/共
+ 104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.i
+ o/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇿🇦 南非 vs 🇰🇷 韩国
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇿🇦 南非 vs 🇰🇷 韩国
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-54@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260625T031500Z
+DTEND:20260625T032500Z
+SUMMARY:📊 赛果｜🇿🇦 南非 vs 🇰🇷 韩国
+DESCRIPTION:A组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇿🇦 南非 vs 🇰🇷 韩国
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-55@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260625T200000Z
+DTEND:20260625T221500Z
+SUMMARY:🇨🇼 库拉索 vs 🇨🇮 科特迪瓦
+DESCRIPTION:E组 · 小组赛\n📍 费城 · Lincoln Financial Field\n第5
+ 5场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.
+ github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇨🇼 库拉索 vs 🇨🇮 科特
+ 迪瓦
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇨🇼 库拉索 vs 🇨🇮 科特迪瓦
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-55@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260625T221500Z
+DTEND:20260625T222500Z
+SUMMARY:📊 赛果｜🇨🇼 库拉索 vs 🇨🇮 科特迪瓦
+DESCRIPTION:E组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇨🇼 库拉索 vs 🇨🇮 科特迪瓦
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-56@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260625T200000Z
+DTEND:20260625T221500Z
+SUMMARY:🇪🇨 厄瓜多尔 vs 🇩🇪 德国
+DESCRIPTION:E组 · 小组赛\n📍 纽约 · MetLife Stadium\n第56场/共
+ 104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.i
+ o/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇪🇨 厄瓜多尔 vs 🇩🇪 德
+ 国
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇪🇨 厄瓜多尔 vs 🇩🇪 德国
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-56@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260625T221500Z
+DTEND:20260625T222500Z
+SUMMARY:📊 赛果｜🇪🇨 厄瓜多尔 vs 🇩🇪 德国
+DESCRIPTION:E组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇪🇨 厄瓜多尔 vs 🇩🇪 德国
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-57@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260625T230000Z
+DTEND:20260626T011500Z
+SUMMARY:🇯🇵 日本 vs 🇸🇪 瑞典
+DESCRIPTION:F组 · 小组赛\n📍 达拉斯 · AT&T Stadium\n第57场/共
+ 104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.i
+ o/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇯🇵 日本 vs 🇸🇪 瑞典
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇯🇵 日本 vs 🇸🇪 瑞典
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-57@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260626T011500Z
+DTEND:20260626T012500Z
+SUMMARY:📊 赛果｜🇯🇵 日本 vs 🇸🇪 瑞典
+DESCRIPTION:F组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇯🇵 日本 vs 🇸🇪 瑞典
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-58@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260625T230000Z
+DTEND:20260626T011500Z
+SUMMARY:🇹🇳 突尼斯 vs 🇳🇱 荷兰
+DESCRIPTION:F组 · 小组赛\n📍 堪萨斯城 · Arrowhead Stadium\n第5
+ 8场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.
+ github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇹🇳 突尼斯 vs 🇳🇱 荷兰
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇹🇳 突尼斯 vs 🇳🇱 荷兰
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-58@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260626T011500Z
+DTEND:20260626T012500Z
+SUMMARY:📊 赛果｜🇹🇳 突尼斯 vs 🇳🇱 荷兰
+DESCRIPTION:F组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇹🇳 突尼斯 vs 🇳🇱 荷兰
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-59@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260626T020000Z
+DTEND:20260626T041500Z
+SUMMARY:🇹🇷 土耳其 vs 🇺🇸 美国
+DESCRIPTION:D组 · 小组赛\n📍 洛杉矶 · SoFi Stadium\n第59场/共
+ 104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.i
+ o/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇹🇷 土耳其 vs 🇺🇸 美国
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇹🇷 土耳其 vs 🇺🇸 美国
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-59@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260626T041500Z
+DTEND:20260626T042500Z
+SUMMARY:📊 赛果｜🇹🇷 土耳其 vs 🇺🇸 美国
+DESCRIPTION:D组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇹🇷 土耳其 vs 🇺🇸 美国
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-60@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260626T020000Z
+DTEND:20260626T041500Z
+SUMMARY:🇵🇾 巴拉圭 vs 🇦🇺 澳大利亚
+DESCRIPTION:D组 · 小组赛\n📍 旧金山 · Levi's Stadium\n第60场/
+ 共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.githu
+ b.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇵🇾 巴拉圭 vs 🇦🇺 澳大
+ 利亚
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇵🇾 巴拉圭 vs 🇦🇺 澳大利亚
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-60@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260626T041500Z
+DTEND:20260626T042500Z
+SUMMARY:📊 赛果｜🇵🇾 巴拉圭 vs 🇦🇺 澳大利亚
+DESCRIPTION:D组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇵🇾 巴拉圭 vs 🇦🇺 澳大利亚
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-61@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260626T190000Z
+DTEND:20260626T211500Z
+SUMMARY:🇳🇴 挪威 vs 🇫🇷 法国
+DESCRIPTION:I组 · 小组赛\n📍 波士顿 · Gillette Stadium\n第61场
+ /共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.gith
+ ub.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇳🇴 挪威 vs 🇫🇷 法国
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇳🇴 挪威 vs 🇫🇷 法国
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-61@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260626T211500Z
+DTEND:20260626T212500Z
+SUMMARY:📊 赛果｜🇳🇴 挪威 vs 🇫🇷 法国
+DESCRIPTION:I组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇳🇴 挪威 vs 🇫🇷 法国
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-62@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260626T190000Z
+DTEND:20260626T211500Z
+SUMMARY:🇸🇳 塞内加尔 vs 🇮🇶 伊拉克
+DESCRIPTION:I组 · 小组赛\n📍 多伦多 · BMO Field\n第62场/共104
+ 场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/w
+ orldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇸🇳 塞内加尔 vs 🇮🇶 伊
+ 拉克
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇸🇳 塞内加尔 vs 🇮🇶 伊拉克
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-62@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260626T211500Z
+DTEND:20260626T212500Z
+SUMMARY:📊 赛果｜🇸🇳 塞内加尔 vs 🇮🇶 伊拉克
+DESCRIPTION:I组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇸🇳 塞内加尔 vs 🇮🇶 伊拉克
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-63@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260627T030000Z
+DTEND:20260627T051500Z
+SUMMARY:🇪🇬 埃及 vs 🇮🇷 伊朗
+DESCRIPTION:G组 · 小组赛\n📍 西雅图 · Lumen Field\n第63场/共1
+ 04场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io
+ /worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇪🇬 埃及 vs 🇮🇷 伊朗
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇪🇬 埃及 vs 🇮🇷 伊朗
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-63@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260627T051500Z
+DTEND:20260627T052500Z
+SUMMARY:📊 赛果｜🇪🇬 埃及 vs 🇮🇷 伊朗
+DESCRIPTION:G组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇪🇬 埃及 vs 🇮🇷 伊朗
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-64@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260627T030000Z
+DTEND:20260627T051500Z
+SUMMARY:🇳🇿 新西兰 vs 🇧🇪 比利时
+DESCRIPTION:G组 · 小组赛\n📍 温哥华 · BC Place\n第64场/共104
+ 场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/w
+ orldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇳🇿 新西兰 vs 🇧🇪 比利
+ 时
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇳🇿 新西兰 vs 🇧🇪 比利时
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-64@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260627T051500Z
+DTEND:20260627T052500Z
+SUMMARY:📊 赛果｜🇳🇿 新西兰 vs 🇧🇪 比利时
+DESCRIPTION:G组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇳🇿 新西兰 vs 🇧🇪 比利时
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-65@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260627T000000Z
+DTEND:20260627T021500Z
+SUMMARY:🇨🇻 佛得角 vs 🇸🇦 沙特
+DESCRIPTION:H组 · 小组赛\n📍 休斯顿 · NRG Stadium\n第65场/共1
+ 04场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io
+ /worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇨🇻 佛得角 vs 🇸🇦 沙特
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇨🇻 佛得角 vs 🇸🇦 沙特
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-65@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260627T021500Z
+DTEND:20260627T022500Z
+SUMMARY:📊 赛果｜🇨🇻 佛得角 vs 🇸🇦 沙特
+DESCRIPTION:H组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇨🇻 佛得角 vs 🇸🇦 沙特
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-66@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260627T000000Z
+DTEND:20260627T021500Z
+SUMMARY:🇺🇾 乌拉圭 vs 🇪🇸 西班牙
+DESCRIPTION:H组 · 小组赛\n📍 瓜达拉哈拉 · Estadio Akron\n第66
+ 场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.g
+ ithub.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇺🇾 乌拉圭 vs 🇪🇸 西班
+ 牙
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇺🇾 乌拉圭 vs 🇪🇸 西班牙
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-66@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260627T021500Z
+DTEND:20260627T022500Z
+SUMMARY:📊 赛果｜🇺🇾 乌拉圭 vs 🇪🇸 西班牙
+DESCRIPTION:H组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇺🇾 乌拉圭 vs 🇪🇸 西班牙
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-67@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260627T210000Z
+DTEND:20260627T231500Z
+SUMMARY:🇵🇦 巴拿马 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰
+DESCRIPTION:L组 · 小组赛\n📍 纽约 · MetLife Stadium\n第67场/共
+ 104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.i
+ o/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇵🇦 巴拿马 vs 🏴󠁧󠁢󠁥
+ 󠁮󠁧󠁿 英格兰
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇵🇦 巴拿马 vs 🏴󠁧󠁢󠁥󠁮󠁧
+ 󠁿 英格兰
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-67@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260627T231500Z
+DTEND:20260627T232500Z
+SUMMARY:📊 赛果｜🇵🇦 巴拿马 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 
+ 英格兰
+DESCRIPTION:L组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇵🇦 巴拿马 vs 🏴󠁧󠁢󠁥󠁮󠁧
+ 󠁿 英格兰
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-68@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260627T210000Z
+DTEND:20260627T231500Z
+SUMMARY:🇭🇷 克罗地亚 vs 🇬🇭 加纳
+DESCRIPTION:L组 · 小组赛\n📍 费城 · Lincoln Financial Field\n第6
+ 8场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.
+ github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇭🇷 克罗地亚 vs 🇬🇭 加
+ 纳
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇭🇷 克罗地亚 vs 🇬🇭 加纳
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-68@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260627T231500Z
+DTEND:20260627T232500Z
+SUMMARY:📊 赛果｜🇭🇷 克罗地亚 vs 🇬🇭 加纳
+DESCRIPTION:L组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇭🇷 克罗地亚 vs 🇬🇭 加纳
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-69@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260628T020000Z
+DTEND:20260628T041500Z
+SUMMARY:🇩🇿 阿尔及利亚 vs 🇦🇹 奥地利
+DESCRIPTION:J组 · 小组赛\n📍 堪萨斯城 · Arrowhead Stadium\n第6
+ 9场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.
+ github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇩🇿 阿尔及利亚 vs 🇦🇹 
+ 奥地利
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇩🇿 阿尔及利亚 vs 🇦🇹 奥地利
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-69@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260628T041500Z
+DTEND:20260628T042500Z
+SUMMARY:📊 赛果｜🇩🇿 阿尔及利亚 vs 🇦🇹 奥地利
+DESCRIPTION:J组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇩🇿 阿尔及利亚 vs 🇦🇹 奥地利
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-70@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260628T020000Z
+DTEND:20260628T041500Z
+SUMMARY:🇯🇴 约旦 vs 🇦🇷 阿根廷
+DESCRIPTION:J组 · 小组赛\n📍 达拉斯 · AT&T Stadium\n第70场/共
+ 104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.i
+ o/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇯🇴 约旦 vs 🇦🇷 阿根廷
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇯🇴 约旦 vs 🇦🇷 阿根廷
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-70@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260628T041500Z
+DTEND:20260628T042500Z
+SUMMARY:📊 赛果｜🇯🇴 约旦 vs 🇦🇷 阿根廷
+DESCRIPTION:J组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇯🇴 约旦 vs 🇦🇷 阿根廷
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-71@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260627T233000Z
+DTEND:20260628T014500Z
+SUMMARY:🇨🇴 哥伦比亚 vs 🇵🇹 葡萄牙
+DESCRIPTION:K组 · 小组赛\n📍 迈阿密 · Hard Rock Stadium\n第71
+ 场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.g
+ ithub.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇨🇴 哥伦比亚 vs 🇵🇹 葡
+ 萄牙
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇨🇴 哥伦比亚 vs 🇵🇹 葡萄牙
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-71@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260628T014500Z
+DTEND:20260628T015500Z
+SUMMARY:📊 赛果｜🇨🇴 哥伦比亚 vs 🇵🇹 葡萄牙
+DESCRIPTION:K组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇨🇴 哥伦比亚 vs 🇵🇹 葡萄牙
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-72@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260627T233000Z
+DTEND:20260628T014500Z
+SUMMARY:🇨🇩 刚果(金) vs 🇺🇿 乌兹别克
+DESCRIPTION:K组 · 小组赛\n📍 亚特兰大 · Mercedes-Benz Stadium\n
+ 第72场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026world
+ cup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🇨🇩 刚果(金) vs 🇺🇿 乌兹
+ 别克
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🇨🇩 刚果(金) vs 🇺🇿 乌兹别克
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-72@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260628T014500Z
+DTEND:20260628T015500Z
+SUMMARY:📊 赛果｜🇨🇩 刚果(金) vs 🇺🇿 乌兹别克
+DESCRIPTION:K组 · 小组赛 已结束\n👉 看比分与后续赛程：\n
+ https://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜🇨🇩 刚果(金) vs 🇺🇿 乌兹别克
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-73@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260628T190000Z
+DTEND:20260628T220000Z
+SUMMARY:🏆 32强赛｜A组第2 vs B组第2
+DESCRIPTION:32强赛\n📍 洛杉矶 · SoFi Stadium\n第73场/共104场\n
+ 👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/worldc
+ up/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 32强赛｜A组第2 vs B组第2
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 32强赛｜A组第2 vs B组第2
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-73@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260628T220000Z
+DTEND:20260628T221000Z
+SUMMARY:📊 赛果｜32强赛：A组第2 vs B组第2
+DESCRIPTION:32强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜32强赛：A组第2 vs B组第2
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-74@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260629T203000Z
+DTEND:20260629T233000Z
+SUMMARY:🏆 32强赛｜E组第1 vs A/B/C/D/F组第3
+DESCRIPTION:32强赛\n📍 波士顿 · Gillette Stadium\n第74场/共104
+ 场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/w
+ orldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 32强赛｜E组第1 vs A/B/C/D/F
+ 组第3
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 32强赛｜E组第1 vs A/B/C/D/F组第3
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-74@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260629T233000Z
+DTEND:20260629T234000Z
+SUMMARY:📊 赛果｜32强赛：E组第1 vs A/B/C/D/F组第3
+DESCRIPTION:32强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜32强赛：E组第1 vs A/B/C/D/F组第3
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-75@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260630T010000Z
+DTEND:20260630T040000Z
+SUMMARY:🏆 32强赛｜F组第1 vs C组第2
+DESCRIPTION:32强赛\n📍 蒙特雷 · Estadio BBVA\n第75场/共104场\n
+ 👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/worldc
+ up/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 32强赛｜F组第1 vs C组第2
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 32强赛｜F组第1 vs C组第2
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-75@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260630T040000Z
+DTEND:20260630T041000Z
+SUMMARY:📊 赛果｜32强赛：F组第1 vs C组第2
+DESCRIPTION:32强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜32强赛：F组第1 vs C组第2
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-76@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260629T170000Z
+DTEND:20260629T200000Z
+SUMMARY:🏆 32强赛｜C组第1 vs F组第2
+DESCRIPTION:32强赛\n📍 休斯顿 · NRG Stadium\n第76场/共104场\n
+ 👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/worldc
+ up/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 32强赛｜C组第1 vs F组第2
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 32强赛｜C组第1 vs F组第2
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-76@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260629T200000Z
+DTEND:20260629T201000Z
+SUMMARY:📊 赛果｜32强赛：C组第1 vs F组第2
+DESCRIPTION:32强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜32强赛：C组第1 vs F组第2
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-77@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260630T210000Z
+DTEND:20260701T000000Z
+SUMMARY:🏆 32强赛｜I组第1 vs C/D/F/G/H组第3
+DESCRIPTION:32强赛\n📍 纽约 · MetLife Stadium\n第77场/共104场\n
+ 👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/worldc
+ up/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 32强赛｜I组第1 vs C/D/F/G/H
+ 组第3
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 32强赛｜I组第1 vs C/D/F/G/H组第3
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-77@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260701T000000Z
+DTEND:20260701T001000Z
+SUMMARY:📊 赛果｜32强赛：I组第1 vs C/D/F/G/H组第3
+DESCRIPTION:32强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜32强赛：I组第1 vs C/D/F/G/H组第3
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-78@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260630T170000Z
+DTEND:20260630T200000Z
+SUMMARY:🏆 32强赛｜E组第2 vs I组第2
+DESCRIPTION:32强赛\n📍 达拉斯 · AT&T Stadium\n第78场/共104场\n
+ 👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/worldc
+ up/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 32强赛｜E组第2 vs I组第2
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 32强赛｜E组第2 vs I组第2
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-78@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260630T200000Z
+DTEND:20260630T201000Z
+SUMMARY:📊 赛果｜32强赛：E组第2 vs I组第2
+DESCRIPTION:32强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜32强赛：E组第2 vs I组第2
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-79@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260701T010000Z
+DTEND:20260701T040000Z
+SUMMARY:🏆 32强赛｜A组第1 vs C/E/F/H/I组第3
+DESCRIPTION:32强赛\n📍 墨西哥城 · Estadio Azteca\n第79场/共104
+ 场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/w
+ orldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 32强赛｜A组第1 vs C/E/F/H/I
+ 组第3
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 32强赛｜A组第1 vs C/E/F/H/I组第3
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-79@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260701T040000Z
+DTEND:20260701T041000Z
+SUMMARY:📊 赛果｜32强赛：A组第1 vs C/E/F/H/I组第3
+DESCRIPTION:32强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜32强赛：A组第1 vs C/E/F/H/I组第3
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-80@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260701T160000Z
+DTEND:20260701T190000Z
+SUMMARY:🏆 32强赛｜L组第1 vs E/H/I/J/K组第3
+DESCRIPTION:32强赛\n📍 亚特兰大 · Mercedes-Benz Stadium\n第80场/
+ 共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.githu
+ b.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 32强赛｜L组第1 vs E/H/I/J/K
+ 组第3
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 32强赛｜L组第1 vs E/H/I/J/K组第3
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-80@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260701T190000Z
+DTEND:20260701T191000Z
+SUMMARY:📊 赛果｜32强赛：L组第1 vs E/H/I/J/K组第3
+DESCRIPTION:32强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜32强赛：L组第1 vs E/H/I/J/K组第3
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-81@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260702T000000Z
+DTEND:20260702T030000Z
+SUMMARY:🏆 32强赛｜D组第1 vs B/E/F/I/J组第3
+DESCRIPTION:32强赛\n📍 旧金山 · Levi's Stadium\n第81场/共104场\
+ n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/world
+ cup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 32强赛｜D组第1 vs B/E/F/I/J
+ 组第3
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 32强赛｜D组第1 vs B/E/F/I/J组第3
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-81@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260702T030000Z
+DTEND:20260702T031000Z
+SUMMARY:📊 赛果｜32强赛：D组第1 vs B/E/F/I/J组第3
+DESCRIPTION:32强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜32强赛：D组第1 vs B/E/F/I/J组第3
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-82@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260701T200000Z
+DTEND:20260701T230000Z
+SUMMARY:🏆 32强赛｜G组第1 vs A/E/H/I/J组第3
+DESCRIPTION:32强赛\n📍 西雅图 · Lumen Field\n第82场/共104场\n
+ 👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/worldc
+ up/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 32强赛｜G组第1 vs A/E/H/I/J
+ 组第3
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 32强赛｜G组第1 vs A/E/H/I/J组第3
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-82@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260701T230000Z
+DTEND:20260701T231000Z
+SUMMARY:📊 赛果｜32强赛：G组第1 vs A/E/H/I/J组第3
+DESCRIPTION:32强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜32强赛：G组第1 vs A/E/H/I/J组第3
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-83@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260702T230000Z
+DTEND:20260703T020000Z
+SUMMARY:🏆 32强赛｜K组第2 vs L组第2
+DESCRIPTION:32强赛\n📍 多伦多 · BMO Field\n第83场/共104场\n👉
+  看比分与后续赛程：\nhttps://wc2026worldcup.github.io/worldcup/?
+ from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 32强赛｜K组第2 vs L组第2
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 32强赛｜K组第2 vs L组第2
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-83@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260703T020000Z
+DTEND:20260703T021000Z
+SUMMARY:📊 赛果｜32强赛：K组第2 vs L组第2
+DESCRIPTION:32强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜32强赛：K组第2 vs L组第2
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-84@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260702T190000Z
+DTEND:20260702T220000Z
+SUMMARY:🏆 32强赛｜H组第1 vs J组第2
+DESCRIPTION:32强赛\n📍 洛杉矶 · SoFi Stadium\n第84场/共104场\n
+ 👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/worldc
+ up/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 32强赛｜H组第1 vs J组第2
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 32强赛｜H组第1 vs J组第2
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-84@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260702T220000Z
+DTEND:20260702T221000Z
+SUMMARY:📊 赛果｜32强赛：H组第1 vs J组第2
+DESCRIPTION:32强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜32强赛：H组第1 vs J组第2
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-85@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260703T030000Z
+DTEND:20260703T060000Z
+SUMMARY:🏆 32强赛｜B组第1 vs E/F/G/I/J组第3
+DESCRIPTION:32强赛\n📍 温哥华 · BC Place\n第85场/共104场\n👉 
+ 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/worldcup/?f
+ rom=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 32强赛｜B组第1 vs E/F/G/I/J
+ 组第3
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 32强赛｜B组第1 vs E/F/G/I/J组第3
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-85@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260703T060000Z
+DTEND:20260703T061000Z
+SUMMARY:📊 赛果｜32强赛：B组第1 vs E/F/G/I/J组第3
+DESCRIPTION:32强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜32强赛：B组第1 vs E/F/G/I/J组第3
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-86@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260703T220000Z
+DTEND:20260704T010000Z
+SUMMARY:🏆 32强赛｜J组第1 vs H组第2
+DESCRIPTION:32强赛\n📍 迈阿密 · Hard Rock Stadium\n第86场/共104
+ 场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/w
+ orldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 32强赛｜J组第1 vs H组第2
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 32强赛｜J组第1 vs H组第2
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-86@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260704T010000Z
+DTEND:20260704T011000Z
+SUMMARY:📊 赛果｜32强赛：J组第1 vs H组第2
+DESCRIPTION:32强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜32强赛：J组第1 vs H组第2
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-87@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260704T013000Z
+DTEND:20260704T043000Z
+SUMMARY:🏆 32强赛｜K组第1 vs D/E/I/J/L组第3
+DESCRIPTION:32强赛\n📍 堪萨斯城 · Arrowhead Stadium\n第87场/共1
+ 04场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io
+ /worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 32强赛｜K组第1 vs D/E/I/J/L
+ 组第3
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 32强赛｜K组第1 vs D/E/I/J/L组第3
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-87@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260704T043000Z
+DTEND:20260704T044000Z
+SUMMARY:📊 赛果｜32强赛：K组第1 vs D/E/I/J/L组第3
+DESCRIPTION:32强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜32强赛：K组第1 vs D/E/I/J/L组第3
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-88@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260703T180000Z
+DTEND:20260703T210000Z
+SUMMARY:🏆 32强赛｜D组第2 vs G组第2
+DESCRIPTION:32强赛\n📍 达拉斯 · AT&T Stadium\n第88场/共104场\n
+ 👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/worldc
+ up/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 32强赛｜D组第2 vs G组第2
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 32强赛｜D组第2 vs G组第2
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-88@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260703T210000Z
+DTEND:20260703T211000Z
+SUMMARY:📊 赛果｜32强赛：D组第2 vs G组第2
+DESCRIPTION:32强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜32强赛：D组第2 vs G组第2
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-89@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260704T210000Z
+DTEND:20260705T000000Z
+SUMMARY:🏆 16强赛｜M74胜者 vs M77胜者
+DESCRIPTION:16强赛\n📍 费城 · Lincoln Financial Field\n第89场/共1
+ 04场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io
+ /worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 16强赛｜M74胜者 vs M77胜者
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 16强赛｜M74胜者 vs M77胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-89@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260705T000000Z
+DTEND:20260705T001000Z
+SUMMARY:📊 赛果｜16强赛：M74胜者 vs M77胜者
+DESCRIPTION:16强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜16强赛：M74胜者 vs M77胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-90@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260704T170000Z
+DTEND:20260704T200000Z
+SUMMARY:🏆 16强赛｜M73胜者 vs M75胜者
+DESCRIPTION:16强赛\n📍 休斯顿 · NRG Stadium\n第90场/共104场\n
+ 👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/worldc
+ up/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 16强赛｜M73胜者 vs M75胜者
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 16强赛｜M73胜者 vs M75胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-90@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260704T200000Z
+DTEND:20260704T201000Z
+SUMMARY:📊 赛果｜16强赛：M73胜者 vs M75胜者
+DESCRIPTION:16强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜16强赛：M73胜者 vs M75胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-91@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260705T200000Z
+DTEND:20260705T230000Z
+SUMMARY:🏆 16强赛｜M76胜者 vs M78胜者
+DESCRIPTION:16强赛\n📍 纽约 · MetLife Stadium\n第91场/共104场\n
+ 👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/worldc
+ up/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 16强赛｜M76胜者 vs M78胜者
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 16强赛｜M76胜者 vs M78胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-91@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260705T230000Z
+DTEND:20260705T231000Z
+SUMMARY:📊 赛果｜16强赛：M76胜者 vs M78胜者
+DESCRIPTION:16强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜16强赛：M76胜者 vs M78胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-92@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260706T000000Z
+DTEND:20260706T030000Z
+SUMMARY:🏆 16强赛｜M79胜者 vs M80胜者
+DESCRIPTION:16强赛\n📍 墨西哥城 · Estadio Azteca\n第92场/共104
+ 场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/w
+ orldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 16强赛｜M79胜者 vs M80胜者
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 16强赛｜M79胜者 vs M80胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-92@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260706T030000Z
+DTEND:20260706T031000Z
+SUMMARY:📊 赛果｜16强赛：M79胜者 vs M80胜者
+DESCRIPTION:16强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜16强赛：M79胜者 vs M80胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-93@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260706T190000Z
+DTEND:20260706T220000Z
+SUMMARY:🏆 16强赛｜M83胜者 vs M84胜者
+DESCRIPTION:16强赛\n📍 达拉斯 · AT&T Stadium\n第93场/共104场\n
+ 👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/worldc
+ up/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 16强赛｜M83胜者 vs M84胜者
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 16强赛｜M83胜者 vs M84胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-93@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260706T220000Z
+DTEND:20260706T221000Z
+SUMMARY:📊 赛果｜16强赛：M83胜者 vs M84胜者
+DESCRIPTION:16强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜16强赛：M83胜者 vs M84胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-94@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260707T000000Z
+DTEND:20260707T030000Z
+SUMMARY:🏆 16强赛｜M81胜者 vs M82胜者
+DESCRIPTION:16强赛\n📍 西雅图 · Lumen Field\n第94场/共104场\n
+ 👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/worldc
+ up/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 16强赛｜M81胜者 vs M82胜者
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 16强赛｜M81胜者 vs M82胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-94@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260707T030000Z
+DTEND:20260707T031000Z
+SUMMARY:📊 赛果｜16强赛：M81胜者 vs M82胜者
+DESCRIPTION:16强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜16强赛：M81胜者 vs M82胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-95@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260707T160000Z
+DTEND:20260707T190000Z
+SUMMARY:🏆 16强赛｜M86胜者 vs M88胜者
+DESCRIPTION:16强赛\n📍 亚特兰大 · Mercedes-Benz Stadium\n第95场/
+ 共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.githu
+ b.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 16强赛｜M86胜者 vs M88胜者
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 16强赛｜M86胜者 vs M88胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-95@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260707T190000Z
+DTEND:20260707T191000Z
+SUMMARY:📊 赛果｜16强赛：M86胜者 vs M88胜者
+DESCRIPTION:16强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜16强赛：M86胜者 vs M88胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-96@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260707T200000Z
+DTEND:20260707T230000Z
+SUMMARY:🏆 16强赛｜M85胜者 vs M87胜者
+DESCRIPTION:16强赛\n📍 温哥华 · BC Place\n第96场/共104场\n👉 
+ 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/worldcup/?f
+ rom=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 16强赛｜M85胜者 vs M87胜者
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 16强赛｜M85胜者 vs M87胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-96@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260707T230000Z
+DTEND:20260707T231000Z
+SUMMARY:📊 赛果｜16强赛：M85胜者 vs M87胜者
+DESCRIPTION:16强赛 已结束\n👉 看比分与后续赛程：\nhttps://w
+ c2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜16强赛：M85胜者 vs M87胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-97@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260709T200000Z
+DTEND:20260709T230000Z
+SUMMARY:🏆 1/4决赛｜M89胜者 vs M90胜者
+DESCRIPTION:1/4决赛\n📍 波士顿 · Gillette Stadium\n第97场/共104
+ 场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/w
+ orldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 1/4决赛｜M89胜者 vs M90胜者
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 1/4决赛｜M89胜者 vs M90胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-97@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260709T230000Z
+DTEND:20260709T231000Z
+SUMMARY:📊 赛果｜1/4决赛：M89胜者 vs M90胜者
+DESCRIPTION:1/4决赛 已结束\n👉 看比分与后续赛程：\nhttps://
+ wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜1/4决赛：M89胜者 vs M90胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-98@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260710T190000Z
+DTEND:20260710T220000Z
+SUMMARY:🏆 1/4决赛｜M93胜者 vs M94胜者
+DESCRIPTION:1/4决赛\n📍 洛杉矶 · SoFi Stadium\n第98场/共104场\n
+ 👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/worldc
+ up/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 1/4决赛｜M93胜者 vs M94胜者
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 1/4决赛｜M93胜者 vs M94胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-98@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260710T220000Z
+DTEND:20260710T221000Z
+SUMMARY:📊 赛果｜1/4决赛：M93胜者 vs M94胜者
+DESCRIPTION:1/4决赛 已结束\n👉 看比分与后续赛程：\nhttps://
+ wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜1/4决赛：M93胜者 vs M94胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-99@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260711T210000Z
+DTEND:20260712T000000Z
+SUMMARY:🏆 1/4决赛｜M91胜者 vs M92胜者
+DESCRIPTION:1/4决赛\n📍 迈阿密 · Hard Rock Stadium\n第99场/共104
+ 场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/w
+ orldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 1/4决赛｜M91胜者 vs M92胜者
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 1/4决赛｜M91胜者 vs M92胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-99@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260712T000000Z
+DTEND:20260712T001000Z
+SUMMARY:📊 赛果｜1/4决赛：M91胜者 vs M92胜者
+DESCRIPTION:1/4决赛 已结束\n👉 看比分与后续赛程：\nhttps://
+ wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜1/4决赛：M91胜者 vs M92胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-100@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260712T010000Z
+DTEND:20260712T040000Z
+SUMMARY:🏆 1/4决赛｜M95胜者 vs M96胜者
+DESCRIPTION:1/4决赛\n📍 堪萨斯城 · Arrowhead Stadium\n第100场/
+ 共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.githu
+ b.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 1/4决赛｜M95胜者 vs M96胜者
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 1/4决赛｜M95胜者 vs M96胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-100@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260712T040000Z
+DTEND:20260712T041000Z
+SUMMARY:📊 赛果｜1/4决赛：M95胜者 vs M96胜者
+DESCRIPTION:1/4决赛 已结束\n👉 看比分与后续赛程：\nhttps://
+ wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜1/4决赛：M95胜者 vs M96胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-101@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260714T190000Z
+DTEND:20260714T220000Z
+SUMMARY:🏆 半决赛｜M97胜者 vs M98胜者
+DESCRIPTION:半决赛\n📍 达拉斯 · AT&T Stadium\n第101场/共104场\
+ n👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/world
+ cup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 半决赛｜M97胜者 vs M98胜者
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 半决赛｜M97胜者 vs M98胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-101@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260714T220000Z
+DTEND:20260714T221000Z
+SUMMARY:📊 赛果｜半决赛：M97胜者 vs M98胜者
+DESCRIPTION:半决赛 已结束\n👉 看比分与后续赛程：\nhttps://
+ wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜半决赛：M97胜者 vs M98胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-102@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260715T190000Z
+DTEND:20260715T220000Z
+SUMMARY:🏆 半决赛｜M99胜者 vs M100胜者
+DESCRIPTION:半决赛\n📍 亚特兰大 · Mercedes-Benz Stadium\n第102
+ 场/共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.g
+ ithub.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 半决赛｜M99胜者 vs M100胜
+ 者
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 半决赛｜M99胜者 vs M100胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-102@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260715T220000Z
+DTEND:20260715T221000Z
+SUMMARY:📊 赛果｜半决赛：M99胜者 vs M100胜者
+DESCRIPTION:半决赛 已结束\n👉 看比分与后续赛程：\nhttps://
+ wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜半决赛：M99胜者 vs M100胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-103@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260718T210000Z
+DTEND:20260719T000000Z
+SUMMARY:🏆 三四名决赛｜M101负者 vs M102负者
+DESCRIPTION:三四名决赛\n📍 迈阿密 · Hard Rock Stadium\n第103场
+ /共104场\n👉 看比分与后续赛程：\nhttps://wc2026worldcup.gith
+ ub.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 三四名决赛｜M101负者 vs M1
+ 02负者
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 三四名决赛｜M101负者 vs M102负者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-103@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260719T000000Z
+DTEND:20260719T001000Z
+SUMMARY:📊 赛果｜三四名决赛：M101负者 vs M102负者
+DESCRIPTION:三四名决赛 已结束\n👉 看比分与后续赛程：\nht
+ tps://wc2026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜三四名决赛：M101负者 vs M102负者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-match-104@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260719T190000Z
+DTEND:20260719T220000Z
+SUMMARY:🏆 决赛｜M101胜者 vs M102胜者
+DESCRIPTION:决赛\n📍 纽约 · MetLife Stadium\n第104场/共104场\n
+ 👉 看比分与后续赛程：\nhttps://wc2026worldcup.github.io/worldc
+ up/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:⏰ 15分钟后开球：🏆 决赛｜M101胜者 vs M102胜者
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:🟢 开球：🏆 决赛｜M101胜者 vs M102胜者
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wc2026-result-104@worldcup.local
+DTSTAMP:20260617T023543Z
+DTSTART:20260719T220000Z
+DTEND:20260719T221000Z
+SUMMARY:📊 赛果｜决赛：M101胜者 vs M102胜者
+DESCRIPTION:决赛 已结束\n👉 看比分与后续赛程：\nhttps://wc2
+ 026worldcup.github.io/worldcup/?from=cal
+URL:https://wc2026worldcup.github.io/worldcup/?from=cal
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:📊 赛果｜决赛：M101胜者 vs M102胜者
+END:VALARM
+END:VEVENT
+END:VCALENDAR

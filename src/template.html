@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>世界杯 2026 · 赛果与赛程</title>
+<style>
+  :root{
+    --bg:#EEF1F5; --card:#FFFFFF; --ink:#14181F; --muted:#697282; --faint:#A2AAB6;
+    --line:#E4E8EE; --turf:#1E8E5A; --turf-deep:#125537; --live:#E5484D; --amber:#C98A12;
+    --pill:#EEF4F0; --pill-ink:#1E6E48; --draw-bg:#EEF1F5; --draw-ink:#566070;
+    --shadow:0 1px 2px rgba(20,24,31,.05),0 6px 18px rgba(20,24,31,.06);
+    --mono:ui-monospace,"SF Mono","SFMono-Regular",Menlo,Consolas,monospace;
+    --cjk:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--cjk);font-size:16px;line-height:1.4;
+       -webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom)}
+  .wrap{max-width:560px;margin:0 auto}
+
+  header{position:sticky;top:0;z-index:20;background:rgba(238,241,245,.86);
+         backdrop-filter:saturate(160%) blur(12px);-webkit-backdrop-filter:saturate(160%) blur(12px);
+         border-bottom:1px solid var(--line)}
+  .hbar{max-width:560px;margin:0 auto;padding:14px 16px 10px}
+  .toprow{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .brand{display:flex;align-items:baseline;gap:8px;min-width:0}
+  .brand b{font-size:22px;font-weight:800;letter-spacing:-.02em}
+  .brand .yr{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--turf);letter-spacing:-.04em}
+  .fifa{flex:none;display:inline-flex;align-items:center;gap:5px;text-decoration:none;
+        background:var(--ink);color:#fff;font-size:13px;font-weight:600;padding:8px 12px;border-radius:999px}
+  .fifa:active{transform:scale(.97)}
+  .sub{margin-top:6px;font-size:12px;color:var(--muted);line-height:1.5}
+  .sub .tz{font-family:var(--mono)}
+
+  .seg{display:flex;gap:4px;margin-top:11px;background:#E2E7EE;padding:3px;border-radius:11px}
+  .seg button{flex:1;border:0;background:transparent;font-family:var(--cjk);
+              font-size:13px;font-weight:600;color:var(--muted);padding:7px 4px;border-radius:9px;cursor:pointer}
+  .seg button[aria-pressed="true"]{background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
+  .seg button .ct{font-family:var(--mono);font-size:11px;color:var(--faint);margin-left:3px}
+  .seg button[aria-pressed="true"] .ct{color:var(--turf)}
+
+  .meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;font-size:12px;color:var(--muted)}
+  .meta .upd{display:flex;align-items:center;gap:6px;min-width:0}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--faint);flex:none}
+  .dot.ok{background:var(--turf)} .dot.err{background:var(--live)}
+  .dot.load{background:var(--amber);animation:blink 1s infinite}
+  @keyframes blink{50%{opacity:.25}}
+  .actions{display:flex;gap:6px;flex:none}
+  .actions select,.refresh{font-family:var(--cjk);font-size:12px;color:var(--ink);
+        border:1px solid var(--line);background:var(--card);border-radius:8px;padding:5px 8px;cursor:pointer}
+  .refresh{font-weight:600}
+  .refresh:active{transform:scale(.97)}
+
+  main{padding:6px 12px 40px}
+  .day{margin-top:18px}
+  .dayhd{display:flex;align-items:baseline;gap:8px;padding:0 4px 8px}
+  .dayhd .d{font-size:15px;font-weight:800;letter-spacing:-.01em}
+  .dayhd .w{font-size:12px;color:var(--muted)}
+  .dayhd .rule{flex:1;height:1px;background:var(--line);align-self:center;margin-left:2px}
+
+  .card{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;
+        box-shadow:var(--shadow);padding:13px 14px;margin-bottom:10px;position:relative;overflow:hidden}
+  .card.live{border-color:rgba(229,72,77,.4)}
+  .chd{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}
+  .tags{display:flex;gap:6px;align-items:center;min-width:0}
+  .pill{font-size:11px;font-weight:700;color:var(--pill-ink);background:var(--pill);
+        padding:3px 8px;border-radius:999px;white-space:nowrap}
+  .pill.ko{color:var(--turf-deep)}
+  .state{font-size:11px;font-weight:700;letter-spacing:.02em;white-space:nowrap;flex:none}
+  .state.up{color:var(--faint)}
+  .state.fin{color:var(--muted)}
+  .state.live{color:var(--live);display:inline-flex;align-items:center;gap:5px}
+  /* draw coin badge (sits after each country name, mirrors the 胜 coin) */
+  .draw-badge{flex:none;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;
+        border-radius:50%;background:#fff;border:2px solid #2563EB;color:#2563EB;
+        font-size:11px;font-weight:800;line-height:1;margin-left:7px}
+  /* rolling football for live */
+  .ball{display:inline-block;font-size:14px;line-height:1;will-change:transform;
+        animation:roll 1s linear infinite alternate}
+  @keyframes roll{0%{transform:translateX(-3px) rotate(-18deg)}100%{transform:translateX(3px) rotate(342deg)}}
+
+  .grid{display:grid;grid-template-columns:1fr auto;column-gap:12px;align-items:center}
+  .sides{display:flex;flex-direction:column;gap:8px;min-width:0}
+  .side{display:flex;align-items:center;gap:9px;min-width:0}
+  .fl{font-size:20px;line-height:1;flex:none;width:24px;text-align:center}
+  .nm{font-size:17px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .side.tbd .nm{color:var(--faint);font-weight:600;font-size:15px}
+  .win-badge{flex:none;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;
+        border-radius:50%;background:#fff;border:2px solid var(--live);color:var(--live);
+        font-size:11px;font-weight:800;line-height:1;margin-left:7px}
+
+  .figure{flex:none;text-align:right;min-width:64px;display:flex;flex-direction:column;
+          align-items:flex-end;justify-content:center;gap:8px}
+  .scores{display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+  .sc{font-family:var(--mono);font-size:25px;font-weight:700;line-height:1;
+      font-variant-numeric:tabular-nums;color:var(--ink);min-height:25px;display:flex;align-items:center}
+  .sc.dim{color:var(--faint)}
+  .sc.liven{color:var(--live)}
+  .kick{display:flex;flex-direction:column;align-items:flex-end}
+  .kick .eyebrow{font-size:10px;font-weight:700;color:var(--faint);letter-spacing:.06em}
+  .kick .t{font-family:var(--mono);font-size:23px;font-weight:700;letter-spacing:-.02em;
+           font-variant-numeric:tabular-nums;color:var(--turf-deep)}
+
+  .foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:11px;
+        padding-top:10px;border-top:1px dashed var(--line);font-size:12px;color:var(--muted)}
+  .foot .loc{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  .foot .when{font-family:var(--mono);white-space:nowrap;flex:none;color:var(--faint)}
+  .foot .wlabel{font-family:var(--cjk);font-weight:600}
+
+  /* universal broadcast entry (mainland China rights holders) */
+  .liveentry{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px}
+  .liveentry .lelbl{font-size:12px;color:var(--muted);font-weight:700;margin-right:1px}
+  .wbtn{font-size:12px;font-weight:600;color:var(--turf-deep);background:var(--pill);
+        border:1px solid #CFE3D6;border-radius:999px;padding:5px 11px;text-decoration:none}
+  .wbtn:active{transform:scale(.96)}
+
+  .empty{text-align:center;color:var(--muted);font-size:14px;padding:48px 20px}
+  .legend{text-align:center;color:var(--faint);font-size:11px;margin-top:22px;line-height:1.7}
+
+  .card.clickable{cursor:pointer}
+  .card.clickable:active{transform:scale(.992)}
+  .wm-overlay{position:fixed;inset:0;z-index:50;background:rgba(20,24,31,.5);
+    display:flex;align-items:flex-end;justify-content:center;padding:14px}
+  .wm-overlay[hidden]{display:none}
+  .wm-card{background:var(--card);border-radius:18px;width:100%;max-width:420px;
+    padding:18px 16px calc(14px + env(safe-area-inset-bottom));box-shadow:0 -10px 44px rgba(0,0,0,.22)}
+  .wm-title{font-size:16px;font-weight:800;text-align:center;color:var(--ink)}
+  .wm-sub{font-size:13px;color:var(--muted);text-align:center;margin:5px 0 15px}
+  .wm-btn{display:block;text-align:center;text-decoration:none;font-size:16px;font-weight:700;
+    color:var(--turf-deep);background:var(--pill);border:1px solid #CFE3D6;border-radius:12px;
+    padding:13px;margin-bottom:9px}
+  .wm-btn:active{transform:scale(.99)}
+  .wm-cancel{display:block;width:100%;font-family:var(--cjk);font-size:15px;font-weight:600;
+    color:var(--muted);background:transparent;border:0;padding:11px;cursor:pointer}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap"></div>
+<header>
+  <div class="hbar">
+    <div class="toprow">
+      <div class="brand"><span>⚽</span><b>世界杯</b><span class="yr">2026</span></div>
+      <a class="fifa" id="fifaTop" target="_blank" rel="noopener">FIFA 官网 ↗</a>
+    </div>
+    <div class="sub">美 · 加 · 墨主办 &nbsp;·&nbsp; 6/11 – 7/19 &nbsp;·&nbsp; 共 104 场<br>
+      时间按你的设备时区显示 · 当前 <span class="tz" id="tzName">—</span></div>
+    <div class="seg" id="seg">
+      <button data-f="all" aria-pressed="true">全部<span class="ct" id="c-all"></span></button>
+      <button data-f="live" aria-pressed="false">进行中<span class="ct" id="c-live"></span></button>
+      <button data-f="fin" aria-pressed="false">已结束<span class="ct" id="c-fin"></span></button>
+      <button data-f="up" aria-pressed="false">未开始<span class="ct" id="c-up"></span></button>
+    </div>
+    <div class="meta">
+      <div class="upd"><span class="dot" id="updDot"></span><span id="updTxt">正在获取最新比分…</span></div>
+      <div class="actions">
+        <select id="stageSel" aria-label="阶段筛选">
+          <option value="all">全部阶段</option>
+          <option value="group">小组赛</option>
+          <option value="knock">淘汰赛</option>
+        </select>
+        <button class="refresh" id="refreshBtn">刷新比分</button>
+      </div>
+    </div>
+    <div class="liveentry">
+      <span class="lelbl">📡 直播入口</span>
+      <a class="wbtn" href="https://www.yangshipin.cn/" target="_blank" rel="noopener">央视频</a>
+      <a class="wbtn" href="https://www.miguvideo.com/" target="_blank" rel="noopener">咪咕视频</a>
+      <a class="wbtn" href="https://www.xiaohongshu.com/" target="_blank" rel="noopener">小红书</a>
+    </div>
+  </div>
+</header>
+<main id="list"></main>
+
+<div id="watchModal" class="wm-overlay" hidden>
+  <div class="wm-card" role="dialog" aria-modal="true" aria-label="选择直播平台">
+    <div class="wm-title">选择直播平台</div>
+    <div class="wm-sub" id="wmSub"></div>
+    <a class="wm-btn" href="https://www.yangshipin.cn/" target="_blank" rel="noopener">📺 央视频</a>
+    <a class="wm-btn" href="https://www.miguvideo.com/" target="_blank" rel="noopener">📱 咪咕视频</a>
+    <a class="wm-btn" href="https://www.xiaohongshu.com/" target="_blank" rel="noopener">📕 小红书</a>
+    <button class="wm-cancel" id="wmCancel" type="button">取消</button>
+  </div>
+</div>
+
+<script>
+const FIFA="__FIFA__";
+const DATA=__DATA__;
+document.getElementById('fifaTop').href=FIFA;
+
+const TZ=Intl.DateTimeFormat().resolvedOptions().timeZone||"本地";
+document.getElementById('tzName').textContent=TZ;
+
+const KNOCK=new Set(["round-of-32","round-of-16","quarter-finals","semi-finals","third-place","final"]);
+function isKnock(m){return KNOCK.has(m.sk);}
+function koMs(m){return Date.parse(m.ko);}
+function endMs(m){return koMs(m)+(isKnock(m)?180:135)*60000;}
+const fmtTime=new Intl.DateTimeFormat('zh-CN',{hour:'2-digit',minute:'2-digit',hour12:false});
+const fmtDay=new Intl.DateTimeFormat('zh-CN',{month:'long',day:'numeric'});
+const fmtWeek=new Intl.DateTimeFormat('zh-CN',{weekday:'short'});
+const fmtMD=new Intl.DateTimeFormat('zh-CN',{month:'numeric',day:'numeric'});
+function dayKey(m){const d=new Date(koMs(m));return d.getFullYear()+'-'+d.getMonth()+'-'+d.getDate();}
+
+function norm(s){return (s||"").toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');}
+const ALIAS={southkorea:'korearepublic',korea:'korearepublic',republicofkorea:'korearepublic',
+ turkey:'turkiye',usa:'unitedstates',unitedstatesofamerica:'unitedstates',us:'unitedstates',
+ iran:'iriran',capeverde:'caboverde',ivorycoast:'cotedivoire',
+ drcongo:'congodr',democraticrepublicofthecongo:'congodr',congokinshasa:'congodr',congo:'congodr',
+ bosnia:'bosniaandherzegovina',bosniaherzegovina:'bosniaandherzegovina',bih:'bosniaandherzegovina',
+ czechrepublic:'czechia',czech:'czechia',saudi:'saudiarabia',uzbek:'uzbekistan'};
+function canon(s){const n=norm(s);return ALIAS[n]||n;}
+function pairKey(a,b){return [canon(a),canon(b)].sort().join('|');}
+
+const byPair={};
+DATA.forEach(m=>{ if(!isKnock(m)) byPair[pairKey(m.h,m.a)]=m; });
+
+let RESULTS={};
+function statusOf(m){
+  const r=RESULTS[m.n], now=Date.now();
+  if(r) return r.live?'live':'fin';
+  if(now<koMs(m)) return 'up';
+  if(now<endMs(m)) return 'live';
+  return 'fin';
+}
+
+let didScroll=false;
+function render(){
+  const fStat=document.querySelector('#seg button[aria-pressed="true"]').dataset.f;
+  const fStage=document.getElementById('stageSel').value;
+  const counts={all:0,live:0,fin:0,up:0};
+  const list=document.getElementById('list'); list.innerHTML='';
+  const sorted=[...DATA].sort((a,b)=>koMs(a)-koMs(b));
+
+  sorted.forEach(m=>{
+    if(fStage==='group'&&isKnock(m))return; if(fStage==='knock'&&!isKnock(m))return;
+    const s=statusOf(m); counts.all++; counts[s]++;
+  });
+  document.getElementById('c-all').textContent=counts.all;
+  document.getElementById('c-live').textContent=counts.live;
+  document.getElementById('c-fin').textContent=counts.fin;
+  document.getElementById('c-up').textContent=counts.up;
+
+  let curDay=null, dayEl=null, shown=0, firstNext=null;
+  sorted.forEach(m=>{
+    if(fStage==='group'&&isKnock(m))return; if(fStage==='knock'&&!isKnock(m))return;
+    const s=statusOf(m);
+    if(fStat!=='all'&&fStat!==s)return;
+    shown++;
+    const dk=dayKey(m);
+    if(dk!==curDay){
+      curDay=dk; dayEl=document.createElement('section'); dayEl.className='day';
+      const d=new Date(koMs(m));
+      dayEl.innerHTML='<div class="dayhd"><span class="d">'+fmtDay.format(d)+
+        '</span><span class="w">'+fmtWeek.format(d)+'</span><span class="rule"></span></div>';
+      list.appendChild(dayEl);
+    }
+    dayEl.appendChild(card(m,s));
+    if(!firstNext&&(s==='up'||s==='live')) firstNext=dayEl.lastChild;
+  });
+
+  if(shown===0) list.innerHTML='<div class="empty">这个筛选下暂时没有比赛。<br>换个标签看看 🙂</div>';
+  else list.insertAdjacentHTML('beforeend',
+    '<div class="legend">比分来自公开体育数据源，仅供参考，以 FIFA 官方为准<br>'+
+    '点右上角“刷新比分”获取最新结果</div>');
+
+  if(!didScroll&&firstNext){ didScroll=true;
+    setTimeout(()=>firstNext.scrollIntoView({behavior:'smooth',block:'center'}),250); }
+}
+
+function card(m,s){
+  const el=document.createElement('div');
+  el.className='card'+(s==='live'?' live':'');
+  const r=RESULTS[m.n], tbd=isKnock(m);
+  const pill=isKnock(m)?'<span class="pill ko">🏆 '+m.st+'</span>'
+                       :'<span class="pill">'+(m.g?m.g+'组 · ':'')+m.st+'</span>';
+
+  const draw = r && !r.live && r.hs===r.as;
+  let hB=null,aB=null;
+  if(r&&!r.live){ if(draw){hB='draw';aB='draw';} else if(r.hs>r.as){hB='win';} else {aB='win';} }
+
+  let state;
+  if(s==='live') state='<span class="state live"><span class="ball">⚽</span>进行中 · 看直播 ›</span>';
+  else if(s==='fin') state='<span class="state fin">完场</span>';
+  else state='<span class="state up">未开始</span>';
+
+  const side=(flag,name,badge,isTbd)=>
+    '<div class="side'+(isTbd?' tbd':'')+'"><span class="fl">'+(flag||'🏳️')+'</span>'+
+    '<span class="nm">'+name+'</span>'+
+    (badge==='win'?'<span class="win-badge">胜</span>':badge==='draw'?'<span class="draw-badge">平</span>':'')+
+    '</div>';
+
+  let figure;
+  if(r){ // we have a score (live or finished)
+    const cls = r.live ? ' liven' : '';
+    figure='<div class="scores"><span class="sc'+cls+'">'+r.hs+'</span><span class="sc'+cls+'">'+r.as+'</span></div>';
+  }else if(s==='fin'){
+    figure='<div class="scores"><span class="sc dim">–</span><span class="sc dim">–</span></div>';
+  }else if(s==='live'){
+    figure='<div class="scores"><span class="sc dim">·</span><span class="sc dim">·</span></div>';
+  }else{
+    figure='<div class="kick"><span class="eyebrow">开球</span><span class="t">'+
+           fmtTime.format(new Date(koMs(m)))+'</span></div>';
+  }
+
+  const whenHtml = (s==='up') ? '' :
+    '<span class="when"><span class="wlabel">比赛时间：</span>'+
+    fmtMD.format(new Date(koMs(m)))+' '+fmtTime.format(new Date(koMs(m)))+'</span>';
+  el.innerHTML=
+    '<div class="chd"><div class="tags">'+pill+'</div>'+state+'</div>'+
+    '<div class="grid"><div class="sides">'+
+      side(m.hf,m.hz,hB,tbd)+side(m.af,m.az,aB,tbd)+
+    '</div><div class="figure">'+figure+'</div></div>'+
+    '<div class="foot"><span class="loc">📍 '+m.c+' · '+m.v+'</span>'+whenHtml+'</div>';
+  if(s==='live'){
+    el.classList.add('clickable');
+    const wt = isKnock(m) ? (m.st+'｜'+m.hz+' vs '+m.az) : (m.hf+' '+m.hz+' vs '+m.af+' '+m.az);
+    el.addEventListener('click',()=>openWatch(wt));
+  }
+  return el;
+}
+
+function utcYMD(ms){const d=new Date(ms);
+  return ''+d.getUTCFullYear()+String(d.getUTCMonth()+1).padStart(2,'0')+String(d.getUTCDate()).padStart(2,'0');}
+function setUpd(state,txt){
+  document.getElementById('updDot').className='dot '+state;
+  document.getElementById('updTxt').textContent=txt;
+}
+
+// ---- source 1: ESPN public API (works in any normal browser / when hosted) ----
+async function fromESPN(){
+  const now=Date.now(); const dset=new Set();
+  DATA.forEach(m=>{ if(isKnock(m))return; if(koMs(m)>now)return;
+    dset.add(utcYMD(koMs(m))); dset.add(utcYMD(koMs(m)-86400000)); });
+  dset.add(utcYMD(now)); dset.add(utcYMD(now+86400000)); dset.add(utcYMD(now-86400000));
+  const base="https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=";
+  let parts;
+  try{ parts=await Promise.all([...dset].map(d=>fetch(base+d).then(r=>r.ok?r.json():null).catch(()=>null))); }
+  catch(e){ return null; }
+  const next={}; let any=false;
+  parts.forEach(j=>{ if(!j||!Array.isArray(j.events))return; any=true;
+    j.events.forEach(ev=>{
+      const comp=ev.competitions&&ev.competitions[0]; if(!comp)return;
+      const cs=comp.competitors||[]; if(cs.length<2)return;
+      const H=cs.find(c=>c.homeAway==='home')||cs[0];
+      const A=cs.find(c=>c.homeAway==='away')||cs[1];
+      const st=((comp.status&&comp.status.type&&comp.status.type.state)||'').toLowerCase();
+      if(st!=='in'&&st!=='post')return;
+      const nH=(H.team&&(H.team.displayName||H.team.name||H.team.shortDisplayName))||'';
+      const nA=(A.team&&(A.team.displayName||A.team.name||A.team.shortDisplayName))||'';
+      const fx=byPair[pairKey(nH,nA)]; if(!fx)return;
+      const hs=parseInt(H.score,10), as=parseInt(A.score,10);
+      if(isNaN(hs)||isNaN(as))return;
+      const orient=canon(fx.h)===canon(nH);
+      next[fx.n]={hs:orient?hs:as, as:orient?as:hs, live:st==='in'};
+    });
+  });
+  return any? next : null;
+}
+
+// ---- source 2: Claude + web search (fallback; works inside Claude preview) ----
+async function fromClaude(){
+  const names=[...new Set(DATA.filter(m=>!isKnock(m)).flatMap(m=>[m.h,m.a]))];
+  const prompt="Use web search to find the LATEST 2026 FIFA World Cup match results. "+
+   "Return ONLY minified JSON, no markdown, no fences, no commentary. "+
+   "Schema: {\"m\":[[\"home\",\"away\",homeScore,awayScore,live]]}. "+
+   "home/away are names taken EXACTLY from this list -> "+JSON.stringify(names)+
+   " ; scores are integers; live=1 if in progress else 0. Include EVERY match already kicked off. "+
+   "If a team is not in the list, skip it. If none started, return {\"m\":[]}.";
+  try{
+    const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:1000,
+        messages:[{role:"user",content:prompt}],
+        tools:[{type:"web_search_20250305",name:"web_search"}]})});
+    const data=await res.json();
+    const text=(data.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("");
+    const a=text.indexOf("{"), b=text.lastIndexOf("}"); if(a<0||b<0) return null;
+    const obj=JSON.parse(text.slice(a,b+1)); const next={};
+    (obj.m||[]).forEach(row=>{ if(!Array.isArray(row)||row.length<4)return;
+      const h=row[0],a2=row[1],hs=+row[2],as2=+row[3],live=row[4]==1;
+      const fx=byPair[pairKey(h,a2)]; if(!fx)return;
+      const orient=canon(fx.h)===canon(h);
+      next[fx.n]={hs:orient?hs:as2, as:orient?as2:hs, live:live}; });
+    return next;
+  }catch(e){ return null; }
+}
+
+async function fetchScores(){
+  setUpd('load','正在获取最新比分…');
+  let next=await fromESPN();
+  if(!next || Object.keys(next).length===0){
+    const alt=await fromClaude();
+    if(alt) next=alt;
+  }
+  if(next){
+    RESULTS=next;
+    const n=Object.keys(next).length;
+    const t=new Date().toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit',hour12:false});
+    setUpd('ok','比分更新于 '+t+' · 已收录 '+n+' 场');
+    render();
+  }else{
+    setUpd('err','比分暂时取不到，稍后再点“刷新比分”');
+  }
+}
+
+document.getElementById('seg').addEventListener('click',e=>{
+  const btn=e.target.closest('button'); if(!btn)return;
+  document.querySelectorAll('#seg button').forEach(b=>b.setAttribute('aria-pressed',b===btn));
+  render();
+});
+document.getElementById('stageSel').addEventListener('change',render);
+document.getElementById('refreshBtn').addEventListener('click',fetchScores);
+
+// live-match card -> choose a broadcast platform
+const wm=document.getElementById('watchModal');
+function openWatch(t){ document.getElementById('wmSub').textContent=t+' · 进行中'; wm.hidden=false; }
+function closeWatch(){ wm.hidden=true; }
+document.getElementById('wmCancel').addEventListener('click',closeWatch);
+wm.addEventListener('click',e=>{ if(e.target===wm) closeWatch(); });
+document.querySelectorAll('#watchModal .wm-btn').forEach(b=>b.addEventListener('click',()=>setTimeout(closeWatch,60)));
+
+render();
+fetchScores();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ac81dc56149740369facaed557013675"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
