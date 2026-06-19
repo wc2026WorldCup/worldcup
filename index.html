@@ -133,6 +133,76 @@
   .wm-btn:active{transform:scale(.99)}
   .wm-cancel{display:block;width:100%;font-family:var(--cjk);font-size:15px;font-weight:600;
     color:var(--muted);background:transparent;border:0;padding:11px;cursor:pointer}
+  /* ===== 视图切换 赛程/积分榜 ===== */
+  .viewtabs{display:flex;gap:6px;margin:11px 0 0;background:#E2E7EE;padding:3px;border-radius:11px}
+  .viewtabs button{flex:1;border:0;cursor:pointer;font-family:var(--cjk);font-size:13px;font-weight:700;
+    color:var(--muted);background:transparent;padding:8px 4px;border-radius:9px}
+  .viewtabs button[aria-pressed="true"]{background:var(--turf);color:#fff;box-shadow:var(--shadow)}
+  /* ===== 积分榜 / 晋级预测 ===== */
+  #standings{padding:6px 12px 44px}
+  #standings[hidden]{display:none}
+  .stnote{background:#FFF8E6;border:1px solid #F0E0B0;border-radius:12px;color:#6b5618;
+    font-size:12px;line-height:1.65;padding:10px 12px;margin:10px 2px 16px}
+  .stnote b{color:#5a4710}
+  .grp{margin:0 0 18px}
+  .grp h3{font-size:15px;font-weight:800;margin:0 0 8px;padding:0 2px;display:flex;align-items:center;gap:7px}
+  .grp h3 .gb{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;
+    padding:0 6px;border-radius:7px;background:var(--turf);color:#fff;font-size:12px;font-weight:800}
+  table.stt{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;overflow:hidden;font-size:13px;box-shadow:var(--shadow)}
+  table.stt th,table.stt td{padding:8px 3px;text-align:center;border-bottom:1px solid var(--line)}
+  table.stt thead th{font-size:11px;color:var(--muted);font-weight:700;background:#F6F8FB}
+  table.stt tr:last-child td{border-bottom:0}
+  table.stt .tm{text-align:left;padding-left:9px;white-space:nowrap;overflow:hidden;
+    text-overflow:ellipsis;max-width:0;width:99%}
+  table.stt .tm .fl{font-size:15px;width:auto;margin-right:6px;text-align:left}
+  table.stt .rk{width:24px;color:var(--faint);font-family:var(--mono)}
+  table.stt td.pt{font-weight:800;color:var(--ink)}
+  table.stt tr.q1 td,table.stt tr.q2 td{background:rgba(30,142,90,.10)}
+  table.stt tr.q3 td{background:rgba(201,138,18,.13)}
+  table.stt tr.q1 .rk,table.stt tr.q2 .rk{color:var(--turf);font-weight:800}
+  table.stt tr.q3 .rk{color:var(--amber);font-weight:800}
+  .qbadge{display:inline-block;font-size:10px;font-weight:800;padding:1px 6px;border-radius:6px}
+  .qbadge.in{background:var(--pill);color:var(--pill-ink)}
+  .qbadge.out{background:#F3E0E0;color:#9B2C2C}
+  .q32 h3{font-size:15px;font-weight:800;margin:18px 2px 10px}
+  .qcol{margin-bottom:13px}
+  .qcol .lbl{font-size:12px;color:var(--muted);font-weight:700;margin:0 2px 7px}
+  .qchips{display:flex;flex-wrap:wrap;gap:6px}
+  .qchip{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--line);
+    border-radius:999px;padding:5px 10px;font-size:13px;font-weight:600;box-shadow:var(--shadow)}
+  .qchip .fl{font-size:15px;width:auto}
+  .qchip .g{color:var(--faint);font-family:var(--mono);font-size:11px}
+  /* ===== 阶段标签(赛程按轮次切换) ===== */
+  .stagetabs{display:flex;gap:6px;margin:11px -2px 0;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    padding:0 2px 2px;scrollbar-width:none}
+  .stagetabs::-webkit-scrollbar{display:none}
+  .stagetabs button{flex:0 0 auto;border:1px solid var(--line);background:var(--card);cursor:pointer;
+    font-family:var(--cjk);font-size:13px;font-weight:700;color:var(--muted);padding:7px 13px;border-radius:999px}
+  .stagetabs button[aria-pressed="true"]{background:var(--turf);color:#fff;border-color:var(--turf)}
+  /* ===== 淘汰赛对阵 / 晋级 bracket ===== */
+  .brkrd{margin:0 0 14px}
+  .brkh{font-size:14px;font-weight:800;margin:0 2px 8px;display:flex;align-items:center;gap:8px}
+  .brkh .brkc{font-size:11px;font-weight:700;color:var(--faint);font-family:var(--mono)}
+  .brkwait{font-size:12px;color:var(--faint);background:var(--card);border:1px dashed var(--line);
+    border-radius:10px;padding:10px 12px}
+  .brkm{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;box-shadow:var(--shadow);padding:9px 11px;margin-bottom:7px}
+  .brkt{flex:1;min-width:0;display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brkt .fl{font-size:16px;flex:none}
+  .brkt.aw{justify-content:flex-end;text-align:right}
+  .brkt.win{font-weight:800;color:var(--turf-deep)}
+  .brkt.tbd{color:var(--faint)}
+  .brkok{color:var(--turf);font-weight:800}
+  .brkmid{flex:none;min-width:52px;text-align:center;font-family:var(--mono)}
+  .brks{font-size:15px;font-weight:800}
+  .brkd{color:var(--faint);margin:0 2px}
+  .brkvs{font-size:12px;color:var(--faint)}
+  .champ{margin-top:8px;background:linear-gradient(90deg,rgba(201,138,18,.18),rgba(201,138,18,.04));
+    border:1px solid #EBD9A8;border-radius:12px;padding:12px 14px;font-size:16px;font-weight:800;
+    display:flex;align-items:center;gap:8px}
+  .champ .fl{font-size:20px}
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -146,6 +216,19 @@
     </div>
     <div class="sub">美 · 加 · 墨主办 &nbsp;·&nbsp; 6/11 – 7/19 &nbsp;·&nbsp; 共 104 场<br>
       时间按你的设备时区显示 · 当前 <span class="tz" id="tzName">—</span></div>
+    <div class="viewtabs" id="viewtabs">
+      <button data-v="schedule" aria-pressed="true">赛程</button>
+      <button data-v="table" aria-pressed="false">积分榜 · 晋级</button>
+    </div>
+    <div class="stagetabs" id="stageTabs">
+      <button data-st="all">全部</button>
+      <button data-st="group-stage">小组赛</button>
+      <button data-st="round-of-32">32强</button>
+      <button data-st="round-of-16">16强</button>
+      <button data-st="quarter-finals">8强</button>
+      <button data-st="semi-finals">4强</button>
+      <button data-st="finals">决赛</button>
+    </div>
     <div class="seg" id="seg">
       <button data-f="all" aria-pressed="true">全部<span class="ct" id="c-all"></span></button>
       <button data-f="live" aria-pressed="false">进行中<span class="ct" id="c-live"></span></button>
@@ -155,15 +238,10 @@
     <div class="meta">
       <div class="upd"><span class="dot" id="updDot"></span><span id="updTxt">正在获取最新比分…</span></div>
       <div class="actions">
-        <select id="stageSel" aria-label="阶段筛选">
-          <option value="all">全部阶段</option>
-          <option value="group">小组赛</option>
-          <option value="knock">淘汰赛</option>
-        </select>
         <button class="refresh" id="refreshBtn">刷新比分</button>
       </div>
     </div>
-    <div class="liveentry">
+    <div class="liveentry" id="liveEntry">
       <span class="lelbl">📡 直播入口</span>
       <a class="wbtn" href="https://www.yangshipin.cn/" target="_blank" rel="noopener">央视频</a>
       <a class="wbtn" href="https://www.miguvideo.com/" target="_blank" rel="noopener">咪咕视频</a>
@@ -172,6 +250,7 @@
   </div>
 </header>
 <main id="list"></main>
+<section id="standings" hidden></section>
 
 <div id="watchModal" class="wm-overlay" hidden>
   <div class="wm-card" role="dialog" aria-modal="true" aria-label="选择直播平台">
@@ -194,6 +273,7 @@ document.getElementById('tzName').textContent=TZ;
 
 const KNOCK=new Set(["round-of-32","round-of-16","quarter-finals","semi-finals","third-place","final"]);
 function isKnock(m){return KNOCK.has(m.sk);}
+function teamsKnown(m){return !!(m.hf&&m.af);}   // 队伍已确定:小组赛恒真;淘汰赛回填真实对阵后为真
 function koMs(m){return Date.parse(m.ko);}
 function endMs(m){return koMs(m)+(isKnock(m)?180:135)*60000;}
 const fmtTime=new Intl.DateTimeFormat('zh-CN',{hour:'2-digit',minute:'2-digit',hour12:false});
@@ -212,8 +292,70 @@ const ALIAS={southkorea:'korearepublic',korea:'korearepublic',republicofkorea:'k
 function canon(s){const n=norm(s);return ALIAS[n]||n;}
 function pairKey(a,b){return [canon(a),canon(b)].sort().join('|');}
 
+// === STD_START (纯函数:按 FIFA 规则算积分榜+晋级32强;由 scripts/test_standings.js 提取单测) ===
+function computeStandings(DATA, RESULTS){
+  var KN={"round-of-32":1,"round-of-16":1,"quarter-finals":1,"semi-finals":1,"third-place":1,"final":1};
+  function fin(m){var r=RESULTS[m.n];return (r&&!r.live)?r:null;}            // 只算已完赛、非进行中
+  var groups={};
+  DATA.forEach(function(m){
+    if(KN[m.sk]||!m.g)return;
+    if(!groups[m.g])groups[m.g]={};
+    var G=groups[m.g];
+    if(!G[m.h])G[m.h]={eng:m.h,name:m.hz,flag:m.hf,P:0,W:0,D:0,L:0,GF:0,GA:0,GD:0,Pts:0};
+    if(!G[m.a])G[m.a]={eng:m.a,name:m.az,flag:m.af,P:0,W:0,D:0,L:0,GF:0,GA:0,GD:0,Pts:0};
+  });
+  DATA.forEach(function(m){
+    if(KN[m.sk]||!m.g)return; var r=fin(m); if(!r)return;
+    var H=groups[m.g][m.h],A=groups[m.g][m.a]; if(!H||!A)return;
+    H.P++;A.P++; H.GF+=r.hs;H.GA+=r.as; A.GF+=r.as;A.GA+=r.hs;
+    if(r.hs>r.as){H.W++;A.L++;H.Pts+=3;}
+    else if(r.hs<r.as){A.W++;H.L++;A.Pts+=3;}
+    else{H.D++;A.D++;H.Pts++;A.Pts++;}
+  });
+  function h2h(g,members){                                                   // 同分球队之间的相互战绩
+    var mini={}; members.forEach(function(e){mini[e]={Pts:0,GD:0,GF:0};});
+    DATA.forEach(function(m){
+      if(KN[m.sk]||m.g!==g)return;
+      if(members.indexOf(m.h)<0||members.indexOf(m.a)<0)return;
+      var r=RESULTS[m.n]; if(!r||r.live)return;
+      var H=mini[m.h],A=mini[m.a];
+      H.GF+=r.hs;H.GD+=(r.hs-r.as); A.GF+=r.as;A.GD+=(r.as-r.hs);
+      if(r.hs>r.as)H.Pts+=3; else if(r.hs<r.as)A.Pts+=3; else{H.Pts++;A.Pts++;}
+    });
+    return mini;
+  }
+  var out={};
+  Object.keys(groups).forEach(function(g){
+    var arr=Object.keys(groups[g]).map(function(k){return groups[g][k];});
+    arr.forEach(function(t){t.GD=t.GF-t.GA;});
+    arr.sort(function(a,b){return b.Pts-a.Pts||b.GD-a.GD||b.GF-a.GF;});      // 1.积分 2.净胜球 3.进球
+    var i=0;                                                                 // 三项全平 -> 相互战绩
+    while(i<arr.length){
+      var j=i+1;
+      while(j<arr.length&&arr[j].Pts===arr[i].Pts&&arr[j].GD===arr[i].GD&&arr[j].GF===arr[i].GF)j++;
+      if(j-i>1){
+        var members=arr.slice(i,j).map(function(t){return t.eng;});
+        var mini=h2h(g,members);
+        var sub=arr.slice(i,j).sort(function(a,b){
+          return mini[b.eng].Pts-mini[a.eng].Pts||mini[b.eng].GD-mini[a.eng].GD||mini[b.eng].GF-mini[a.eng].GF;});
+        for(var k=0;k<sub.length;k++)arr[i+k]=sub[k];
+      }
+      i=j;
+    }
+    out[g]=arr;
+  });
+  var thirds=Object.keys(out).filter(function(g){return out[g].length>=3;})  // 12 个小组第3名跨组排名
+    .map(function(g){return {g:g,t:out[g][2]};});
+  thirds.sort(function(a,b){return b.t.Pts-a.t.Pts||b.t.GD-a.t.GD||b.t.GF-a.t.GF;});
+  thirds.forEach(function(x,idx){x.qualified=idx<8;});                       // 取前 8 个最佳第3名
+  var winners=Object.keys(out).sort().map(function(g){return {g:g,t:out[g][0]};}).filter(function(x){return x.t;});
+  var runners=Object.keys(out).sort().map(function(g){return {g:g,t:out[g][1]};}).filter(function(x){return x.t;});
+  return {groups:out,thirds:thirds,winners:winners,runners:runners};
+}
+// === STD_END ===
+
 const byPair={};
-DATA.forEach(m=>{ if(!isKnock(m)) byPair[pairKey(m.h,m.a)]=m; });
+DATA.forEach(m=>{ if(teamsKnown(m)) byPair[pairKey(m.h,m.a)]=m; });   // 含已确定的淘汰赛对阵
 
 let RESULTS={};
 function statusOf(m){
@@ -224,16 +366,16 @@ function statusOf(m){
   return 'fin';
 }
 
-let didScroll=false;
+let landedDone=false, lastNext=null, scoreRenders=0, curStage='all';
 function render(){
   const fStat=document.querySelector('#seg button[aria-pressed="true"]').dataset.f;
-  const fStage=document.getElementById('stageSel').value;
+  const fStage=curStage;
   const counts={all:0,live:0,fin:0,up:0};
   const list=document.getElementById('list'); list.innerHTML='';
   const sorted=[...DATA].sort((a,b)=>koMs(a)-koMs(b));
 
   sorted.forEach(m=>{
-    if(fStage==='group'&&isKnock(m))return; if(fStage==='knock'&&!isKnock(m))return;
+    if(!stageMatch(m,fStage))return;
     const s=statusOf(m); counts.all++; counts[s]++;
   });
   document.getElementById('c-all').textContent=counts.all;
@@ -243,7 +385,7 @@ function render(){
 
   let curDay=null, dayEl=null, shown=0, firstNext=null;
   sorted.forEach(m=>{
-    if(fStage==='group'&&isKnock(m))return; if(fStage==='knock'&&!isKnock(m))return;
+    if(!stageMatch(m,fStage))return;
     const s=statusOf(m);
     if(fStat!=='all'&&fStat!==s)return;
     shown++;
@@ -264,14 +406,31 @@ function render(){
     '<div class="legend">比分来自公开体育数据源，仅供参考，以 FIFA 官方为准<br>'+
     '点右上角“刷新比分”获取最新结果</div>');
 
-  if(!didScroll&&firstNext){ didScroll=true;
-    setTimeout(()=>firstNext.scrollIntoView({behavior:'smooth',block:'center'}),250); }
+  lastNext=firstNext;   // 记录「已结束 ↔ 未开始」交界,landBoundary() 据此定位
+}
+
+// 阶段标签:把每个 sk 归到一个标签;'finals' 含决赛+三四名
+function stageMatch(m,st){
+  if(st==='all')return true;
+  if(st==='finals')return m.sk==='final'||m.sk==='third-place';
+  return m.sk===st;
+}
+// 当前轮次 = 最早一场「未结束」比赛所属阶段(小组赛打完就自动跳到 32 强,依此类推)
+function currentStageTab(){
+  const up=[...DATA].sort((a,b)=>koMs(a)-koMs(b)).find(m=>statusOf(m)!=='fin');
+  if(!up)return 'finals';
+  return (up.sk==='final'||up.sk==='third-place')?'finals':up.sk;
+}
+function setStage(v){
+  curStage=v;
+  document.querySelectorAll('#stageTabs button').forEach(b=>b.setAttribute('aria-pressed', b.dataset.st===v?'true':'false'));
+  render();
 }
 
 function card(m,s){
   const el=document.createElement('div');
   el.className='card'+(s==='live'?' live':'');
-  const r=RESULTS[m.n], tbd=isKnock(m);
+  const r=RESULTS[m.n], tbd=isKnock(m)&&!teamsKnown(m);
   const pill=isKnock(m)?'<span class="pill ko">🏆 '+m.st+'</span>'
                        :'<span class="pill">'+(m.g?m.g+'组 · ':'')+m.st+'</span>';
 
@@ -330,7 +489,7 @@ function setUpd(state,txt){
 // ---- source 1: ESPN public API (works in any normal browser / when hosted) ----
 async function fromESPN(){
   const now=Date.now(); const dset=new Set();
-  DATA.forEach(m=>{ if(isKnock(m))return; if(koMs(m)>now)return;
+  DATA.forEach(m=>{ if(!teamsKnown(m))return; if(koMs(m)>now)return;
     dset.add(utcYMD(koMs(m))); dset.add(utcYMD(koMs(m)-86400000)); });
   dset.add(utcYMD(now)); dset.add(utcYMD(now+86400000)); dset.add(utcYMD(now-86400000));
   const base="https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=";
@@ -352,7 +511,9 @@ async function fromESPN(){
       const hs=parseInt(H.score,10), as=parseInt(A.score,10);
       if(isNaN(hs)||isNaN(as))return;
       const orient=canon(fx.h)===canon(nH);
-      next[fx.n]={hs:orient?hs:as, as:orient?as:hs, live:st==='in'};
+      let w=H.winner===true?'h':A.winner===true?'a':null;   // ESPN 胜者标志(淘汰赛点球也准)
+      if(!orient)w=(w==='h'?'a':w==='a'?'h':null);
+      next[fx.n]={hs:orient?hs:as, as:orient?as:hs, live:st==='in', w:w};
     });
   });
   return any? next : null;
@@ -399,8 +560,11 @@ async function fetchScores(){
     const t=new Date().toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit',hour12:false});
     setUpd('ok','比分更新于 '+t+' · 已收录 '+n+' 场');
     render();
+    renderStandings();
+    if(++scoreRenders===1){ landedDone=false; landBoundary(); }  // 比分首次到位后重新定位(初次定位会被本次重渲染打断)
   }else{
     setUpd('err','比分暂时取不到，稍后再点“刷新比分”');
+    landBoundary();
   }
 }
 
@@ -409,7 +573,11 @@ document.getElementById('seg').addEventListener('click',e=>{
   document.querySelectorAll('#seg button').forEach(b=>b.setAttribute('aria-pressed',b===btn));
   render();
 });
-document.getElementById('stageSel').addEventListener('change',render);
+document.getElementById('stageTabs').addEventListener('click',function(e){
+  const b=e.target.closest('button'); if(!b)return;
+  setStage(b.dataset.st);
+  window.scrollTo({top:0,behavior:'smooth'});   // 手动切轮次:回到该轮开头
+});
 document.getElementById('refreshBtn').addEventListener('click',fetchScores);
 
 // live-match card -> choose a broadcast platform
@@ -420,8 +588,127 @@ document.getElementById('wmCancel').addEventListener('click',closeWatch);
 wm.addEventListener('click',e=>{ if(e.target===wm) closeWatch(); });
 document.querySelectorAll('#watchModal .wm-btn').forEach(b=>b.addEventListener('click',()=>setTimeout(closeWatch,60)));
 
-render();
+function escH(s){return (''+s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+function renderStandings(){
+  const box=document.getElementById('standings');
+  const S=computeStandings(DATA,RESULTS);
+  let played=0,total=0;
+  DATA.forEach(m=>{ if(m.g&&!isKnock(m)){ total++; if(RESULTS[m.n]&&!RESULTS[m.n].live) played++; } });
+  let h='<div class="stnote">🔮 <b>晋级预测</b> · 按当前比分实时推算('+played+'/'+total+' 场小组赛已完);'+
+    '小组赛 6/27 才全部结束,排名会随比分变化,<b>仅供参考</b>。<br>'+
+    '<span style="color:var(--turf);font-weight:800">绿</span> 预计小组前 2 直接晋级 · '+
+    '<span style="color:var(--amber);font-weight:800">黄</span> 预计最佳第 3 名晋级(12 组取最好的 8 个)。</div>';
+  Object.keys(S.groups).sort().forEach(g=>{
+    const rows=S.groups[g];
+    const q3=S.thirds.find(x=>x.g===g&&x.qualified);
+    h+='<div class="grp"><h3><span class="gb">'+g+'</span>组</h3>'+
+       '<table class="stt"><thead><tr><th class="rk">#</th><th class="tm">球队</th>'+
+       '<th>场</th><th>胜</th><th>平</th><th>负</th><th>净</th><th>积</th></tr></thead><tbody>';
+    rows.forEach((t,i)=>{
+      const cls=i===0?'q1':i===1?'q2':((i===2&&q3)?'q3':'');
+      const gd=(t.GD>0?'+':'')+t.GD;
+      h+='<tr class="'+cls+'"><td class="rk">'+(i+1)+'</td>'+
+         '<td class="tm"><span class="fl">'+(t.flag||'🏳️')+'</span>'+escH(t.name)+'</td>'+
+         '<td>'+t.P+'</td><td>'+t.W+'</td><td>'+t.D+'</td><td>'+t.L+'</td>'+
+         '<td>'+gd+'</td><td class="pt">'+t.Pts+'</td></tr>';
+    });
+    h+='</tbody></table></div>';
+  });
+  h+='<div class="grp"><h3><span class="gb" style="background:var(--amber)">3</span>最佳第三名 · 取前 8 晋级</h3>'+
+     '<table class="stt"><thead><tr><th class="rk">#</th><th class="tm">球队</th><th>组</th>'+
+     '<th>场</th><th>净</th><th>积</th><th>结果</th></tr></thead><tbody>';
+  S.thirds.forEach((x,i)=>{
+    const t=x.t,gd=(t.GD>0?'+':'')+t.GD;
+    h+='<tr class="'+(x.qualified?'q3':'')+'"><td class="rk">'+(i+1)+'</td>'+
+       '<td class="tm"><span class="fl">'+(t.flag||'🏳️')+'</span>'+escH(t.name)+'</td>'+
+       '<td>'+x.g+'</td><td>'+t.P+'</td><td>'+gd+'</td><td class="pt">'+t.Pts+'</td>'+
+       '<td><span class="qbadge '+(x.qualified?'in':'out')+'">'+(x.qualified?'晋级':'淘汰')+'</span></td></tr>';
+  });
+  h+='</tbody></table></div>';
+  const chip=(x,k)=>'<span class="qchip"><span class="fl">'+(x.t.flag||'🏳️')+'</span>'+escH(x.t.name)+
+    '<span class="g">'+x.g+k+'</span></span>';
+  const tQ=S.thirds.filter(x=>x.qualified);
+  h+='<div class="q32"><h3>🏆 晋级 32 强(预测 · 共 '+(S.winners.length+S.runners.length+tQ.length)+' 队)</h3>'+
+     '<div class="qcol"><div class="lbl">各组第 1（'+S.winners.length+'）</div><div class="qchips">'+
+       S.winners.map(x=>chip(x,'·1')).join('')+'</div></div>'+
+     '<div class="qcol"><div class="lbl">各组第 2（'+S.runners.length+'）</div><div class="qchips">'+
+       S.runners.map(x=>chip(x,'·2')).join('')+'</div></div>'+
+     '<div class="qcol"><div class="lbl">最佳第 3（'+tQ.length+'）</div><div class="qchips">'+
+       tQ.map(x=>chip(x,'·3')).join('')+'</div></div></div>';
+  h+=renderKnockout();
+  box.innerHTML=h;
+}
+
+// 淘汰赛某场胜者:'h'/'a'/null。优先用 ESPN 胜者标志(点球也准),否则比分;平局无标志 → 未定
+function koWinner(m){
+  const r=RESULTS[m.n]; if(!r||r.live) return null;
+  if(r.w==='h'||r.w==='a') return r.w;
+  if(r.hs>r.as) return 'h'; if(r.as>r.hs) return 'a'; return null;
+}
+// 淘汰赛对阵图 / 晋级:逐轮渲染,胜者标✓晋级;末尾给冠军。随 update_knockout 回填与比分自动更新
+function renderKnockout(){
+  const rounds=[
+    {sk:'round-of-32',  label:'32 强赛'},
+    {sk:'round-of-16',  label:'16 强赛'},
+    {sk:'quarter-finals',label:'8 强(1/4 决赛)'},
+    {sk:'semi-finals',  label:'半决赛'},
+    {sk:'third-place',  label:'三四名决赛'},
+    {sk:'final',        label:'决赛'}
+  ];
+  let h='<div class="q32"><h3>🏆 淘汰赛对阵 · 晋级</h3>';
+  rounds.forEach(rd=>{
+    const ms=DATA.filter(m=>m.sk===rd.sk).sort((a,b)=>a.n-b.n);
+    if(!ms.length) return;
+    h+='<div class="brkrd"><div class="brkh">'+rd.label+'<span class="brkc">'+ms.length+' 场</span></div>';
+    if(!ms.some(teamsKnown)){                       // 该轮队伍还没定 → 折叠一行
+      h+='<div class="brkwait">待上一轮结束后自动揭晓</div></div>'; return;
+    }
+    ms.forEach(m=>{
+      const w=koWinner(m), r=RESULTS[m.n], known=teamsKnown(m);
+      const side=(s)=>{
+        const fl=(s==='h'?m.hf:m.af)||'', name=s==='h'?m.hz:m.az, win=w===s;
+        return '<span class="brkt'+(s==='a'?' aw':'')+(win?' win':'')+(known?'':' tbd')+'">'+
+               (s==='a'?escH(name)+(win?' <span class="brkok">✓</span>':'')+'<span class="fl">'+fl+'</span>'
+                       :'<span class="fl">'+fl+'</span>'+escH(name)+(win?' <span class="brkok">✓</span>':''))+'</span>';
+      };
+      const mid=r?('<span class="brks">'+r.hs+'</span><span class="brkd">:</span><span class="brks">'+r.as+'</span>')
+                 :'<span class="brkvs">vs</span>';
+      h+='<div class="brkm">'+side('h')+'<span class="brkmid">'+mid+'</span>'+side('a')+'</div>';
+    });
+    h+='</div>';
+  });
+  const fin=DATA.find(m=>m.sk==='final'), fw=fin?koWinner(fin):null;
+  if(fw){ const fl=(fw==='h'?fin.hf:fin.af)||'', nm=fw==='h'?fin.hz:fin.az;
+    h+='<div class="champ">🏆 冠军:<span class="fl">'+fl+'</span>'+escH(nm)+'</div>'; }
+  return h+'</div>';
+}
+function setView(v){
+  const sched=(v!=='table');
+  document.querySelectorAll('#viewtabs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===v?'true':'false'));
+  document.getElementById('seg').style.display=sched?'':'none';
+  document.getElementById('stageTabs').style.display=sched?'':'none';
+  document.getElementById('liveEntry').style.display=sched?'':'none';
+  document.getElementById('list').hidden=!sched;
+  document.getElementById('standings').hidden=sched;
+  if(!sched){ renderStandings(); window.scrollTo({top:0}); }
+}
+document.getElementById('viewtabs').addEventListener('click',function(e){
+  const b=e.target.closest('button'); if(b) setView(b.dataset.v);
+});
+
+function landBoundary(){
+  if(landedDone||!lastNext) return;
+  if(document.getElementById('list').hidden) return;            // 仅在赛程视图定位
+  landedDone=true;
+  requestAnimationFrame(()=>{
+    const y=lastNext.getBoundingClientRect().top+window.pageYOffset-window.innerHeight*0.38;
+    window.scrollTo({top:Math.max(0,y),behavior:'smooth'});     // 下一场置于视口约 38% 处:上方刚结束、下方未开始
+  });
+}
+setStage(currentStageTab());   // 进页面自动定位到当前进行中的轮次(往轮可切标签查看)
+landBoundary();
 fetchScores();
+setTimeout(landBoundary,3000);   // 兜底:比分迟迟取不到时也能定位
 </script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ac81dc56149740369facaed557013675"}'></script><!-- End Cloudflare Web Analytics -->
 </body>

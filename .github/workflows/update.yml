@@ -1,0 +1,43 @@
+name: Auto-update knockout bracket
+
+# 分组赛结束后,自动把淘汰赛真实对阵回填进 data/matches.json(零人工)。
+#  - 每天定时跑几次:从 ESPN 拉取淘汰赛对阵,逐轮自动填入(R32 → R16 → … → 决赛)
+#  - 也可在 Actions 页面手动触发
+#  - 一旦 data/matches.json 有变更就提交;build.yml 会随即自动重建 index.html 与 worldcup.ics,
+#    GitHub Pages 重新发布,订阅日历下次回源时也会自动更新 —— 全程无需手动开发或上传。
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"      # 每 6 小时一次(UTC)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write              # 允许把回填后的 data 提交回仓库
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch & fill knockout matchups from ESPN
+        run: python scripts/update_knockout.py    # 仅标准库,无需 pip install
+
+      - name: Commit if the bracket changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/matches.json
+          if git diff --staged --quiet; then
+            echo "淘汰赛对阵无变化 — 跳过提交。"
+          else
+            git commit -m "chore: 自动回填淘汰赛对阵(来自 ESPN)"
+            git push
+          fi
+          # 不加 [skip ci]:让 build.yml 因 data 变更自动重建并发布
