@@ -74,5 +74,19 @@ console.log('测试 3 · 真实赛程 + 全完赛(结构与 32 强):');
   ok(S.thirds.every((x, i) => i === 0 || S.thirds[i-1].t.Pts >= x.t.Pts), '最佳第三名按积分降序');
 })();
 
+// ── 测试 4:淘汰赛胜者判定 koWinner(含点球 1:1 靠 winner 标志) ──
+console.log('测试 4 · 淘汰赛胜者(含点球):');
+(function () {
+  const mko = html.match(/function koWinner\(m\)\{[\s\S]*?\n\}/);
+  ok(!!mko, '从 template.html 提取到 koWinner');
+  const RESULTS = { 1:{hs:2,as:1}, 2:{hs:1,as:2}, 3:{hs:1,as:1,w:'h'}, 4:{hs:1,as:1}, 5:{hs:0,as:0,live:true} };
+  const koWinner = new Function('RESULTS', mko[0] + '; return koWinner;')(RESULTS);
+  eq(koWinner({n:1}), 'h', '2:1 → 主胜');
+  eq(koWinner({n:2}), 'a', '1:2 → 客胜');
+  eq(koWinner({n:3}), 'h', '1:1 但 ESPN winner=主 → 主胜(点球判得准)');
+  eq(koWinner({n:4}), null, '1:1 无胜者标志 → 未定(不乱判)');
+  eq(koWinner({n:5}), null, '进行中 → 未定');
+})();
+
 if (fail) { console.error('\n❌ ' + fail + ' 个断言失败'); process.exit(1); }
 console.log('\n✅ 全部通过');

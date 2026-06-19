@@ -34,6 +34,17 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run tests (积分榜 / 淘汰赛回填 / 比分快照)
+        run: |
+          node   scripts/test_standings.js
+          python scripts/test_update_knockout.py
+          python scripts/test_fetch_scores.py
+
       - name: Build site & calendar
         run: python scripts/build_all.py    # 仅用标准库,无需 pip install
 
