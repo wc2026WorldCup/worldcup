@@ -73,6 +73,15 @@ bad = U.parse_events({"events": [ev("Atlantis", "Wakanda", slot(fresh,73)["ko"],
 lg = []
 ok(U.apply_updates(fresh, bad, cd, lg) == 0, "未知国家不回填")
 
+print("测试 5 · 变音符号队名(ESPN 常带,历史易错点):")
+ok(U.canon("Türkiye") == U.canon("Turkiye"), "Türkiye ≡ Turkiye")
+ok(U.canon("Côte d'Ivoire") == U.canon("Cote d'Ivoire"), "Côte d'Ivoire ≡ Cote d'Ivoire")
+ok(U.canon("Curaçao") == U.canon("Curacao"), "Curaçao ≡ Curacao")
+fr = load(); cdt = U.build_dict(fr); s73 = slot(fr, 73)
+U.apply_updates(fr, U.parse_events({"events": [ev("Türkiye", "Brazil", s73["ko"], s73["v"])]}), cdt, [])
+mt = slot(fr, 73)
+ok((mt["hz"], mt["hf"]) == ("土耳其", "🇹🇷"), "ESPN 'Türkiye' 正确回填为 🇹🇷土耳其")
+
 if fail:
     print("\n❌ %d 个断言失败" % fail); sys.exit(1)
 print("\n✅ 全部通过")

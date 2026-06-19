@@ -20,7 +20,7 @@
 
 仅 Python 标准库。
 """
-import json, sys, re, urllib.request, datetime
+import json, sys, re, urllib.request, datetime, unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -42,7 +42,9 @@ TBD = {"", "tbd", "tobedetermined", "tba", "winner", "loser", "thirdplace"}
 
 
 def norm(s):
-    s = (s or "").lower().replace("&", "and")
+    # 先去变音符号(Türkiye→Turkiye、Côte d'Ivoire→Cote...、Curaçao→Curacao),与前端 JS 的 NFD 对齐
+    s = unicodedata.normalize("NFD", s or "").encode("ascii", "ignore").decode("ascii")
+    s = s.lower().replace("&", "and")
     return re.sub(r"[^a-z0-9]", "", s)
 
 def canon(s):
