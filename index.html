@@ -622,7 +622,8 @@ async function fetchScores(){
     }
     render();
     renderStandings();
-    if(++scoreRenders===1){ landedDone=false; landBoundary(); }  // 比分首次到位后重新定位(初次定位会被本次重渲染打断)
+    scrollToCurrentKo();                                          // 积分榜视图:刷新比分后定位到当前淘汰赛轮次
+    if(++scoreRenders===1){ landedDone=false; landBoundary(); }  // 赛程视图:比分首次到位后定位到交界
   }else{
     setUpd('err','比分暂时取不到，稍后再点“刷新比分”');
     landBoundary();
@@ -723,7 +724,7 @@ function renderKnockout(){
     const anyReal=ms.some(teamsKnown);
     const anyTeam=ms.some(m=>teamsKnown(m)||provTeam(m.hz)||provTeam(m.az));
     const note=(!anyReal&&anyTeam)?'<span class="bnote">· 按当前排名暂定</span>':'';
-    h+='<div class="brkrd"><div class="brkh">'+rd.label+'<span class="brkc">'+ms.length+' 场</span>'+note+'</div>';
+    h+='<div class="brkrd" id="ko-'+rd.sk+'"><div class="brkh">'+rd.label+'<span class="brkc">'+ms.length+' 场</span>'+note+'</div>';
     if(!anyTeam){                                    // 该轮队伍还无法确定 → 折叠一行
       h+='<div class="brkwait">待上一轮结束后自动揭晓</div></div>'; return;
     }
@@ -752,6 +753,23 @@ function renderKnockout(){
     h+='<div class="champ">🏆 冠军:<span class="fl">'+fl+'</span>'+escH(nm)+'</div>'; }
   return h+'</div>';
 }
+// 当前淘汰赛轮次 sk:最早一场未结束的淘汰赛所属轮;还没开打→32强;全部打完→决赛
+function currentKoSk(){
+  const ko=[...DATA].filter(isKnock).sort((a,b)=>koMs(a)-koMs(b));
+  const up=ko.find(m=>statusOf(m)!=='fin');
+  return up?up.sk:(ko.length?'final':'round-of-32');
+}
+// 「积分榜·晋级」视图里,定位到当前淘汰赛轮次的对阵区(切入该视图 / 刷新比分时调用)
+function scrollToCurrentKo(){
+  if(document.getElementById('standings').hidden) return;        // 仅积分榜视图生效
+  const el=document.getElementById('ko-'+currentKoSk());
+  if(!el){ window.scrollTo({top:0}); return; }
+  requestAnimationFrame(()=>{
+    const hdr=document.querySelector('header'); const off=(hdr?hdr.offsetHeight:0)+10;
+    const y=el.getBoundingClientRect().top+window.pageYOffset-off;
+    window.scrollTo({top:Math.max(0,y),behavior:'smooth'});      // 当前轮次对阵区置于表头下方
+  });
+}
 function setView(v){
   const sched=(v!=='table');
   document.querySelectorAll('#viewtabs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===v?'true':'false'));
@@ -760,7 +778,7 @@ function setView(v){
   document.getElementById('liveEntry').style.display=sched?'':'none';
   document.getElementById('list').hidden=!sched;
   document.getElementById('standings').hidden=sched;
-  if(!sched){ renderStandings(); window.scrollTo({top:0}); }
+  if(!sched){ renderStandings(); scrollToCurrentKo(); }   // 切入积分榜 → 定位到当前淘汰赛轮次
 }
 document.getElementById('viewtabs').addEventListener('click',function(e){
   const b=e.target.closest('button'); if(b) setView(b.dataset.v);
