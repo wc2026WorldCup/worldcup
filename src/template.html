@@ -221,6 +221,7 @@
   .provp{font-size:11px;font-weight:800;color:#B26B00}
   .bnote{font-size:13px;font-weight:700;color:var(--amber);margin-left:8px}
   table.stt + .q32 .brkt.prov,.brkt.prov{color:var(--ink);font-weight:600}
+  .pentag{display:inline-block;font-size:10px;font-weight:700;color:#C98A12;background:#FFF4DA;border-radius:5px;padding:0 5px;margin-left:6px;vertical-align:middle}
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -469,12 +470,18 @@ function card(m,s){
                        :'<span class="pill">'+(m.g?m.g+'组 · ':'')+m.st+'</span>';
 
   const draw = r && !r.live && r.hs===r.as;
+  const kWin = (r&&!r.live&&isKnock(m)) ? koWinner(m) : null;   // 淘汰赛胜者(含点球/加时)
+  const pens = !!(r&&!r.live&&isKnock(m)&&r.hs===r.as&&kWin);   // 比分相平但有胜者 → 点球决出
   let hB=null,aB=null;
-  if(r&&!r.live){ if(draw){hB='draw';aB='draw';} else if(r.hs>r.as){hB='win';} else {aB='win';} }
+  if(r&&!r.live){
+    if(isKnock(m)){ if(kWin==='h')hB='win'; else if(kWin==='a')aB='win'; }   // 淘汰赛无平局,只标晋级方
+    else if(draw){hB='draw';aB='draw';}
+    else if(r.hs>r.as){hB='win';} else {aB='win';}
+  }
 
   let state;
   if(s==='live') state='<span class="state live"><span class="ball">⚽</span>进行中 · 看直播 ›</span>';
-  else if(s==='fin') state='<span class="state fin">完场</span>';
+  else if(s==='fin') state='<span class="state fin">完场'+(pens?' · 点球':'')+'</span>';
   else state='<span class="state up">未开始</span>';
 
   const side=(flag,name,badge,isTbd)=>
@@ -732,7 +739,8 @@ function renderKnockout(){
                (s==='a'?escH(name)+(win?' <span class="brkok">✓</span>':'')+'<span class="fl">'+fl+'</span>'
                        :'<span class="fl">'+fl+'</span>'+escH(name)+(win?' <span class="brkok">✓</span>':''))+'</span>';
       };
-      const mid=r?('<span class="brks">'+r.hs+'</span><span class="brkd">:</span><span class="brks">'+r.as+'</span>')
+      const pen=r&&!r.live&&r.hs===r.as&&w;   // 比分相平但有胜者 → 点球
+      const mid=r?('<span class="brks">'+r.hs+'</span><span class="brkd">:</span><span class="brks">'+r.as+'</span>'+(pen?'<span class="pentag">点球</span>':''))
                  :'<span class="brkvs">vs</span>';
       h+='<div class="brkm">'+side('h')+'<span class="brkmid">'+mid+'</span>'+side('a')+'</div>';
     });
