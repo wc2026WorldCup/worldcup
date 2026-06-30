@@ -217,6 +217,10 @@
     border:1px solid #EBD9A8;border-radius:12px;padding:12px 14px;font-size:16px;font-weight:800;
     display:flex;align-items:center;gap:8px}
   .champ .fl{font-size:20px}
+  /* 淘汰赛「暂定对阵」标记 */
+  .provp{font-size:11px;font-weight:800;color:#B26B00}
+  .bnote{font-size:13px;font-weight:700;color:var(--amber);margin-left:8px}
+  table.stt + .q32 .brkt.prov,.brkt.prov{color:var(--ink);font-weight:600}
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -380,8 +384,17 @@ function statusOf(m){
   return 'fin';
 }
 
-let landedDone=false, lastNext=null, scoreRenders=0, curStage='all';
+let landedDone=false, lastNext=null, scoreRenders=0, curStage='all', CURSTAND=null;
+// 把淘汰赛占位"A组第2/E组第1"按当前积分榜解析成「暂定」球队;
+// 第3名占位("X/Y/Z组第3")与"M..胜者/负者"无法在小组赛阶段确定 → 返回 null。
+function provTeam(zh){
+  if(!CURSTAND) return null;
+  const m=/^([A-L])组第([12])$/.exec(zh||''); if(!m) return null;
+  const arr=CURSTAND.groups[m[1]]; const t=arr&&arr[+m[2]-1];
+  return t?{flag:t.flag,name:t.name}:null;
+}
 function render(){
+  CURSTAND=computeStandings(DATA,RESULTS);   // 当前积分榜:供淘汰赛占位解析"暂定对阵"
   const fStat=document.querySelector('#seg button[aria-pressed="true"]').dataset.f;
   const fStage=curStage;
   const counts={all:0,live:0,fin:0,up:0};
@@ -445,7 +458,14 @@ function card(m,s){
   const el=document.createElement('div');
   el.className='card'+(s==='live'?' live':'');
   const r=RESULTS[m.n], tbd=isKnock(m)&&!teamsKnown(m);
-  const pill=isKnock(m)?'<span class="pill ko">🏆 '+m.st+'</span>'
+  // 淘汰赛占位:能按当前积分榜解析的(A组第2/E组第1)显示成「暂定」真实球队
+  let hf2=m.hf, hz2=m.hz, af2=m.af, az2=m.az, htbd=tbd, atbd=tbd, prov=false;
+  if(tbd){
+    const ph=provTeam(m.hz), pa=provTeam(m.az);
+    if(ph){ hf2=ph.flag; hz2=ph.name; htbd=false; prov=true; }
+    if(pa){ af2=pa.flag; az2=pa.name; atbd=false; prov=true; }
+  }
+  const pill=isKnock(m)?'<span class="pill ko">🏆 '+m.st+(prov?' · <span class="provp">暂定</span>':'')+'</span>'
                        :'<span class="pill">'+(m.g?m.g+'组 · ':'')+m.st+'</span>';
 
   const draw = r && !r.live && r.hs===r.as;
@@ -482,7 +502,7 @@ function card(m,s){
   el.innerHTML=
     '<div class="chd"><div class="tags">'+pill+'</div>'+state+'</div>'+
     '<div class="grid"><div class="sides">'+
-      side(m.hf,m.hz,hB,tbd)+side(m.af,m.az,aB,tbd)+
+      side(hf2,hz2,hB,htbd)+side(af2,az2,aB,atbd)+
     '</div><div class="figure">'+figure+'</div></div>'+
     '<div class="foot"><span class="loc">📍 '+m.c+' · '+m.v+'</span>'+whenHtml+'</div>';
   if(s==='live'){
@@ -624,7 +644,7 @@ document.querySelectorAll('#watchModal .wm-btn').forEach(b=>b.addEventListener('
 function escH(s){return (''+s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
 function renderStandings(){
   const box=document.getElementById('standings');
-  const S=computeStandings(DATA,RESULTS);
+  const S=computeStandings(DATA,RESULTS); CURSTAND=S;
   let played=0,total=0;
   DATA.forEach(m=>{ if(m.g&&!isKnock(m)){ total++; if(RESULTS[m.n]&&!RESULTS[m.n].live) played++; } });
   let h='<div class="stnote">🔮 <b>晋级预测</b> · 按当前比分实时推算('+played+'/'+total+' 场小组赛已完);'+
@@ -692,15 +712,23 @@ function renderKnockout(){
   rounds.forEach(rd=>{
     const ms=DATA.filter(m=>m.sk===rd.sk).sort((a,b)=>a.n-b.n);
     if(!ms.length) return;
-    h+='<div class="brkrd"><div class="brkh">'+rd.label+'<span class="brkc">'+ms.length+' 场</span></div>';
-    if(!ms.some(teamsKnown)){                       // 该轮队伍还没定 → 折叠一行
+    const anyReal=ms.some(teamsKnown);
+    const anyTeam=ms.some(m=>teamsKnown(m)||provTeam(m.hz)||provTeam(m.az));
+    const note=(!anyReal&&anyTeam)?'<span class="bnote">· 按当前排名暂定</span>':'';
+    h+='<div class="brkrd"><div class="brkh">'+rd.label+'<span class="brkc">'+ms.length+' 场</span>'+note+'</div>';
+    if(!anyTeam){                                    // 该轮队伍还无法确定 → 折叠一行
       h+='<div class="brkwait">待上一轮结束后自动揭晓</div></div>'; return;
     }
     ms.forEach(m=>{
       const w=koWinner(m), r=RESULTS[m.n], known=teamsKnown(m);
       const side=(s)=>{
-        const fl=(s==='h'?m.hf:m.af)||'', name=s==='h'?m.hz:m.az, win=w===s;
-        return '<span class="brkt'+(s==='a'?' aw':'')+(win?' win':'')+(known?'':' tbd')+'">'+
+        let fl,name,cls;
+        if(known){ fl=(s==='h'?m.hf:m.af)||''; name=s==='h'?m.hz:m.az; cls=''; }
+        else { const p=provTeam(s==='h'?m.hz:m.az);
+               if(p){ fl=p.flag||''; name=p.name; cls=' prov'; }
+               else { fl=''; name=s==='h'?m.hz:m.az; cls=' tbd'; } }
+        const win=w===s;
+        return '<span class="brkt'+(s==='a'?' aw':'')+(win?' win':'')+cls+'">'+
                (s==='a'?escH(name)+(win?' <span class="brkok">✓</span>':'')+'<span class="fl">'+fl+'</span>'
                        :'<span class="fl">'+fl+'</span>'+escH(name)+(win?' <span class="brkok">✓</span>':''))+'</span>';
       };
