@@ -376,6 +376,12 @@ function computeStandings(DATA, RESULTS){
 
 const byPair={};
 DATA.forEach(m=>{ if(teamsKnown(m)) byPair[pairKey(m.h,m.a)]=m; });   // 含已确定的淘汰赛对阵
+// 国家字典(canon 英文 → 中文名/国旗,建自小组赛行)+ 淘汰赛「UTC日|球场」索引(与是否回填无关)
+const NAT={};
+DATA.forEach(m=>{ if(!isKnock(m)){ NAT[canon(m.h)]={zh:m.hz,flag:m.hf}; NAT[canon(m.a)]={zh:m.az,flag:m.af}; } });
+const koVD={};
+DATA.forEach(m=>{ if(isKnock(m)) koVD[utcYMD(koMs(m))+'|'+norm(m.v)]=m; });
+let KOFILL={};   // 运行时:按 场地+日期 从 ESPN 回填的淘汰赛真实队伍(队伍与比分同源,方向一致)
 
 let RESULTS={};
 function statusOf(m){
@@ -471,9 +477,13 @@ function card(m,s){
   // 淘汰赛占位:能按当前积分榜解析的(A组第2/E组第1)显示成「暂定」真实球队
   let hf2=m.hf, hz2=m.hz, af2=m.af, az2=m.az, htbd=tbd, atbd=tbd, prov=false;
   if(tbd){
-    const ph=provTeam(m.hz), pa=provTeam(m.az);
-    if(ph){ hf2=ph.flag; hz2=ph.name; htbd=false; if(!ph.firm)prov=true; }   // firm(已决出)不标暂定
-    if(pa){ af2=pa.flag; az2=pa.name; atbd=false; if(!pa.firm)prov=true; }
+    const kf=KOFILL[m.n];
+    if(kf){ hf2=kf.hf; hz2=kf.hz; af2=kf.af; az2=kf.az; htbd=false; atbd=false; }   // ESPN 实时回填,确定
+    else {
+      const ph=provTeam(m.hz), pa=provTeam(m.az);
+      if(ph){ hf2=ph.flag; hz2=ph.name; htbd=false; if(!ph.firm)prov=true; }         // firm(已决出)不标暂定
+      if(pa){ af2=pa.flag; az2=pa.name; atbd=false; if(!pa.firm)prov=true; }
+    }
   }
   const pill=isKnock(m)?'<span class="pill ko">🏆 '+m.st+(prov?' · <span class="provp">暂定</span>':'')+'</span>'
                        :'<span class="pill">'+(m.g?m.g+'组 · ':'')+m.st+'</span>';
@@ -539,7 +549,7 @@ function setUpd(state,txt){
 // ---- source 1: ESPN public API (works in any normal browser / when hosted) ----
 async function fromESPN(){
   const now=Date.now(); const dset=new Set();
-  DATA.forEach(m=>{ if(!teamsKnown(m))return; if(koMs(m)>now)return;
+  DATA.forEach(m=>{ if(koMs(m)>now)return;      // 含所有已开赛场次(含未回填的淘汰赛)的日期
     dset.add(utcYMD(koMs(m))); dset.add(utcYMD(koMs(m)-86400000)); });
   dset.add(utcYMD(now)); dset.add(utcYMD(now+86400000)); dset.add(utcYMD(now-86400000));
   const base="https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=";
@@ -557,13 +567,21 @@ async function fromESPN(){
       if(st!=='in'&&st!=='post')return;
       const nH=(H.team&&(H.team.displayName||H.team.name||H.team.shortDisplayName))||'';
       const nA=(A.team&&(A.team.displayName||A.team.name||A.team.shortDisplayName))||'';
-      const fx=byPair[pairKey(nH,nA)]; if(!fx)return;
       const hs=parseInt(H.score,10), as=parseInt(A.score,10);
       if(isNaN(hs)||isNaN(as))return;
-      const orient=canon(fx.h)===canon(nH);
-      let w=H.winner===true?'h':A.winner===true?'a':null;   // ESPN 胜者标志(淘汰赛点球也准)
-      if(!orient)w=(w==='h'?'a':w==='a'?'h':null);
-      next[fx.n]={hs:orient?hs:as, as:orient?as:hs, live:st==='in', w:w};
+      const w0=H.winner===true?'h':A.winner===true?'a':null;   // ESPN 胜者标志(点球也准)
+      const fx=byPair[pairKey(nH,nA)];
+      if(fx){                                                   // 按队名匹配:按我方主客方向归一
+        const orient=canon(fx.h)===canon(nH);
+        next[fx.n]={hs:orient?hs:as, as:orient?as:hs, live:st==='in', w:orient?w0:(w0==='h'?'a':w0==='a'?'h':null)};
+      }else{                                                    // 未匹配(多为尚未回填的淘汰赛)→ 按 场地+日期 对号,并用 ESPN 队名回填
+        const ven=(comp.venue&&comp.venue.fullName)||'';
+        const kf=koVD[utcYMD(Date.parse(comp.date||ev.date||''))+'|'+norm(ven)];
+        if(!kf||!isKnock(kf))return;
+        const dH=NAT[canon(nH)], dA=NAT[canon(nA)]; if(!dH||!dA)return;   // 队名不识别 → 跳过,不存可能错位的比分
+        KOFILL[kf.n]={hf:dH.flag,hz:dH.zh,af:dA.flag,az:dA.zh};
+        next[kf.n]={hs:hs, as:as, live:st==='in', w:w0};        // 队伍与比分同源(均以 ESPN 主为主),方向天然一致
+      }
     });
   });
   return any? next : null;
@@ -730,7 +748,7 @@ function renderKnockout(){
     const ms=DATA.filter(m=>m.sk===rd.sk).sort((a,b)=>a.n-b.n);
     if(!ms.length) return;
     const isProv=z=>{const p=provTeam(z);return !!(p&&!p.firm);};        // 仅小组位预测算"暂定"
-    const anyTeam=ms.some(m=>teamsKnown(m)||provTeam(m.hz)||provTeam(m.az));
+    const anyTeam=ms.some(m=>teamsKnown(m)||KOFILL[m.n]||provTeam(m.hz)||provTeam(m.az));
     const anyProv=ms.some(m=>!teamsKnown(m)&&(isProv(m.hz)||isProv(m.az)));
     const note=anyProv?'<span class="bnote">· 按当前排名暂定</span>':'';
     h+='<div class="brkrd" id="ko-'+rd.sk+'"><div class="brkh">'+rd.label+'<span class="brkc">'+ms.length+' 场</span>'+note+'</div>';
@@ -742,9 +760,11 @@ function renderKnockout(){
       const side=(s)=>{
         let fl,name,cls;
         if(known){ fl=(s==='h'?m.hf:m.af)||''; name=s==='h'?m.hz:m.az; cls=''; }
-        else { const p=provTeam(s==='h'?m.hz:m.az);
-               if(p){ fl=p.flag||''; name=p.name; cls=p.firm?'':' prov'; }   // firm 已决出 → 正常显示
-               else { fl=''; name=s==='h'?m.hz:m.az; cls=' tbd'; } }
+        else { const kf=KOFILL[m.n];
+               if(kf){ fl=(s==='h'?kf.hf:kf.af)||''; name=s==='h'?kf.hz:kf.az; cls=''; }   // ESPN 回填 → 正常显示
+               else { const p=provTeam(s==='h'?m.hz:m.az);
+                      if(p){ fl=p.flag||''; name=p.name; cls=p.firm?'':' prov'; }
+                      else { fl=''; name=s==='h'?m.hz:m.az; cls=' tbd'; } } }
         const win=w===s;
         return '<span class="brkt'+(s==='a'?' aw':'')+(win?' win':'')+cls+'">'+
                (s==='a'?escH(name)+(win?' <span class="brkok">✓</span>':'')+'<span class="fl">'+fl+'</span>'
