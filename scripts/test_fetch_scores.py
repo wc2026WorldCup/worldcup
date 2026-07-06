@@ -49,5 +49,22 @@ print("测试 4 · 进行中标记:")
 sc3 = F.parse_scores([{"events": [ev(s1["h"], s1["a"], 1, 0, state="in")]}], idx)
 ok(sc3.get(1) and sc3[1]["live"] is True, "进行中(in)标 live=True")
 
+print("测试 5 · 按场地+日期回填未确定的淘汰赛(带队伍):")
+import update_knockout as U2
+nat = U2.build_dict(matches)
+kf = {"n": 901, "sk": "round-of-32", "st": "32强赛", "g": None,
+      "h": "Group A runners-up", "a": "Group B runners-up",
+      "hz": "A组第2", "az": "B组第2", "hf": "", "af": "", "c": "X", "v": "Test Venue Z", "ko": "2026-07-15T19:00:00Z"}
+kovd = {U2.our_ko(kf).strftime("%Y%m%d") + "|" + U2.norm(kf["v"]): kf}
+evVD = {"competitions": [{"date": "2026-07-15T19:00:00Z", "venue": {"fullName": "Test Venue Z"},
+        "status": {"type": {"state": "post"}},
+        "competitors": [{"homeAway": "home", "team": {"displayName": "Argentina"}, "score": "2", "winner": True},
+                        {"homeAway": "away", "team": {"displayName": "Germany"}, "score": "1", "winner": False}]}]}
+sv = F.parse_scores([{"events": [evVD]}], {}, kovd, nat)   # idx 为空 → 走场地+日期分支
+ok(sv.get(901) is not None, "按场地+日期命中淘汰赛槽 901")
+ok(sv.get(901) and (sv[901]["hz"], sv[901]["az"]) == ("阿根廷", "德国"), "回填真实队名 阿根廷/德国")
+ok(sv.get(901) and (sv[901]["hf"], sv[901]["af"]) == ("🇦🇷", "🇩🇪"), "带国旗")
+ok(sv.get(901) and sv[901]["hs"] == 2 and sv[901]["as"] == 1 and sv[901]["w"] == "h", "比分与胜者(以 ESPN 主为主)")
+
 if fail: print("\n❌ %d 个断言失败" % fail); sys.exit(1)
 print("\n✅ 全部通过")

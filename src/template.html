@@ -623,7 +623,8 @@ async function fromCache(){
     const j=await r.json(); const sc=j&&j.scores; if(!sc) return null;
     const next={}; let any=false;
     Object.keys(sc).forEach(n=>{ const v=sc[n]; if(!v)return;
-      next[n]={hs:v.hs, as:v.as, live:!!v.live, w:v.w||null}; any=true; });
+      next[n]={hs:v.hs, as:v.as, live:!!v.live, w:v.w||null}; any=true;
+      if(v.hz&&v.hf){ KOFILL[n]={hf:v.hf,hz:v.hz,af:v.af,az:v.az}; } });   // 缓存里带队伍的淘汰赛 → 回填
     cacheUpdated=j.updated||null;
     return any? next : null;
   }catch(e){ return null; }
@@ -777,8 +778,12 @@ function renderKnockout(){
     h+='</div>';
   });
   const fin=DATA.find(m=>m.sk==='final'), fw=fin?koWinner(fin):null;
-  if(fw){ const fl=(fw==='h'?fin.hf:fin.af)||'', nm=fw==='h'?fin.hz:fin.az;
-    h+='<div class="champ">🏆 冠军:<span class="fl">'+fl+'</span>'+escH(nm)+'</div>'; }
+  if(fw){                                    // 冠军名同样按 已确定/ESPN回填/暂定 顺序解析,不显示占位
+    let fl,nm; const kf=KOFILL[fin.n];
+    if(teamsKnown(fin)){ fl=fw==='h'?fin.hf:fin.af; nm=fw==='h'?fin.hz:fin.az; }
+    else if(kf){ fl=fw==='h'?kf.hf:kf.af; nm=fw==='h'?kf.hz:kf.az; }
+    else { const p=provTeam(fw==='h'?fin.hz:fin.az); fl=p?p.flag:''; nm=p?p.name:(fw==='h'?fin.hz:fin.az); }
+    h+='<div class="champ">🏆 冠军:<span class="fl">'+(fl||'')+'</span>'+escH(nm)+'</div>'; }
   return h+'</div>';
 }
 // 当前淘汰赛轮次 sk:最早一场未结束的淘汰赛所属轮;还没开打→32强;全部打完→决赛

@@ -38,8 +38,18 @@ def pair_index(matches):
             idx[tuple(sorted((U.canon(m["h"]), U.canon(m["a"]))))] = m
     return idx
 
-def parse_scores(payloads, idx):
-    """ESPN scoreboard 多份 JSON → {场次号 n: {hs, as, live, w}}。纯函数,可单测。"""
+def ko_vd_index(matches):
+    """淘汰赛「UTC日|球场」→ 场次行(与是否回填无关)。"""
+    idx = {}
+    for m in matches:
+        if m.get("sk") in U.KNOCK:
+            idx[U.our_ko(m).strftime("%Y%m%d") + "|" + U.norm(m["v"])] = m
+    return idx
+
+def parse_scores(payloads, idx, kovd=None, nat=None):
+    """ESPN scoreboard 多份 JSON → {场次号 n: {...}}。纯函数,可单测。
+    队名对得上 → {hs,as,live,w}(按我方主客归一);
+    对不上但按 场地+日期 命中淘汰赛槽 → 额外带 {h,a,hz,az,hf,af}(以 ESPN 主客为准,供前端回填未确定的淘汰赛)。"""
     out = {}
     for j in payloads:
         for ev in (j or {}).get("events", []):
@@ -59,26 +69,37 @@ def parse_scores(payloads, idx):
                 t = c.get("team") or {}
                 return t.get("displayName") or t.get("name") or t.get("shortDisplayName") or ""
             nH, nA = nm(H), nm(A)
-            fx = idx.get(tuple(sorted((U.canon(nH), U.canon(nA)))))
-            if not fx:
-                continue
             try:
                 hs, as_ = int(H.get("score")), int(A.get("score"))
             except (TypeError, ValueError):
                 continue
-            w = 'h' if H.get("winner") is True else 'a' if A.get("winner") is True else None
-            if U.canon(fx["h"]) != U.canon(nH):          # ESPN 主客与我们相反 → 归一
-                hs, as_ = as_, hs
-                w = 'a' if w == 'h' else 'h' if w == 'a' else None
-            out[fx["n"]] = {"hs": hs, "as": as_, "live": st == "in", "w": w}
+            w0 = 'h' if H.get("winner") is True else 'a' if A.get("winner") is True else None
+            fx = idx.get(tuple(sorted((U.canon(nH), U.canon(nA)))))
+            if fx:                                            # 按队名匹配 → 按我方主客归一
+                hs2, as2, w = hs, as_, w0
+                if U.canon(fx["h"]) != U.canon(nH):
+                    hs2, as2 = as_, hs
+                    w = 'a' if w0 == 'h' else 'h' if w0 == 'a' else None
+                out[fx["n"]] = {"hs": hs2, "as": as2, "live": st == "in", "w": w}
+            elif kovd is not None and nat is not None:        # 按场地+日期匹配未回填的淘汰赛,并带队伍
+                ven = ((comp.get("venue") or {}).get("fullName")) or ""
+                ko = U.parse_ko(comp.get("date") or ev.get("date") or "")
+                if not ko:
+                    continue
+                kf = kovd.get(ko.strftime("%Y%m%d") + "|" + U.norm(ven))
+                if not kf:
+                    continue
+                dH, dA = nat.get(U.canon(nH)), nat.get(U.canon(nA))
+                if not dH or not dA:                          # 队名不识别 → 跳过,不存可能错位的比分
+                    continue
+                out[kf["n"]] = {"hs": hs, "as": as_, "live": st == "in", "w": w0,
+                                "h": nH, "a": nA, "hz": dH[0], "hf": dH[1], "az": dA[0], "af": dA[1]}
     return out
 
 def dates_for(matches):
     now = datetime.datetime.now(datetime.timezone.utc)
     ds = {now.strftime("%Y%m%d")}
     for m in matches:
-        if not known(m):
-            continue
         k = U.our_ko(m)
         if k < now - datetime.timedelta(days=2) or k > now + datetime.timedelta(days=1):
             continue
@@ -101,8 +122,10 @@ def main(argv):
     mock = argv[argv.index("--mock") + 1] if "--mock" in argv else None
     matches = json.loads(DATA.read_text(encoding="utf-8"))
     idx = pair_index(matches)
+    nat = U.build_dict(matches)          # canon 英文 → (中文名, 国旗)
+    kovd = ko_vd_index(matches)          # 淘汰赛「日期|球场」索引
     payloads = [json.loads(Path(mock).read_text(encoding="utf-8"))] if mock else fetch(dates_for(matches))
-    scores = parse_scores(payloads, idx)
+    scores = parse_scores(payloads, idx, kovd, nat)
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     if not scores and OUT.exists():                       # 全部拉取失败时,保留上次快照,别用空覆盖
