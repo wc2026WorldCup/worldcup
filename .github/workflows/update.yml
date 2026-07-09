@@ -38,6 +38,7 @@ jobs:
             echo "淘汰赛对阵无变化 — 跳过提交。"
           else
             git commit -m "chore: 自动回填淘汰赛对阵(来自 ESPN)"
+            git pull --rebase origin main    # 避免与其它工作流并发推送时的非快进冲突
             git push
           fi
           # 不加 [skip ci]:让 build.yml 因 data 变更自动重建并发布
